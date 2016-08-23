@@ -64,6 +64,7 @@ for clusterNumber in cluster.clusterList:
 # fasta
 
 currentLength  = largestCluster
+totalAbundance = 0
 
 #record = SeqIO.to_dict(SeqIO.parse(sys.argv[2], "fasta"))
 record = SeqIO.index(sys.argv[2], "fasta")
@@ -71,13 +72,17 @@ record = SeqIO.index(sys.argv[2], "fasta")
 while currentLength > 0:
     for clusterNumber in cluster.clusterList:
         if clusterNumber.abundance == currentLength:
+            
+            totalAbundance = totalAbundance + currentLength
+            
             seq = record[clusterNumber.rep].seq
             
             # remove old abundance tag
             newClusterName = clusterNumber.rep.split(";")
             
-            print(">"+newClusterName[0]+";abundance="+str(clusterNumber.abundance)+";cluster=cd"+str(clusterNumber.cluster)+"\n"+seq)
+            print(">"+newClusterName[0]+";a="+str(clusterNumber.abundance)+";c=cd"+str(clusterNumber.cluster)+"\n"+seq)
             #print(record[clusterNumber.rep].format("fasta"))
                              
     currentLength = currentLength - 1
     
+print(totalAbundance,file=sys.stderr)
