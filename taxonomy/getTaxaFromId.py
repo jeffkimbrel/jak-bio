@@ -1,39 +1,49 @@
+import sys
+import time
 from Bio import Entrez
 Entrez.email = 'kimbrel1@llnl.gov'
 
 dictionary = {}
-inputID = "WP_054761838.1"
 
-dictionary[inputID] = {}
+## Read in list
+lines = [line.strip() for line in open(sys.argv[1])]
 
-
-def get_tax_data(taxid):
-    """once we have the taxid, we can fetch the record"""
-    search = Entrez.efetch(id = str(taxid), db = "taxonomy", retmode = "xml")
-    return Entrez.read(search)
-
-#
-handle = Entrez.esearch(db="protein", term=inputID, retmode="xml")
-record = Entrez.read(handle)
-accession = record["IdList"][0]
-
-#
-handle = Entrez.esummary(db="protein", id=accession, retmode="xml")
-record = Entrez.read(handle)
-
-tax = record[0]['TaxId']
-
-for item in record[0]:
-    dictionary[inputID][item] = record[0][item]
-
-#
-handle = Entrez.efetch(db="taxonomy", id=str(tax), retmode="xml")
-record = Entrez.read(handle)
-
-for datatype in record[0]:
-    dictionary[inputID][datatype] = record[0][datatype]
+for line in list(lines):
+    split = line.split("|")
     
+    inputID = split[3]
+    
+    print(inputID,file=sys.stderr)
+    
+    dictionary[inputID] = {}
+       
+    #
+    #time.sleep(1) # add some delay for NCBI sake
+    handle = Entrez.esearch(db="protein", term=inputID, retmode="xml")
+    record = Entrez.read(handle)
+    accession = record["IdList"][0]
+    #
+    #time.sleep(1) # add some delay for NCBI sake
+    handle = Entrez.esummary(db="protein", id=accession, retmode="xml")
+    record = Entrez.read(handle)
+    
+    tax = record[0]['TaxId']
+    
+    for item in record[0]:
+        dictionary[inputID][item] = record[0][item]
+    
+    #
+    #time.sleep(1) # add some delay for NCBI sake
+    handle = Entrez.efetch(db="taxonomy", id=str(tax), retmode="xml")
+    record = Entrez.read(handle)
+    
+    for datatype in record[0]:
+        dictionary[inputID][datatype] = record[0][datatype]
+        
 #    
+
+print("LOCUS\tNAME\tTaxID\tID\tkingdom\tphylum\tclass\torder\tfamily\tgenus\tspecies")
+
 for record in dictionary:
         
     lineage = {d['Rank']:d['ScientificName'] for d in dictionary[record]["LineageEx"] if d['Rank'] in ['superkingdom','phylum', 'class','order','family','genus','species']}
@@ -46,11 +56,6 @@ for record in dictionary:
     genus = lineage.get('genus', "unknown")
     species = lineage.get('species', "unknown")
     
-    
     print(record,dictionary[record]["ScientificName"],dictionary[record]["TaxId"],dictionary[record]["Id"],kingdom,phylum,taxClass,order,family,genus,species,sep="\t")
     
     
-    
-    
-    #for item in dictionary[record]:
-        #print(item,dictionary[record][item],sep=": ")
