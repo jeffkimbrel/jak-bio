@@ -40,14 +40,16 @@ for f in glob.glob('*.KO'):
         if kegg not in ontology:
             notInOntology[kegg] = kegg
         
-        
-        K[kegg] = kegg
-        S[f][kegg] = count
+        if level == 'KO':
+            K[kegg] = kegg
+            S[f][kegg] = count
+        elif level == 'L1':
+            
 
 sortedK = sorted(list(K))
 sortedS = sorted(list(S))
 
-'''
+
 ## HEADER
 print(level,end="")
 for sample in sortedS:
@@ -63,7 +65,7 @@ for kegg in sortedK:
         #print(S[sample][kegg])
         print("\t"+str(S[sample].get(kegg, 0)),end="")
     print()
-'''
+
     
 # NON-ONTOLOGY
 for kegg in notInOntology:
