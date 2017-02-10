@@ -1,18 +1,19 @@
 from pyx import *
 import sys
-unit.set(defaultunit="mm")
-text.set(text.LatexRunner)
-text.preamble(r"\usepackage{times}")
+#unit.set(defaultunit="mm")
+#text.set(text.LatexRunner)
+#text.preamble(r"\usepackage{times}")
 c = canvas.canvas()
 
 ##### Global Options #####
 
-mmWidth = 1500
+mmWidth = 1500 # width of image
 mmPadLeft = 30
 mmPadRight = 10
-mmSpaceHeight = 50
+mmSpaceHeight = 50 # space between chromosomes/contigs
 mmFeatureHeight = 20
 mmCurrentY = 20
+defaultColor = "red"
 
 ##### Classes #####
 
@@ -32,13 +33,14 @@ class chrome:
 
 class feature:
     featList = []
-    def __init__(self, chromosome,start,stop,strand,name):
+    def __init__(self, chromosome,start,stop,strand,name,color):
         feature.featList.append(self)
         self.chromosome = chromosome
         self.start = start
         self.stop = stop
         self.strand = strand
         self.name = name
+        self.color = color
 
 ##### Functions #####
 
@@ -110,7 +112,7 @@ while True:
         incrementY = addChrome(split[0],int(split[1]),int(split[2]))
         if incrementY:
             mmCurrentY += mmSpaceHeight
-        feature(split[0],int(split[1]),int(split[2]),split[3],split[4])
+        feature(split[0],int(split[1]),int(split[2]),split[3],split[4],defaultColor)
 
     if not line:
         break
