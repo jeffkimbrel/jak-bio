@@ -1,6 +1,6 @@
 import sys
 
-levelSelect = 4 # 1=L1, 2=L2, etc.
+levelSelect = 2 # 1=L1, 2=L2, etc.
 levelSelect = levelSelect - 1
 ontology = {}
 ontFile = [line.strip() for line in open("/Users/jak/Dropbox/scripts/FOAM/FOAM-onto_rel1.tsv")]

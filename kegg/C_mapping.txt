@@ -1,0 +1,4194 @@
+K00002	Other carbohydrate metabolism
+K00003	Cysteine and methionine metabolism
+K00003	Serine and threonine metabolism
+K00008	Other carbohydrate metabolism
+K00012	Cofactor and vitamin biosynthesis
+K00012	Nucleotide sugar
+K00012	Other carbohydrate metabolism
+K00013	Histidine metabolism
+K00014	Aromatic amino acid metabolism
+K00018	Methane metabolism
+K00019	Fatty acid metabolism
+K00021	Terpenoid backbone biosynthesis
+K00022	Fatty acid metabolism
+K00022	Lysine metabolism
+K00023	Other carbohydrate metabolism
+K00024	Carbon fixation
+K00024	Central carbohydrate metabolism
+K00024	Methane metabolism
+K00024	Other carbohydrate metabolism
+K00025	Carbon fixation
+K00025	Central carbohydrate metabolism
+K00025	Other carbohydrate metabolism
+K00026	Carbon fixation
+K00026	Central carbohydrate metabolism
+K00026	Other carbohydrate metabolism
+K00028	Carbon fixation
+K00029	Carbon fixation
+K00030	Central carbohydrate metabolism
+K00031	Carbon fixation
+K00031	Central carbohydrate metabolism
+K00031	Other carbohydrate metabolism
+K00033	Central carbohydrate metabolism
+K00036	Central carbohydrate metabolism
+K00037	Sterol biosynthesis
+K00040	Other carbohydrate metabolism
+K00041	Other carbohydrate metabolism
+K00051	Carbon fixation
+K00052	Branched-chain amino acid metabolism
+K00053	Branched-chain amino acid metabolism
+K00055	Aromatics degradation
+K00058	Serine and threonine metabolism
+K00059	Cofactor and vitamin biosynthesis
+K00059	Fatty acid metabolism
+K00064	Cofactor and vitamin biosynthesis
+K00067	Other carbohydrate metabolism
+K00070	Sterol biosynthesis
+K00071	Sterol biosynthesis
+K00077	Cofactor and vitamin biosynthesis
+K00082	Cofactor and vitamin biosynthesis
+K00083	Biosynthesis of secondary metabolites
+K00087	Purine metabolism
+K00088	Purine metabolism
+K00097	Cofactor and vitamin biosynthesis
+K00099	Terpenoid backbone biosynthesis
+K00103	Cofactor and vitamin biosynthesis
+K00106	Purine metabolism
+K00108	Serine and threonine metabolism
+K00116	Central carbohydrate metabolism
+K00128	Polyamine biosynthesis
+K00130	Serine and threonine metabolism
+K00131	Central carbohydrate metabolism
+K00133	Cysteine and methionine metabolism
+K00133	Lysine metabolism
+K00133	Other amino acid metabolism
+K00133	Serine and threonine metabolism
+K00134	Carbon fixation
+K00134	Central carbohydrate metabolism
+K00134	Other carbohydrate metabolism
+K00135	Other amino acid metabolism
+K00139	Other amino acid metabolism
+K00140	Other carbohydrate metabolism
+K00141	Aromatics degradation
+K00143	Lysine metabolism
+K00145	Arginine and proline metabolism
+K00147	Arginine and proline metabolism
+K00149	Polyamine biosynthesis
+K00150	Carbon fixation
+K00150	Central carbohydrate metabolism
+K00151	Aromatic amino acid metabolism
+K00152	Aromatics degradation
+K00161	Central carbohydrate metabolism
+K00162	Central carbohydrate metabolism
+K00163	Central carbohydrate metabolism
+K00164	Central carbohydrate metabolism
+K00164	Lysine metabolism
+K00166	Branched-chain amino acid metabolism
+K00167	Branched-chain amino acid metabolism
+K00169	Carbon fixation
+K00169	Central carbohydrate metabolism
+K00170	Carbon fixation
+K00170	Central carbohydrate metabolism
+K00171	Carbon fixation
+K00171	Central carbohydrate metabolism
+K00172	Carbon fixation
+K00172	Central carbohydrate metabolism
+K00174	Carbon fixation
+K00174	Central carbohydrate metabolism
+K00175	Carbon fixation
+K00175	Central carbohydrate metabolism
+K00176	Carbon fixation
+K00176	Central carbohydrate metabolism
+K00177	Carbon fixation
+K00177	Central carbohydrate metabolism
+K00182	Cell signaling
+K00192	Methane metabolism
+K00193	Methane metabolism
+K00194	Carbon fixation
+K00194	Methane metabolism
+K00195	Methane metabolism
+K00197	Carbon fixation
+K00197	Methane metabolism
+K00198	Carbon fixation
+K00200	Methane metabolism
+K00201	Methane metabolism
+K00202	Methane metabolism
+K00203	Methane metabolism
+K00204	Methane metabolism
+K00205	Methane metabolism
+K00207	Pyrimidine metabolism
+K00208	Cofactor and vitamin biosynthesis
+K00208	Fatty acid metabolism
+K00209	Fatty acid metabolism
+K00210	Aromatic amino acid metabolism
+K00213	Sterol biosynthesis
+K00215	Lysine metabolism
+K00220	Aromatic amino acid metabolism
+K00222	Sterol biosynthesis
+K00223	Sterol biosynthesis
+K00225	Cofactor and vitamin biosynthesis
+K00226	Pyrimidine metabolism
+K00227	Sterol biosynthesis
+K00228	Cofactor and vitamin biosynthesis
+K00230	Cofactor and vitamin biosynthesis
+K00231	Cofactor and vitamin biosynthesis
+K00232	Fatty acid metabolism
+K00234	ATP synthesis
+K00234	Central carbohydrate metabolism
+K00235	ATP synthesis
+K00235	Central carbohydrate metabolism
+K00236	ATP synthesis
+K00236	Central carbohydrate metabolism
+K00237	ATP synthesis
+K00237	Central carbohydrate metabolism
+K00239	ATP synthesis
+K00239	Carbon fixation
+K00239	Central carbohydrate metabolism
+K00240	ATP synthesis
+K00240	Carbon fixation
+K00240	Central carbohydrate metabolism
+K00241	ATP synthesis
+K00241	Carbon fixation
+K00241	Central carbohydrate metabolism
+K00242	ATP synthesis
+K00242	Carbon fixation
+K00242	Central carbohydrate metabolism
+K00244	ATP synthesis
+K00244	Carbon fixation
+K00244	Central carbohydrate metabolism
+K00245	ATP synthesis
+K00245	Carbon fixation
+K00245	Central carbohydrate metabolism
+K00246	ATP synthesis
+K00246	Carbon fixation
+K00246	Central carbohydrate metabolism
+K00247	ATP synthesis
+K00247	Carbon fixation
+K00247	Central carbohydrate metabolism
+K00249	Branched-chain amino acid metabolism
+K00249	Fatty acid metabolism
+K00249	Other carbohydrate metabolism
+K00251	Sterol biosynthesis
+K00252	Lysine metabolism
+K00253	Branched-chain amino acid metabolism
+K00254	Pyrimidine metabolism
+K00255	Fatty acid metabolism
+K00261	Other carbohydrate metabolism
+K00274	Polyamine biosynthesis
+K00275	Cofactor and vitamin biosynthesis
+K00278	Cofactor and vitamin biosynthesis
+K00281	Other carbohydrate metabolism
+K00286	Arginine and proline metabolism
+K00287	Cofactor and vitamin biosynthesis
+K00288	Cofactor and vitamin biosynthesis
+K00290	Lysine metabolism
+K00293	Lysine metabolism
+K00297	Carbon fixation
+K00312	Cell signaling
+K00319	Methane metabolism
+K00320	Methane metabolism
+K00330	ATP synthesis
+K00331	ATP synthesis
+K00332	ATP synthesis
+K00333	ATP synthesis
+K00334	ATP synthesis
+K00335	ATP synthesis
+K00336	ATP synthesis
+K00337	ATP synthesis
+K00338	ATP synthesis
+K00339	ATP synthesis
+K00340	ATP synthesis
+K00341	ATP synthesis
+K00342	ATP synthesis
+K00343	ATP synthesis
+K00360	Nitrogen metabolism
+K00362	Nitrogen metabolism
+K00363	Nitrogen metabolism
+K00365	Purine metabolism
+K00366	Nitrogen metabolism
+K00367	Nitrogen metabolism
+K00368	Nitrogen metabolism
+K00370	Nitrogen metabolism
+K00371	Nitrogen metabolism
+K00372	Nitrogen metabolism
+K00374	Nitrogen metabolism
+K00376	Nitrogen metabolism
+K00380	Sulfur metabolism
+K00381	Sulfur metabolism
+K00382	Branched-chain amino acid metabolism
+K00382	Central carbohydrate metabolism
+K00382	Other carbohydrate metabolism
+K00390	Sulfur metabolism
+K00392	Sulfur metabolism
+K00394	Sulfur metabolism
+K00395	Sulfur metabolism
+K00399	Methane metabolism
+K00401	Methane metabolism
+K00402	Methane metabolism
+K00404	ATP synthesis
+K00405	ATP synthesis
+K00406	ATP synthesis
+K00407	ATP synthesis
+K00408	Cell signaling
+K00410	ATP synthesis
+K00411	ATP synthesis
+K00412	ATP synthesis
+K00413	ATP synthesis
+K00414	ATP synthesis
+K00415	ATP synthesis
+K00416	ATP synthesis
+K00417	ATP synthesis
+K00418	ATP synthesis
+K00419	ATP synthesis
+K00420	ATP synthesis
+K00425	ATP synthesis
+K00426	ATP synthesis
+K00431	Aromatic amino acid metabolism
+K00444	Cell signaling
+K00445	Cell signaling
+K00446	Aromatics degradation
+K00451	Aromatic amino acid metabolism
+K00452	Aromatic amino acid metabolism
+K00453	Aromatic amino acid metabolism
+K00454	Fatty acid metabolism
+K00455	Aromatic amino acid metabolism
+K00457	Aromatic amino acid metabolism
+K00462	Aromatics degradation
+K00463	Aromatic amino acid metabolism
+K00475	Biosynthesis of secondary metabolites
+K00486	Aromatic amino acid metabolism
+K00487	Aromatic amino acid metabolism
+K00487	Biosynthesis of secondary metabolites
+K00488	Sterol biosynthesis
+K00489	Sterol biosynthesis
+K00497	Sterol biosynthesis
+K00498	Sterol biosynthesis
+K00501	Aromatic amino acid metabolism
+K00502	Aromatic amino acid metabolism
+K00503	Aromatic amino acid metabolism
+K00505	Aromatic amino acid metabolism
+K00512	Sterol biosynthesis
+K00513	Sterol biosynthesis
+K00514	Other terpenoid biosynthesis
+K00524	Pyrimidine metabolism
+K00525	Pyrimidine metabolism
+K00526	Pyrimidine metabolism
+K00527	Pyrimidine metabolism
+K00529	Aromatic amino acid metabolism
+K00531	Nitrogen metabolism
+K00542	Other amino acid metabolism
+K00543	Aromatic amino acid metabolism
+K00548	Cysteine and methionine metabolism
+K00549	Cysteine and methionine metabolism
+K00550	Lipid metabolism
+K00551	Lipid metabolism
+K00553	Aromatic amino acid metabolism
+K00558	Cysteine and methionine metabolism
+K00559	Sterol biosynthesis
+K00560	Pyrimidine metabolism
+K00568	Cofactor and vitamin biosynthesis
+K00570	Lipid metabolism
+K00572	Cell signaling
+K00577	Methane metabolism
+K00578	Methane metabolism
+K00579	Methane metabolism
+K00580	Methane metabolism
+K00581	Methane metabolism
+K00582	Methane metabolism
+K00583	Methane metabolism
+K00584	Methane metabolism
+K00588	Aromatic amino acid metabolism
+K00588	Biosynthesis of secondary metabolites
+K00589	Cofactor and vitamin biosynthesis
+K00591	Cofactor and vitamin biosynthesis
+K00600	Cofactor and vitamin biosynthesis
+K00600	Methane metabolism
+K00600	Other carbohydrate metabolism
+K00601	Purine metabolism
+K00602	Purine metabolism
+K00605	Other carbohydrate metabolism
+K00606	Cofactor and vitamin biosynthesis
+K00608	Pyrimidine metabolism
+K00609	Pyrimidine metabolism
+K00610	Pyrimidine metabolism
+K00611	Arginine and proline metabolism
+K00613	Other amino acid metabolism
+K00615	Carbon fixation
+K00615	Central carbohydrate metabolism
+K00616	Central carbohydrate metabolism
+K00618	Arginine and proline metabolism
+K00619	Arginine and proline metabolism
+K00620	Arginine and proline metabolism
+K00625	Carbon fixation
+K00625	Methane metabolism
+K00626	Carbon fixation
+K00626	Fatty acid metabolism
+K00626	Other carbohydrate metabolism
+K00626	Terpenoid backbone biosynthesis
+K00627	Central carbohydrate metabolism
+K00629	Lipid metabolism
+K00630	Lipid metabolism
+K00631	Lipid metabolism
+K00632	Fatty acid metabolism
+K00635	Lipid metabolism
+K00640	Cysteine and methionine metabolism
+K00645	Fatty acid metabolism
+K00647	Cofactor and vitamin biosynthesis
+K00647	Fatty acid metabolism
+K00648	Fatty acid metabolism
+K00651	Cysteine and methionine metabolism
+K00652	Cofactor and vitamin biosynthesis
+K00654	Lipid metabolism
+K00655	Lipid metabolism
+K00657	Polyamine biosynthesis
+K00658	Central carbohydrate metabolism
+K00658	Lysine metabolism
+K00659	Sterol biosynthesis
+K00660	Biosynthesis of secondary metabolites
+K00665	Fatty acid metabolism
+K00667	Fatty acid metabolism
+K00668	Fatty acid metabolism
+K00669	Aromatic amino acid metabolism
+K00672	Methane metabolism
+K00674	Lysine metabolism
+K00677	Lipopolysaccharide metabolism
+K00699	Cofactor and vitamin biosynthesis
+K00699	Other carbohydrate metabolism
+K00700	Other carbohydrate metabolism
+K00703	Other carbohydrate metabolism
+K00710	Glycan metabolism
+K00714	Cell signaling
+K00717	Glycan metabolism
+K00719	Glycan metabolism
+K00720	Lipid metabolism
+K00727	Glycan metabolism
+K00729	Glycan metabolism
+K00730	Glycan metabolism
+K00731	Glycan metabolism
+K00733	Glycosaminoglycan metabolism
+K00734	Glycosaminoglycan metabolism
+K00736	Glycan metabolism
+K00737	Glycan metabolism
+K00738	Glycan metabolism
+K00739	Glycan metabolism
+K00744	Glycan metabolism
+K00746	Glycosaminoglycan metabolism
+K00747	Glycosaminoglycan metabolism
+K00748	Lipopolysaccharide metabolism
+K00762	Pyrimidine metabolism
+K00764	Purine metabolism
+K00765	Histidine metabolism
+K00766	Aromatic amino acid metabolism
+K00767	Cofactor and vitamin biosynthesis
+K00768	Cofactor and vitamin biosynthesis
+K00771	Glycosaminoglycan metabolism
+K00772	Cysteine and methionine metabolism
+K00778	Glycan metabolism
+K00779	Glycan metabolism
+K00787	Terpenoid backbone biosynthesis
+K00788	Cofactor and vitamin biosynthesis
+K00789	Cysteine and methionine metabolism
+K00793	Cofactor and vitamin biosynthesis
+K00794	Cofactor and vitamin biosynthesis
+K00795	Terpenoid backbone biosynthesis
+K00796	Cofactor and vitamin biosynthesis
+K00797	Cysteine and methionine metabolism
+K00797	Polyamine biosynthesis
+K00798	Cofactor and vitamin biosynthesis
+K00800	Aromatic amino acid metabolism
+K00804	Terpenoid backbone biosynthesis
+K00814	Carbon fixation
+K00815	Aromatic amino acid metabolism
+K00815	Cysteine and methionine metabolism
+K00817	Histidine metabolism
+K00818	Arginine and proline metabolism
+K00821	Arginine and proline metabolism
+K00821	Lysine metabolism
+K00823	Other amino acid metabolism
+K00825	Lysine metabolism
+K00826	Branched-chain amino acid metabolism
+K00826	Cofactor and vitamin biosynthesis
+K00830	Methane metabolism
+K00830	Other carbohydrate metabolism
+K00831	Cofactor and vitamin biosynthesis
+K00831	Serine and threonine metabolism
+K00832	Aromatic amino acid metabolism
+K00832	Cysteine and methionine metabolism
+K00833	Cofactor and vitamin biosynthesis
+K00836	Other amino acid metabolism
+K00838	Aromatic amino acid metabolism
+K00838	Cysteine and methionine metabolism
+K00838	Lysine metabolism
+K00841	Lysine metabolism
+K00844	Central carbohydrate metabolism
+K00844	Other carbohydrate metabolism
+K00845	Central carbohydrate metabolism
+K00845	Other carbohydrate metabolism
+K00849	Other carbohydrate metabolism
+K00850	Central carbohydrate metabolism
+K00850	Methane metabolism
+K00854	Other carbohydrate metabolism
+K00855	Carbon fixation
+K00859	Cofactor and vitamin biosynthesis
+K00860	Sulfur metabolism
+K00861	Cofactor and vitamin biosynthesis
+K00863	Methane metabolism
+K00866	Lipid metabolism
+K00867	Cofactor and vitamin biosynthesis
+K00869	Terpenoid backbone biosynthesis
+K00872	Serine and threonine metabolism
+K00873	Central carbohydrate metabolism
+K00873	Purine metabolism
+K00874	Central carbohydrate metabolism
+K00874	Other carbohydrate metabolism
+K00877	Cofactor and vitamin biosynthesis
+K00878	Cofactor and vitamin biosynthesis
+K00883	Other carbohydrate metabolism
+K00886	Central carbohydrate metabolism
+K00886	Other carbohydrate metabolism
+K00888	Lipid metabolism
+K00889	Lipid metabolism
+K00891	Aromatic amino acid metabolism
+K00894	Lipid metabolism
+K00899	Cysteine and methionine metabolism
+K00911	Lipid metabolism
+K00912	Lipopolysaccharide metabolism
+K00913	Lipid metabolism
+K00915	Lipid metabolism
+K00918	Central carbohydrate metabolism
+K00919	Terpenoid backbone biosynthesis
+K00922	Cell signaling
+K00925	Carbon fixation
+K00925	Methane metabolism
+K00927	Carbon fixation
+K00927	Central carbohydrate metabolism
+K00927	Other carbohydrate metabolism
+K00928	Cysteine and methionine metabolism
+K00928	Lysine metabolism
+K00928	Other amino acid metabolism
+K00928	Serine and threonine metabolism
+K00930	Arginine and proline metabolism
+K00931	Arginine and proline metabolism
+K00933	Other amino acid metabolism
+K00938	Terpenoid backbone biosynthesis
+K00939	Purine metabolism
+K00940	Purine metabolism
+K00940	Pyrimidine metabolism
+K00941	Cofactor and vitamin biosynthesis
+K00942	Purine metabolism
+K00943	Pyrimidine metabolism
+K00944	Purine metabolism
+K00945	Pyrimidine metabolism
+K00946	Cofactor and vitamin biosynthesis
+K00948	Central carbohydrate metabolism
+K00950	Cofactor and vitamin biosynthesis
+K00953	Cofactor and vitamin biosynthesis
+K00954	Cofactor and vitamin biosynthesis
+K00955	Sulfur metabolism
+K00956	Sulfur metabolism
+K00957	Sulfur metabolism
+K00958	Sulfur metabolism
+K00962	RNA processing
+K00963	Cofactor and vitamin biosynthesis
+K00963	Nucleotide sugar
+K00963	Other carbohydrate metabolism
+K00965	Nucleotide sugar
+K00965	Other carbohydrate metabolism
+K00966	Cofactor and vitamin biosynthesis
+K00966	Nucleotide sugar
+K00967	Lipid metabolism
+K00968	Lipid metabolism
+K00969	Cofactor and vitamin biosynthesis
+K00971	Cofactor and vitamin biosynthesis
+K00971	Nucleotide sugar
+K00972	Nucleotide sugar
+K00973	Other carbohydrate metabolism
+K00975	Other carbohydrate metabolism
+K00979	Lipopolysaccharide metabolism
+K00981	Lipid metabolism
+K00991	Terpenoid backbone biosynthesis
+K00993	Lipid metabolism
+K00994	Lipid metabolism
+K00998	Lipid metabolism
+K01001	Glycan metabolism
+K01006	Carbon fixation
+K01007	Carbon fixation
+K01012	Cofactor and vitamin biosynthesis
+K01019	Lipid metabolism
+K01046	Lipid metabolism
+K01051	Other carbohydrate metabolism
+K01053	Cofactor and vitamin biosynthesis
+K01054	Lipid metabolism
+K01055	Aromatics degradation
+K01057	Central carbohydrate metabolism
+K01064	Cell signaling
+K01077	Cofactor and vitamin biosynthesis
+K01079	Serine and threonine metabolism
+K01080	Lipid metabolism
+K01086	Carbon fixation
+K01086	Central carbohydrate metabolism
+K01089	Histidine metabolism
+K01092	Lipid metabolism
+K01100	Carbon fixation
+K01106	Lipid metabolism
+K01107	Lipid metabolism
+K01109	Lipid metabolism
+K01113	Cofactor and vitamin biosynthesis
+K01116	Lipid metabolism
+K01132	Glycosaminoglycan metabolism
+K01135	Glycosaminoglycan metabolism
+K01136	Glycosaminoglycan metabolism
+K01137	Glycosaminoglycan metabolism
+K01184	Other carbohydrate metabolism
+K01195	Cofactor and vitamin biosynthesis
+K01195	Glycosaminoglycan metabolism
+K01195	Other carbohydrate metabolism
+K01197	Glycosaminoglycan metabolism
+K01205	Glycosaminoglycan metabolism
+K01207	Drug resistance
+K01213	Other carbohydrate metabolism
+K01214	Other carbohydrate metabolism
+K01217	Glycosaminoglycan metabolism
+K01228	Glycan metabolism
+K01230	Glycan metabolism
+K01231	Glycan metabolism
+K01236	Other carbohydrate metabolism
+K01243	Cysteine and methionine metabolism
+K01244	Cysteine and methionine metabolism
+K01251	Cysteine and methionine metabolism
+K01356	Drug resistance
+K01357	Cell signaling
+K01384	Cell signaling
+K01431	Pyrimidine metabolism
+K01432	Aromatic amino acid metabolism
+K01438	Arginine and proline metabolism
+K01439	Lysine metabolism
+K01441	Lipid metabolism
+K01448	Drug resistance
+K01464	Pyrimidine metabolism
+K01465	Pyrimidine metabolism
+K01466	Purine metabolism
+K01467	Drug resistance
+K01468	Histidine metabolism
+K01476	Arginine and proline metabolism
+K01476	Polyamine biosynthesis
+K01477	Purine metabolism
+K01479	Histidine metabolism
+K01480	Polyamine biosynthesis
+K01491	Carbon fixation
+K01491	Cofactor and vitamin biosynthesis
+K01492	Purine metabolism
+K01493	Bacterial secretion system
+K01494	Pyrimidine metabolism
+K01495	Cofactor and vitamin biosynthesis
+K01496	Histidine metabolism
+K01497	Cofactor and vitamin biosynthesis
+K01498	Cofactor and vitamin biosynthesis
+K01499	Methane metabolism
+K01520	Pyrimidine metabolism
+K01523	Histidine metabolism
+K01549	ATP synthesis
+K01555	Aromatic amino acid metabolism
+K01556	Aromatic amino acid metabolism
+K01558	Cell signaling
+K01565	Glycosaminoglycan metabolism
+K01574	Fatty acid metabolism
+K01579	Cofactor and vitamin biosynthesis
+K01580	Other amino acid metabolism
+K01581	Polyamine biosynthesis
+K01583	Polyamine biosynthesis
+K01584	Polyamine biosynthesis
+K01585	Polyamine biosynthesis
+K01586	Lysine metabolism
+K01587	Purine metabolism
+K01588	Purine metabolism
+K01589	Purine metabolism
+K01591	Pyrimidine metabolism
+K01592	Aromatic amino acid metabolism
+K01593	Aromatic amino acid metabolism
+K01595	Carbon fixation
+K01595	Methane metabolism
+K01596	Central carbohydrate metabolism
+K01597	Terpenoid backbone biosynthesis
+K01598	Cofactor and vitamin biosynthesis
+K01599	Cofactor and vitamin biosynthesis
+K01601	Carbon fixation
+K01601	Other carbohydrate metabolism
+K01602	Carbon fixation
+K01602	Other carbohydrate metabolism
+K01609	Aromatic amino acid metabolism
+K01610	Carbon fixation
+K01610	Central carbohydrate metabolism
+K01611	Cysteine and methionine metabolism
+K01611	Polyamine biosynthesis
+K01613	Lipid metabolism
+K01617	Aromatics degradation
+K01622	Central carbohydrate metabolism
+K01623	Carbon fixation
+K01623	Central carbohydrate metabolism
+K01624	Carbon fixation
+K01624	Central carbohydrate metabolism
+K01624	Methane metabolism
+K01625	Central carbohydrate metabolism
+K01625	Other carbohydrate metabolism
+K01626	Aromatic amino acid metabolism
+K01627	Lipopolysaccharide metabolism
+K01631	Other carbohydrate metabolism
+K01633	Cofactor and vitamin biosynthesis
+K01634	Lipid metabolism
+K01637	Other carbohydrate metabolism
+K01638	Other carbohydrate metabolism
+K01640	Branched-chain amino acid metabolism
+K01640	Fatty acid metabolism
+K01641	Fatty acid metabolism
+K01641	Terpenoid backbone biosynthesis
+K01647	Central carbohydrate metabolism
+K01647	Other carbohydrate metabolism
+K01649	Branched-chain amino acid metabolism
+K01652	Branched-chain amino acid metabolism
+K01653	Branched-chain amino acid metabolism
+K01655	Lysine metabolism
+K01656	Aromatic amino acid metabolism
+K01657	Aromatic amino acid metabolism
+K01658	Aromatic amino acid metabolism
+K01661	Cofactor and vitamin biosynthesis
+K01662	Terpenoid backbone biosynthesis
+K01663	Histidine metabolism
+K01666	Aromatic amino acid metabolism
+K01666	Aromatics degradation
+K01676	Carbon fixation
+K01676	Central carbohydrate metabolism
+K01677	Carbon fixation
+K01677	Central carbohydrate metabolism
+K01678	Carbon fixation
+K01678	Central carbohydrate metabolism
+K01679	Carbon fixation
+K01679	Central carbohydrate metabolism
+K01681	Carbon fixation
+K01681	Central carbohydrate metabolism
+K01681	Other carbohydrate metabolism
+K01682	Carbon fixation
+K01682	Central carbohydrate metabolism
+K01682	Other carbohydrate metabolism
+K01684	Other carbohydrate metabolism
+K01685	Other carbohydrate metabolism
+K01686	Other carbohydrate metabolism
+K01687	Branched-chain amino acid metabolism
+K01689	Central carbohydrate metabolism
+K01689	Methane metabolism
+K01689	RNA processing
+K01690	Central carbohydrate metabolism
+K01692	Fatty acid metabolism
+K01692	Lysine metabolism
+K01693	Histidine metabolism
+K01694	Aromatic amino acid metabolism
+K01695	Aromatic amino acid metabolism
+K01696	Aromatic amino acid metabolism
+K01697	Cysteine and methionine metabolism
+K01698	Cofactor and vitamin biosynthesis
+K01702	Branched-chain amino acid metabolism
+K01703	Branched-chain amino acid metabolism
+K01704	Branched-chain amino acid metabolism
+K01705	Lysine metabolism
+K01710	Other carbohydrate metabolism
+K01712	Histidine metabolism
+K01713	Aromatic amino acid metabolism
+K01714	Lysine metabolism
+K01716	Fatty acid metabolism
+K01719	Cofactor and vitamin biosynthesis
+K01723	Fatty acid metabolism
+K01733	Serine and threonine metabolism
+K01735	Aromatic amino acid metabolism
+K01736	Aromatic amino acid metabolism
+K01738	Cysteine and methionine metabolism
+K01739	Cysteine and methionine metabolism
+K01745	Histidine metabolism
+K01749	Cofactor and vitamin biosynthesis
+K01754	Branched-chain amino acid metabolism
+K01755	Arginine and proline metabolism
+K01756	Purine metabolism
+K01758	Cysteine and methionine metabolism
+K01760	Cysteine and methionine metabolism
+K01762	Cysteine and methionine metabolism
+K01768	Cell signaling
+K01770	Terpenoid backbone biosynthesis
+K01772	Cofactor and vitamin biosynthesis
+K01778	Lysine metabolism
+K01782	Fatty acid metabolism
+K01782	Lysine metabolism
+K01783	Central carbohydrate metabolism
+K01784	Nucleotide sugar
+K01784	Other carbohydrate metabolism
+K01785	Other carbohydrate metabolism
+K01790	Other carbohydrate metabolism
+K01791	Nucleotide sugar
+K01793	Glycosaminoglycan metabolism
+K01796	Sterol biosynthesis
+K01799	Cofactor and vitamin biosynthesis
+K01800	Aromatic amino acid metabolism
+K01803	Central carbohydrate metabolism
+K01807	Carbon fixation
+K01807	Central carbohydrate metabolism
+K01808	Carbon fixation
+K01808	Central carbohydrate metabolism
+K01809	Cofactor and vitamin biosynthesis
+K01810	Central carbohydrate metabolism
+K01810	Cofactor and vitamin biosynthesis
+K01812	Other carbohydrate metabolism
+K01814	Histidine metabolism
+K01817	Aromatic amino acid metabolism
+K01821	Aromatics degradation
+K01822	Sterol biosynthesis
+K01823	Terpenoid backbone biosynthesis
+K01824	Sterol biosynthesis
+K01825	Fatty acid metabolism
+K01825	Lysine metabolism
+K01826	Aromatic amino acid metabolism
+K01834	Central carbohydrate metabolism
+K01835	Other carbohydrate metabolism
+K01840	Cofactor and vitamin biosynthesis
+K01845	Cofactor and vitamin biosynthesis
+K01846	Other carbohydrate metabolism
+K01847	Carbon fixation
+K01847	Other carbohydrate metabolism
+K01848	Carbon fixation
+K01848	Other carbohydrate metabolism
+K01849	Carbon fixation
+K01849	Other carbohydrate metabolism
+K01850	Aromatic amino acid metabolism
+K01851	Cofactor and vitamin biosynthesis
+K01852	Sterol biosynthesis
+K01856	Aromatics degradation
+K01859	Biosynthesis of secondary metabolites
+K01866	Aminoacyl tRNA
+K01867	Aminoacyl tRNA
+K01868	Aminoacyl tRNA
+K01869	Aminoacyl tRNA
+K01870	Aminoacyl tRNA
+K01872	Aminoacyl tRNA
+K01873	Aminoacyl tRNA
+K01874	Aminoacyl tRNA
+K01875	Aminoacyl tRNA
+K01876	Aminoacyl tRNA
+K01878	Aminoacyl tRNA
+K01879	Aminoacyl tRNA
+K01880	Aminoacyl tRNA
+K01881	Aminoacyl tRNA
+K01883	Aminoacyl tRNA
+K01884	Aminoacyl tRNA
+K01885	Aminoacyl tRNA
+K01885	Cofactor and vitamin biosynthesis
+K01886	Aminoacyl tRNA
+K01887	Aminoacyl tRNA
+K01889	Aminoacyl tRNA
+K01890	Aminoacyl tRNA
+K01892	Aminoacyl tRNA
+K01893	Aminoacyl tRNA
+K01895	Methane metabolism
+K01897	Fatty acid metabolism
+K01899	Central carbohydrate metabolism
+K01900	Central carbohydrate metabolism
+K01902	Carbon fixation
+K01902	Central carbohydrate metabolism
+K01903	Carbon fixation
+K01903	Central carbohydrate metabolism
+K01904	Aromatic amino acid metabolism
+K01904	Biosynthesis of secondary metabolites
+K01906	Cofactor and vitamin biosynthesis
+K01911	Cofactor and vitamin biosynthesis
+K01916	Cofactor and vitamin biosynthesis
+K01918	Cofactor and vitamin biosynthesis
+K01919	Cofactor and vitamin biosynthesis
+K01920	Cofactor and vitamin biosynthesis
+K01922	Cofactor and vitamin biosynthesis
+K01923	Purine metabolism
+K01930	Cofactor and vitamin biosynthesis
+K01933	Purine metabolism
+K01935	Cofactor and vitamin biosynthesis
+K01937	Pyrimidine metabolism
+K01938	Carbon fixation
+K01938	Cofactor and vitamin biosynthesis
+K01939	Purine metabolism
+K01940	Arginine and proline metabolism
+K01945	Purine metabolism
+K01947	Cofactor and vitamin biosynthesis
+K01948	Arginine and proline metabolism
+K01950	Cofactor and vitamin biosynthesis
+K01951	Purine metabolism
+K01952	Purine metabolism
+K01954	Pyrimidine metabolism
+K01955	Pyrimidine metabolism
+K01956	Pyrimidine metabolism
+K01958	Carbon fixation
+K01959	Carbon fixation
+K01960	Carbon fixation
+K01961	Carbon fixation
+K01961	Fatty acid metabolism
+K01962	Carbon fixation
+K01962	Fatty acid metabolism
+K01963	Carbon fixation
+K01963	Fatty acid metabolism
+K01964	Carbon fixation
+K01964	Other carbohydrate metabolism
+K01965	Other carbohydrate metabolism
+K01966	Other carbohydrate metabolism
+K01968	Branched-chain amino acid metabolism
+K01969	Branched-chain amino acid metabolism
+K01988	Glycan metabolism
+K01989	Metallic cation, iron-siderophore and vitamin B12 transport system
+K01990	ABC-2 type and other transport systems
+K01992	ABC-2 type and other transport systems
+K01995	Phosphate and amino acid transport system
+K01996	Phosphate and amino acid transport system
+K01997	Phosphate and amino acid transport system
+K01998	Phosphate and amino acid transport system
+K01999	Phosphate and amino acid transport system
+K02000	Mineral and organic ion transport system
+K02001	Mineral and organic ion transport system
+K02002	Mineral and organic ion transport system
+K02003	ABC-2 type and other transport systems
+K02004	ABC-2 type and other transport systems
+K02006	Metallic cation, iron-siderophore and vitamin B12 transport system
+K02007	Metallic cation, iron-siderophore and vitamin B12 transport system
+K02008	Metallic cation, iron-siderophore and vitamin B12 transport system
+K02009	Metallic cation, iron-siderophore and vitamin B12 transport system
+K02010	Mineral and organic ion transport system
+K02011	Mineral and organic ion transport system
+K02012	Mineral and organic ion transport system
+K02013	Metallic cation, iron-siderophore and vitamin B12 transport system
+K02015	Metallic cation, iron-siderophore and vitamin B12 transport system
+K02016	Metallic cation, iron-siderophore and vitamin B12 transport system
+K02017	Mineral and organic ion transport system
+K02018	Mineral and organic ion transport system
+K02020	Mineral and organic ion transport system
+K02025	Saccharide, polyol, and lipid transport system
+K02026	Saccharide, polyol, and lipid transport system
+K02027	Saccharide, polyol, and lipid transport system
+K02028	Phosphate and amino acid transport system
+K02029	Phosphate and amino acid transport system
+K02030	Phosphate and amino acid transport system
+K02031	Peptide and nickel transport system
+K02032	Peptide and nickel transport system
+K02033	Peptide and nickel transport system
+K02034	Peptide and nickel transport system
+K02035	Peptide and nickel transport system
+K02036	Phosphate and amino acid transport system
+K02037	Phosphate and amino acid transport system
+K02038	Phosphate and amino acid transport system
+K02040	Phosphate and amino acid transport system
+K02041	Phosphate and amino acid transport system
+K02042	Phosphate and amino acid transport system
+K02044	Phosphate and amino acid transport system
+K02045	Mineral and organic ion transport system
+K02046	Mineral and organic ion transport system
+K02047	Mineral and organic ion transport system
+K02048	Mineral and organic ion transport system
+K02049	Mineral and organic ion transport system
+K02050	Mineral and organic ion transport system
+K02051	Mineral and organic ion transport system
+K02052	Mineral and organic ion transport system
+K02053	Mineral and organic ion transport system
+K02054	Mineral and organic ion transport system
+K02055	Mineral and organic ion transport system
+K02056	Saccharide, polyol, and lipid transport system
+K02057	Saccharide, polyol, and lipid transport system
+K02058	Saccharide, polyol, and lipid transport system
+K02062	Mineral and organic ion transport system
+K02063	Mineral and organic ion transport system
+K02064	Mineral and organic ion transport system
+K02065	Saccharide, polyol, and lipid transport system
+K02066	Saccharide, polyol, and lipid transport system
+K02067	Saccharide, polyol, and lipid transport system
+K02068	Saccharide, polyol, and lipid transport system
+K02069	Saccharide, polyol, and lipid transport system
+K02071	Phosphate and amino acid transport system
+K02072	Phosphate and amino acid transport system
+K02073	Phosphate and amino acid transport system
+K02074	Metallic cation, iron-siderophore and vitamin B12 transport system
+K02075	Metallic cation, iron-siderophore and vitamin B12 transport system
+K02077	Metallic cation, iron-siderophore and vitamin B12 transport system
+K02084	Cell signaling
+K02087	Cell signaling
+K02089	Cell signaling
+K02091	Cell signaling
+K02105	Cell signaling
+K02107	ATP synthesis
+K02108	ATP synthesis
+K02109	ATP synthesis
+K02110	ATP synthesis
+K02111	ATP synthesis
+K02112	ATP synthesis
+K02113	ATP synthesis
+K02114	ATP synthesis
+K02115	ATP synthesis
+K02117	ATP synthesis
+K02118	ATP synthesis
+K02119	ATP synthesis
+K02120	ATP synthesis
+K02121	ATP synthesis
+K02122	ATP synthesis
+K02123	ATP synthesis
+K02124	ATP synthesis
+K02125	ATP synthesis
+K02126	ATP synthesis
+K02127	ATP synthesis
+K02128	ATP synthesis
+K02129	ATP synthesis
+K02130	ATP synthesis
+K02131	ATP synthesis
+K02132	ATP synthesis
+K02133	ATP synthesis
+K02134	ATP synthesis
+K02135	ATP synthesis
+K02136	ATP synthesis
+K02137	ATP synthesis
+K02138	ATP synthesis
+K02139	ATP synthesis
+K02140	ATP synthesis
+K02141	ATP synthesis
+K02142	ATP synthesis
+K02143	ATP synthesis
+K02144	ATP synthesis
+K02145	ATP synthesis
+K02146	ATP synthesis
+K02147	ATP synthesis
+K02148	ATP synthesis
+K02149	ATP synthesis
+K02150	ATP synthesis
+K02151	ATP synthesis
+K02152	ATP synthesis
+K02153	ATP synthesis
+K02154	ATP synthesis
+K02155	ATP synthesis
+K02160	Carbon fixation
+K02160	Fatty acid metabolism
+K02169	Cofactor and vitamin biosynthesis
+K02170	Cofactor and vitamin biosynthesis
+K02171	Drug resistance
+K02172	Drug resistance
+K02187	Cell signaling
+K02193	ABC-2 type and other transport systems
+K02194	ABC-2 type and other transport systems
+K02195	ABC-2 type and other transport systems
+K02201	Cofactor and vitamin biosynthesis
+K02202	Repair system
+K02203	Serine and threonine metabolism
+K02204	Serine and threonine metabolism
+K02206	Cell signaling
+K02209	Replication system
+K02210	Replication system
+K02212	Replication system
+K02216	Cell signaling
+K02220	Cell signaling
+K02225	Cofactor and vitamin biosynthesis
+K02226	Cofactor and vitamin biosynthesis
+K02227	Cofactor and vitamin biosynthesis
+K02231	Cofactor and vitamin biosynthesis
+K02232	Cofactor and vitamin biosynthesis
+K02233	Cofactor and vitamin biosynthesis
+K02235	Cell signaling
+K02236	Bacterial secretion system
+K02237	Bacterial secretion system
+K02238	Bacterial secretion system
+K02239	Bacterial secretion system
+K02240	Bacterial secretion system
+K02241	Bacterial secretion system
+K02242	Bacterial secretion system
+K02243	Bacterial secretion system
+K02244	Bacterial secretion system
+K02245	Bacterial secretion system
+K02246	Bacterial secretion system
+K02247	Bacterial secretion system
+K02248	Bacterial secretion system
+K02249	Bacterial secretion system
+K02256	ATP synthesis
+K02257	ATP synthesis
+K02258	ATP synthesis
+K02259	ATP synthesis
+K02260	ATP synthesis
+K02261	ATP synthesis
+K02262	ATP synthesis
+K02263	ATP synthesis
+K02264	ATP synthesis
+K02265	ATP synthesis
+K02266	ATP synthesis
+K02267	ATP synthesis
+K02268	ATP synthesis
+K02269	ATP synthesis
+K02270	ATP synthesis
+K02271	ATP synthesis
+K02272	ATP synthesis
+K02273	ATP synthesis
+K02274	ATP synthesis
+K02275	ATP synthesis
+K02276	ATP synthesis
+K02277	ATP synthesis
+K02291	Other terpenoid biosynthesis
+K02293	Other terpenoid biosynthesis
+K02297	ATP synthesis
+K02298	ATP synthesis
+K02299	ATP synthesis
+K02300	ATP synthesis
+K02302	Cofactor and vitamin biosynthesis
+K02303	Cofactor and vitamin biosynthesis
+K02304	Cofactor and vitamin biosynthesis
+K02305	Nitrogen metabolism
+K02318	Cofactor and vitamin biosynthesis
+K02320	DNA polymerase
+K02321	DNA polymerase
+K02322	DNA polymerase
+K02323	DNA polymerase
+K02324	DNA polymerase
+K02325	DNA polymerase
+K02326	DNA polymerase
+K02327	DNA polymerase
+K02328	DNA polymerase
+K02329	Cell signaling
+K02330	Repair system
+K02332	DNA polymerase
+K02333	DNA polymerase
+K02337	DNA polymerase
+K02338	DNA polymerase
+K02339	DNA polymerase
+K02340	DNA polymerase
+K02341	DNA polymerase
+K02342	DNA polymerase
+K02343	DNA polymerase
+K02344	DNA polymerase
+K02345	DNA polymerase
+K02350	DNA polymerase
+K02353	Cell signaling
+K02354	Cell signaling
+K02361	Cofactor and vitamin biosynthesis
+K02366	Glycosaminoglycan metabolism
+K02367	Glycosaminoglycan metabolism
+K02368	Glycosaminoglycan metabolism
+K02369	Glycosaminoglycan metabolism
+K02370	Glycosaminoglycan metabolism
+K02371	Fatty acid metabolism
+K02372	Cofactor and vitamin biosynthesis
+K02372	Fatty acid metabolism
+K02375	Cell signaling
+K02376	Cell signaling
+K02424	Phosphate and amino acid transport system
+K02432	Cell signaling
+K02437	Other carbohydrate metabolism
+K02446	Carbon fixation
+K02446	Central carbohydrate metabolism
+K02450	Bacterial secretion system
+K02451	Bacterial secretion system
+K02452	Bacterial secretion system
+K02453	Bacterial secretion system
+K02454	Bacterial secretion system
+K02455	Bacterial secretion system
+K02456	Bacterial secretion system
+K02457	Bacterial secretion system
+K02458	Bacterial secretion system
+K02459	Bacterial secretion system
+K02460	Bacterial secretion system
+K02461	Bacterial secretion system
+K02462	Bacterial secretion system
+K02463	Bacterial secretion system
+K02464	Bacterial secretion system
+K02465	Bacterial secretion system
+K02487	Two-component regulatory system
+K02488	Two-component regulatory system
+K02489	Two-component regulatory system
+K02490	Two-component regulatory system
+K02491	Two-component regulatory system
+K02492	Cofactor and vitamin biosynthesis
+K02495	Cofactor and vitamin biosynthesis
+K02496	Cofactor and vitamin biosynthesis
+K02500	Histidine metabolism
+K02501	Histidine metabolism
+K02502	Histidine metabolism
+K02517	Lipopolysaccharide metabolism
+K02527	Lipopolysaccharide metabolism
+K02535	Lipopolysaccharide metabolism
+K02536	Lipopolysaccharide metabolism
+K02540	Replication system
+K02541	Replication system
+K02542	Replication system
+K02545	Drug resistance
+K02546	Drug resistance
+K02547	Drug resistance
+K02548	Cofactor and vitamin biosynthesis
+K02549	Cofactor and vitamin biosynthesis
+K02551	Cofactor and vitamin biosynthesis
+K02552	Cofactor and vitamin biosynthesis
+K02554	Aromatic amino acid metabolism
+K02554	Aromatics degradation
+K02555	Cell signaling
+K02560	Lipopolysaccharide metabolism
+K02567	Nitrogen metabolism
+K02568	Nitrogen metabolism
+K02575	Metabolic capacity
+K02576	Glycosaminoglycan metabolism
+K02577	Glycosaminoglycan metabolism
+K02578	Glycosaminoglycan metabolism
+K02579	Glycosaminoglycan metabolism
+K02580	Cell signaling
+K02586	Nitrogen metabolism
+K02588	Nitrogen metabolism
+K02591	Nitrogen metabolism
+K02599	Cell signaling
+K02603	Replication system
+K02604	Replication system
+K02605	Replication system
+K02606	Replication system
+K02607	Replication system
+K02608	Replication system
+K02620	Cell signaling
+K02626	Polyamine biosynthesis
+K02634	ATP synthesis
+K02635	ATP synthesis
+K02636	ATP synthesis
+K02637	ATP synthesis
+K02640	ATP synthesis
+K02642	ATP synthesis
+K02643	ATP synthesis
+K02649	Cell signaling
+K02654	Bacterial secretion system
+K02657	Two-component regulatory system
+K02658	Two-component regulatory system
+K02667	Two-component regulatory system
+K02668	Two-component regulatory system
+K02684	DNA polymerase
+K02685	DNA polymerase
+K02689	Photosynthesis
+K02690	Photosynthesis
+K02691	Photosynthesis
+K02692	Photosynthesis
+K02693	Photosynthesis
+K02694	Photosynthesis
+K02703	Photosynthesis
+K02704	Photosynthesis
+K02705	Photosynthesis
+K02706	Photosynthesis
+K02707	Photosynthesis
+K02708	Photosynthesis
+K02725	Proteasome
+K02726	Proteasome
+K02727	Proteasome
+K02728	Proteasome
+K02729	Proteasome
+K02730	Proteasome
+K02731	Proteasome
+K02732	Proteasome
+K02733	Proteasome
+K02734	Proteasome
+K02735	Proteasome
+K02736	Proteasome
+K02737	Proteasome
+K02738	Proteasome
+K02739	Proteasome
+K02740	Proteasome
+K02741	Proteasome
+K02744	Phosphotransferase system (PTS)
+K02745	Phosphotransferase system (PTS)
+K02746	Phosphotransferase system (PTS)
+K02747	Phosphotransferase system (PTS)
+K02749	Phosphotransferase system (PTS)
+K02750	Phosphotransferase system (PTS)
+K02752	Phosphotransferase system (PTS)
+K02753	Phosphotransferase system (PTS)
+K02755	Phosphotransferase system (PTS)
+K02756	Phosphotransferase system (PTS)
+K02757	Phosphotransferase system (PTS)
+K02759	Phosphotransferase system (PTS)
+K02760	Phosphotransferase system (PTS)
+K02761	Phosphotransferase system (PTS)
+K02763	Phosphotransferase system (PTS)
+K02764	Phosphotransferase system (PTS)
+K02765	Phosphotransferase system (PTS)
+K02768	Phosphotransferase system (PTS)
+K02769	Phosphotransferase system (PTS)
+K02770	Phosphotransferase system (PTS)
+K02771	Phosphotransferase system (PTS)
+K02773	Phosphotransferase system (PTS)
+K02774	Phosphotransferase system (PTS)
+K02775	Phosphotransferase system (PTS)
+K02777	Phosphotransferase system (PTS)
+K02778	Phosphotransferase system (PTS)
+K02779	Phosphotransferase system (PTS)
+K02781	Phosphotransferase system (PTS)
+K02782	Phosphotransferase system (PTS)
+K02783	Phosphotransferase system (PTS)
+K02786	Phosphotransferase system (PTS)
+K02787	Phosphotransferase system (PTS)
+K02788	Phosphotransferase system (PTS)
+K02790	Phosphotransferase system (PTS)
+K02791	Phosphotransferase system (PTS)
+K02793	Phosphotransferase system (PTS)
+K02794	Phosphotransferase system (PTS)
+K02795	Phosphotransferase system (PTS)
+K02796	Phosphotransferase system (PTS)
+K02798	Phosphotransferase system (PTS)
+K02799	Phosphotransferase system (PTS)
+K02800	Phosphotransferase system (PTS)
+K02802	Phosphotransferase system (PTS)
+K02803	Phosphotransferase system (PTS)
+K02804	Phosphotransferase system (PTS)
+K02808	Phosphotransferase system (PTS)
+K02809	Phosphotransferase system (PTS)
+K02810	Phosphotransferase system (PTS)
+K02812	Phosphotransferase system (PTS)
+K02813	Phosphotransferase system (PTS)
+K02814	Phosphotransferase system (PTS)
+K02815	Phosphotransferase system (PTS)
+K02817	Phosphotransferase system (PTS)
+K02818	Phosphotransferase system (PTS)
+K02819	Phosphotransferase system (PTS)
+K02821	Cofactor and vitamin biosynthesis
+K02821	Phosphotransferase system (PTS)
+K02822	Cofactor and vitamin biosynthesis
+K02822	Phosphotransferase system (PTS)
+K02826	ATP synthesis
+K02827	ATP synthesis
+K02828	ATP synthesis
+K02829	ATP synthesis
+K02831	Cell signaling
+K02840	Lipopolysaccharide metabolism
+K02841	Lipopolysaccharide metabolism
+K02842	Cell signaling
+K02843	Lipopolysaccharide metabolism
+K02844	Lipopolysaccharide metabolism
+K02847	Lipopolysaccharide metabolism
+K02848	Lipopolysaccharide metabolism
+K02849	Lipopolysaccharide metabolism
+K02850	Lipopolysaccharide metabolism
+K02858	Cofactor and vitamin biosynthesis
+K02863	Ribosome
+K02864	Ribosome
+K02865	Ribosome
+K02866	Ribosome
+K02867	Ribosome
+K02868	Ribosome
+K02869	Ribosome
+K02870	Ribosome
+K02871	Ribosome
+K02872	Ribosome
+K02873	Ribosome
+K02874	Ribosome
+K02875	Ribosome
+K02876	Ribosome
+K02877	Ribosome
+K02878	Ribosome
+K02879	Ribosome
+K02880	Ribosome
+K02881	Ribosome
+K02882	Ribosome
+K02883	Ribosome
+K02884	Ribosome
+K02885	Ribosome
+K02886	Ribosome
+K02887	Ribosome
+K02888	Ribosome
+K02889	Ribosome
+K02890	Ribosome
+K02891	Ribosome
+K02892	Ribosome
+K02893	Ribosome
+K02894	Ribosome
+K02895	Ribosome
+K02896	Ribosome
+K02897	Ribosome
+K02898	Ribosome
+K02899	Ribosome
+K02900	Ribosome
+K02901	Ribosome
+K02902	Ribosome
+K02903	Ribosome
+K02904	Ribosome
+K02905	Ribosome
+K02906	Ribosome
+K02907	Ribosome
+K02908	Ribosome
+K02909	Ribosome
+K02910	Ribosome
+K02911	Ribosome
+K02912	Ribosome
+K02913	Ribosome
+K02914	Ribosome
+K02915	Ribosome
+K02916	Ribosome
+K02917	Ribosome
+K02918	Ribosome
+K02919	Ribosome
+K02920	Ribosome
+K02921	Ribosome
+K02922	Ribosome
+K02923	Ribosome
+K02924	Ribosome
+K02925	Ribosome
+K02926	Ribosome
+K02927	Ribosome
+K02928	Ribosome
+K02929	Ribosome
+K02930	Ribosome
+K02931	Ribosome
+K02932	Ribosome
+K02933	Ribosome
+K02934	Ribosome
+K02935	Ribosome
+K02936	Ribosome
+K02937	Ribosome
+K02938	Ribosome
+K02939	Ribosome
+K02940	Ribosome
+K02941	Ribosome
+K02942	Ribosome
+K02943	Ribosome
+K02944	Ribosome
+K02945	Ribosome
+K02946	Ribosome
+K02947	Ribosome
+K02948	Ribosome
+K02949	Ribosome
+K02950	Ribosome
+K02951	Ribosome
+K02952	Ribosome
+K02953	Ribosome
+K02954	Ribosome
+K02955	Ribosome
+K02956	Ribosome
+K02957	Ribosome
+K02958	Ribosome
+K02959	Ribosome
+K02960	Ribosome
+K02961	Ribosome
+K02962	Ribosome
+K02963	Ribosome
+K02964	Ribosome
+K02965	Ribosome
+K02966	Ribosome
+K02967	Ribosome
+K02968	Ribosome
+K02969	Ribosome
+K02970	Ribosome
+K02971	Ribosome
+K02973	Ribosome
+K02974	Ribosome
+K02975	Ribosome
+K02976	Ribosome
+K02977	Ribosome
+K02978	Ribosome
+K02979	Ribosome
+K02980	Ribosome
+K02981	Ribosome
+K02982	Ribosome
+K02983	Ribosome
+K02984	Ribosome
+K02985	Ribosome
+K02986	Ribosome
+K02987	Ribosome
+K02988	Ribosome
+K02989	Ribosome
+K02990	Ribosome
+K02991	Ribosome
+K02992	Ribosome
+K02993	Ribosome
+K02994	Ribosome
+K02995	Ribosome
+K02996	Ribosome
+K02997	Ribosome
+K02998	Ribosome
+K02999	RNA polymerase
+K03000	RNA polymerase
+K03001	RNA polymerase
+K03002	RNA polymerase
+K03003	RNA polymerase
+K03004	RNA polymerase
+K03005	RNA polymerase
+K03006	RNA polymerase
+K03007	RNA polymerase
+K03008	RNA polymerase
+K03009	RNA polymerase
+K03010	RNA polymerase
+K03011	RNA polymerase
+K03012	RNA polymerase
+K03013	RNA polymerase
+K03014	RNA polymerase
+K03015	RNA polymerase
+K03016	RNA polymerase
+K03017	RNA polymerase
+K03018	RNA polymerase
+K03019	RNA polymerase
+K03020	RNA polymerase
+K03021	RNA polymerase
+K03022	RNA polymerase
+K03023	RNA polymerase
+K03024	RNA polymerase
+K03025	RNA polymerase
+K03026	RNA polymerase
+K03027	RNA polymerase
+K03028	Proteasome
+K03029	Proteasome
+K03030	Proteasome
+K03031	Proteasome
+K03032	Proteasome
+K03033	Proteasome
+K03035	Proteasome
+K03036	Proteasome
+K03037	Proteasome
+K03038	Proteasome
+K03039	Proteasome
+K03040	RNA polymerase
+K03041	RNA polymerase
+K03042	RNA polymerase
+K03043	RNA polymerase
+K03044	RNA polymerase
+K03045	RNA polymerase
+K03046	RNA polymerase
+K03047	RNA polymerase
+K03048	RNA polymerase
+K03049	RNA polymerase
+K03050	RNA polymerase
+K03051	RNA polymerase
+K03052	RNA polymerase
+K03053	RNA polymerase
+K03054	RNA polymerase
+K03055	RNA polymerase
+K03056	RNA polymerase
+K03058	RNA polymerase
+K03059	RNA polymerase
+K03060	RNA polymerase
+K03061	Proteasome
+K03062	Proteasome
+K03063	Proteasome
+K03064	Proteasome
+K03065	Proteasome
+K03066	Proteasome
+K03070	Bacterial secretion system
+K03071	Bacterial secretion system
+K03072	Bacterial secretion system
+K03073	Bacterial secretion system
+K03074	Bacterial secretion system
+K03075	Bacterial secretion system
+K03076	Bacterial secretion system
+K03077	Cofactor and vitamin biosynthesis
+K03078	Cofactor and vitamin biosynthesis
+K03079	Cofactor and vitamin biosynthesis
+K03083	Cell signaling
+K03094	Ubiquitin system
+K03106	Bacterial secretion system
+K03110	Bacterial secretion system
+K03114	Cell signaling
+K03116	Bacterial secretion system
+K03117	Bacterial secretion system
+K03118	Bacterial secretion system
+K03141	Repair system
+K03142	Repair system
+K03143	Repair system
+K03144	Repair system
+K03147	Cofactor and vitamin biosynthesis
+K03165	Repair system
+K03175	Cell signaling
+K03179	Cofactor and vitamin biosynthesis
+K03181	Cofactor and vitamin biosynthesis
+K03182	Cofactor and vitamin biosynthesis
+K03183	Cofactor and vitamin biosynthesis
+K03184	Cofactor and vitamin biosynthesis
+K03185	Cofactor and vitamin biosynthesis
+K03186	Cofactor and vitamin biosynthesis
+K03194	Bacterial secretion system
+K03195	Bacterial secretion system
+K03196	Bacterial secretion system
+K03196	Pathogenicity
+K03197	Bacterial secretion system
+K03198	Bacterial secretion system
+K03199	Bacterial secretion system
+K03200	Bacterial secretion system
+K03201	Bacterial secretion system
+K03202	Bacterial secretion system
+K03203	Bacterial secretion system
+K03204	Bacterial secretion system
+K03205	Bacterial secretion system
+K03209	Cell signaling
+K03210	Bacterial secretion system
+K03217	Bacterial secretion system
+K03219	Bacterial secretion system
+K03219	Pathogenicity
+K03220	Bacterial secretion system
+K03221	Bacterial secretion system
+K03221	Pathogenicity
+K03222	Bacterial secretion system
+K03222	Pathogenicity
+K03222	Plant pathogenicity
+K03223	Bacterial secretion system
+K03223	Plant pathogenicity
+K03224	Bacterial secretion system
+K03224	Pathogenicity
+K03224	Plant pathogenicity
+K03225	Bacterial secretion system
+K03225	Pathogenicity
+K03225	Plant pathogenicity
+K03226	Bacterial secretion system
+K03226	Pathogenicity
+K03226	Plant pathogenicity
+K03227	Bacterial secretion system
+K03227	Pathogenicity
+K03227	Plant pathogenicity
+K03228	Bacterial secretion system
+K03228	Pathogenicity
+K03228	Plant pathogenicity
+K03229	Bacterial secretion system
+K03229	Pathogenicity
+K03229	Plant pathogenicity
+K03230	Bacterial secretion system
+K03230	Pathogenicity
+K03230	Plant pathogenicity
+K03257	RNA processing
+K03259	RNA processing
+K03260	RNA processing
+K03268	Aromatics degradation
+K03269	Lipopolysaccharide metabolism
+K03270	Lipopolysaccharide metabolism
+K03271	Lipopolysaccharide metabolism
+K03272	Lipopolysaccharide metabolism
+K03273	Lipopolysaccharide metabolism
+K03274	Lipopolysaccharide metabolism
+K03278	Lipopolysaccharide metabolism
+K03279	Lipopolysaccharide metabolism
+K03280	Lipopolysaccharide metabolism
+K03283	Spliceosome
+K03331	Other carbohydrate metabolism
+K03334	Aromatic amino acid metabolism
+K03340	Lysine metabolism
+K03345	RNA processing
+K03347	Ubiquitin system
+K03348	Ubiquitin system
+K03349	Ubiquitin system
+K03350	Ubiquitin system
+K03351	Ubiquitin system
+K03352	Ubiquitin system
+K03353	Ubiquitin system
+K03354	Ubiquitin system
+K03355	Ubiquitin system
+K03356	Ubiquitin system
+K03357	Ubiquitin system
+K03358	Ubiquitin system
+K03359	Ubiquitin system
+K03360	Ubiquitin system
+K03361	Ubiquitin system
+K03362	Ubiquitin system
+K03363	Ubiquitin system
+K03364	Ubiquitin system
+K03367	Drug resistance
+K03369	Glycan metabolism
+K03370	Glycan metabolism
+K03371	Glycan metabolism
+K03381	Aromatics degradation
+K03385	Nitrogen metabolism
+K03388	Methane metabolism
+K03389	Methane metabolism
+K03390	Methane metabolism
+K03392	Aromatic amino acid metabolism
+K03407	Two-component regulatory system
+K03412	Two-component regulatory system
+K03413	Two-component regulatory system
+K03415	Two-component regulatory system
+K03419	Glycosaminoglycan metabolism
+K03420	Proteasome
+K03425	Bacterial secretion system
+K03432	Proteasome
+K03433	Proteasome
+K03434	Glycan metabolism
+K03446	Drug efflux transporter/pump
+K03464	Aromatics degradation
+K03472	Cofactor and vitamin biosynthesis
+K03473	Cofactor and vitamin biosynthesis
+K03474	Cofactor and vitamin biosynthesis
+K03475	Cofactor and vitamin biosynthesis
+K03475	Phosphotransferase system (PTS)
+K03476	Cofactor and vitamin biosynthesis
+K03504	DNA polymerase
+K03505	DNA polymerase
+K03506	DNA polymerase
+K03508	DNA polymerase
+K03512	Repair system
+K03514	RNA processing
+K03517	Cofactor and vitamin biosynthesis
+K03523	Metallic cation, iron-siderophore and vitamin B12 transport system
+K03525	Cofactor and vitamin biosynthesis
+K03526	Terpenoid backbone biosynthesis
+K03527	Terpenoid backbone biosynthesis
+K03543	Drug efflux transporter/pump
+K03553	Drug resistance
+K03577	Drug efflux transporter/pump
+K03585	Drug efflux transporter/pump
+K03585	Drug resistance
+K03621	Lipid metabolism
+K03661	ATP synthesis
+K03662	ATP synthesis
+K03673	Drug resistance
+K03678	RNA processing
+K03679	RNA processing
+K03681	RNA processing
+K03689	ATP synthesis
+K03732	RNA processing
+K03737	Carbon fixation
+K03737	Central carbohydrate metabolism
+K03738	Central carbohydrate metabolism
+K03739	Drug resistance
+K03740	Drug resistance
+K03760	Drug resistance
+K03763	DNA polymerase
+K03766	Glycan metabolism
+K03781	Other carbohydrate metabolism
+K03785	Aromatic amino acid metabolism
+K03786	Aromatic amino acid metabolism
+K03794	Cofactor and vitamin biosynthesis
+K03798	Drug resistance
+K03799	Drug resistance
+K03841	Carbon fixation
+K03841	Central carbohydrate metabolism
+K03841	Methane metabolism
+K03842	Glycan metabolism
+K03843	Glycan metabolism
+K03844	Glycan metabolism
+K03845	Glycan metabolism
+K03846	Glycan metabolism
+K03847	Glycan metabolism
+K03848	Glycan metabolism
+K03849	Glycan metabolism
+K03850	Glycan metabolism
+K03856	Aromatic amino acid metabolism
+K03857	Glycan metabolism
+K03868	Ubiquitin system
+K03869	Ubiquitin system
+K03870	Ubiquitin system
+K03871	Ubiquitin system
+K03872	Ubiquitin system
+K03873	Ubiquitin system
+K03875	Ubiquitin system
+K03877	Glycan metabolism
+K03878	ATP synthesis
+K03879	ATP synthesis
+K03880	ATP synthesis
+K03881	ATP synthesis
+K03882	ATP synthesis
+K03883	ATP synthesis
+K03884	ATP synthesis
+K03886	ATP synthesis
+K03887	ATP synthesis
+K03888	ATP synthesis
+K03889	ATP synthesis
+K03890	ATP synthesis
+K03891	ATP synthesis
+K03934	ATP synthesis
+K03935	ATP synthesis
+K03936	ATP synthesis
+K03937	ATP synthesis
+K03938	ATP synthesis
+K03939	ATP synthesis
+K03940	ATP synthesis
+K03941	ATP synthesis
+K03942	ATP synthesis
+K03943	ATP synthesis
+K03944	ATP synthesis
+K03945	ATP synthesis
+K03946	ATP synthesis
+K03947	ATP synthesis
+K03948	ATP synthesis
+K03949	ATP synthesis
+K03950	ATP synthesis
+K03951	ATP synthesis
+K03952	ATP synthesis
+K03953	ATP synthesis
+K03954	ATP synthesis
+K03955	ATP synthesis
+K03956	ATP synthesis
+K03957	ATP synthesis
+K03958	ATP synthesis
+K03959	ATP synthesis
+K03960	ATP synthesis
+K03961	ATP synthesis
+K03962	ATP synthesis
+K03963	ATP synthesis
+K03964	ATP synthesis
+K03965	ATP synthesis
+K03966	ATP synthesis
+K03967	ATP synthesis
+K03968	ATP synthesis
+K04041	Carbon fixation
+K04041	Central carbohydrate metabolism
+K04042	Nucleotide sugar
+K04053	Bacterial secretion system
+K04054	Bacterial secretion system
+K04056	Bacterial secretion system
+K04057	Bacterial secretion system
+K04058	Bacterial secretion system
+K04059	Bacterial secretion system
+K04073	Aromatic amino acid metabolism
+K04073	Aromatics degradation
+K04087	Drug resistance
+K04088	Drug resistance
+K04092	Aromatic amino acid metabolism
+K04093	Aromatic amino acid metabolism
+K04102	Aromatics degradation
+K04112	Aromatics degradation
+K04113	Aromatics degradation
+K04114	Aromatics degradation
+K04115	Aromatics degradation
+K04116	Aromatics degradation
+K04117	Aromatics degradation
+K04126	Biosynthesis of secondary metabolites
+K04127	Biosynthesis of secondary metabolites
+K04128	Biosynthesis of secondary metabolites
+K04343	Drug resistance
+K04345	Cell signaling
+K04365	Cell signaling
+K04366	Cell signaling
+K04367	Cell signaling
+K04368	Cell signaling
+K04369	Cell signaling
+K04371	Cell signaling
+K04388	Cell signaling
+K04397	Cell signaling
+K04399	Cell signaling
+K04403	Cell signaling
+K04404	Cell signaling
+K04412	Cell signaling
+K04415	Cell signaling
+K04416	Cell signaling
+K04417	Cell signaling
+K04418	Cell signaling
+K04419	Cell signaling
+K04420	Cell signaling
+K04421	Cell signaling
+K04423	Cell signaling
+K04425	Cell signaling
+K04426	Cell signaling
+K04427	Cell signaling
+K04428	Cell signaling
+K04429	Cell signaling
+K04430	Cell signaling
+K04431	Cell signaling
+K04432	Cell signaling
+K04433	Cell signaling
+K04440	Cell signaling
+K04441	Cell signaling
+K04447	Cell signaling
+K04456	Cell signaling
+K04463	Cell signaling
+K04464	Cell signaling
+K04467	Cell signaling
+K04480	Methane metabolism
+K04486	Histidine metabolism
+K04489	Cell signaling
+K04490	Cell signaling
+K04491	Cell signaling
+K04492	Cell signaling
+K04500	Cell signaling
+K04501	Cell signaling
+K04503	Cell signaling
+K04505	Cell signaling
+K04516	Aromatic amino acid metabolism
+K04517	Aromatic amino acid metabolism
+K04518	Aromatic amino acid metabolism
+K04522	Cell signaling
+K04527	Cell signaling
+K04561	Nitrogen metabolism
+K04563	Cell signaling
+K04566	Aminoacyl tRNA
+K04567	Aminoacyl tRNA
+K04571	Protein processing
+K04628	Lipid metabolism
+K04630	Cell signaling
+K04632	Cell signaling
+K04662	Cell signaling
+K04663	Cell signaling
+K04664	Cell signaling
+K04665	Cell signaling
+K04667	Cell signaling
+K04670	Cell signaling
+K04671	Cell signaling
+K04672	Cell signaling
+K04673	Cell signaling
+K04674	Cell signaling
+K04675	Cell signaling
+K04676	Cell signaling
+K04681	Cell signaling
+K04690	Cell signaling
+K04692	Cell signaling
+K04694	Cell signaling
+K04694	Ubiquitin system
+K04695	Cell signaling
+K04695	Ubiquitin system
+K04696	Cell signaling
+K04696	Ubiquitin system
+K04697	Cell signaling
+K04697	Ubiquitin system
+K04698	Cell signaling
+K04698	Ubiquitin system
+K04699	Cell signaling
+K04699	Ubiquitin system
+K04701	Cell signaling
+K04701	Ubiquitin system
+K04705	Protein processing
+K04708	Lipid metabolism
+K04709	Lipid metabolism
+K04710	Lipid metabolism
+K04712	Lipid metabolism
+K04718	Lipid metabolism
+K04728	Cell signaling
+K04728	Repair system
+K04729	Cell signaling
+K04730	Cell signaling
+K04733	Cell signaling
+K04734	Cell signaling
+K04735	Cell signaling
+K04771	Drug resistance
+K04802	Repair system
+K04835	Other carbohydrate metabolism
+K04948	Cell signaling
+K04952	Cell signaling
+K05277	Biosynthesis of secondary metabolites
+K05283	Glycan metabolism
+K05284	Glycan metabolism
+K05285	Glycan metabolism
+K05286	Glycan metabolism
+K05287	Glycan metabolism
+K05298	Carbon fixation
+K05299	Carbon fixation
+K05308	Central carbohydrate metabolism
+K05351	Other carbohydrate metabolism
+K05359	Aromatic amino acid metabolism
+K05375	Biosynthesis of secondary metabolites
+K05528	Glycan metabolism
+K05529	Glycan metabolism
+K05530	Glycan metabolism
+K05531	Glycan metabolism
+K05532	Glycan metabolism
+K05533	Glycan metabolism
+K05534	Glycan metabolism
+K05535	Glycan metabolism
+K05546	Glycan metabolism
+K05549	Aromatics degradation
+K05550	Aromatics degradation
+K05551	Biosynthesis of secondary metabolites
+K05552	Biosynthesis of secondary metabolites
+K05553	Biosynthesis of secondary metabolites
+K05554	Biosynthesis of secondary metabolites
+K05555	Biosynthesis of secondary metabolites
+K05556	Biosynthesis of secondary metabolites
+K05572	ATP synthesis
+K05573	ATP synthesis
+K05574	ATP synthesis
+K05575	ATP synthesis
+K05576	ATP synthesis
+K05577	ATP synthesis
+K05578	ATP synthesis
+K05579	ATP synthesis
+K05580	ATP synthesis
+K05581	ATP synthesis
+K05582	ATP synthesis
+K05583	ATP synthesis
+K05584	ATP synthesis
+K05585	ATP synthesis
+K05599	Aromatics degradation
+K05600	Aromatics degradation
+K05602	Histidine metabolism
+K05605	Other carbohydrate metabolism
+K05606	Carbon fixation
+K05606	Other carbohydrate metabolism
+K05607	Branched-chain amino acid metabolism
+K05685	Drug efflux transporter/pump
+K05708	Aromatic amino acid metabolism
+K05709	Aromatic amino acid metabolism
+K05710	Aromatic amino acid metabolism
+K05711	Aromatic amino acid metabolism
+K05712	Aromatic amino acid metabolism
+K05713	Aromatic amino acid metabolism
+K05714	Aromatic amino acid metabolism
+K05772	Mineral and organic ion transport system
+K05773	Mineral and organic ion transport system
+K05776	Mineral and organic ion transport system
+K05777	Mineral and organic ion transport system
+K05778	Mineral and organic ion transport system
+K05779	Mineral and organic ion transport system
+K05783	Aromatics degradation
+K05784	Aromatics degradation
+K05804	Drug efflux transporter/pump
+K05813	Saccharide, polyol, and lipid transport system
+K05814	Saccharide, polyol, and lipid transport system
+K05815	Saccharide, polyol, and lipid transport system
+K05816	Saccharide, polyol, and lipid transport system
+K05822	Lysine metabolism
+K05823	Lysine metabolism
+K05824	Lysine metabolism
+K05826	Arginine and proline metabolism
+K05826	Lysine metabolism
+K05827	Lysine metabolism
+K05828	Arginine and proline metabolism
+K05828	Lysine metabolism
+K05829	Arginine and proline metabolism
+K05829	Lysine metabolism
+K05830	Arginine and proline metabolism
+K05830	Lysine metabolism
+K05831	Arginine and proline metabolism
+K05831	Lysine metabolism
+K05832	Metallic cation, iron-siderophore and vitamin B12 transport system
+K05833	Metallic cation, iron-siderophore and vitamin B12 transport system
+K05845	Mineral and organic ion transport system
+K05846	Mineral and organic ion transport system
+K05847	Mineral and organic ion transport system
+K05857	Lipid metabolism
+K05858	Lipid metabolism
+K05859	Lipid metabolism
+K05860	Lipid metabolism
+K05861	Lipid metabolism
+K05866	Cell signaling
+K05867	Cell signaling
+K05868	Cell signaling
+K05884	Methane metabolism
+K05894	Fatty acid metabolism
+K05917	Sterol biosynthesis
+K05921	Aromatic amino acid metabolism
+K05928	Cofactor and vitamin biosynthesis
+K05933	Cysteine and methionine metabolism
+K05979	Methane metabolism
+K06001	Aromatic amino acid metabolism
+K06016	Pyrimidine metabolism
+K06034	Methane metabolism
+K06041	Lipopolysaccharide metabolism
+K06044	Other carbohydrate metabolism
+K06051	Cell signaling
+K06053	Cell signaling
+K06059	Cell signaling
+K06060	Cell signaling
+K06063	Spliceosome
+K06073	Metallic cation, iron-siderophore and vitamin B12 transport system
+K06074	Metallic cation, iron-siderophore and vitamin B12 transport system
+K06125	Cofactor and vitamin biosynthesis
+K06126	Cofactor and vitamin biosynthesis
+K06127	Cofactor and vitamin biosynthesis
+K06134	Cofactor and vitamin biosynthesis
+K06170	Cell signaling
+K06171	Cell signaling
+K06172	Cell signaling
+K06208	Aromatic amino acid metabolism
+K06209	Aromatic amino acid metabolism
+K06210	Cofactor and vitamin biosynthesis
+K06224	Cell signaling
+K06225	Cell signaling
+K06226	Cell signaling
+K06227	Cell signaling
+K06228	Cell signaling
+K06229	Cell signaling
+K06230	Cell signaling
+K06443	Other terpenoid biosynthesis
+K06445	Fatty acid metabolism
+K06596	Two-component regulatory system
+K06597	Two-component regulatory system
+K06618	Cell signaling
+K06620	Cell signaling
+K06626	Cell signaling
+K06627	Cell signaling
+K06632	Cell signaling
+K06634	Repair system
+K06640	Cell signaling
+K06641	Cell signaling
+K06642	Repair system
+K06645	Cell signaling
+K06646	Cell signaling
+K06650	Cell signaling
+K06685	Cell signaling
+K06691	Proteasome
+K06696	Proteasome
+K06697	Proteasome
+K06718	Other amino acid metabolism
+K06720	Other amino acid metabolism
+K06857	Mineral and organic ion transport system
+K06858	Metallic cation, iron-siderophore and vitamin B12 transport system
+K06859	Central carbohydrate metabolism
+K06859	Cofactor and vitamin biosynthesis
+K06861	ABC-2 type and other transport systems
+K06863	Purine metabolism
+K06979	Drug resistance
+K06998	Biosynthesis of secondary metabolites
+K07091	ABC-2 type and other transport systems
+K07104	Aromatics degradation
+K07122	Saccharide, polyol, and lipid transport system
+K07127	Purine metabolism
+K07130	Aromatic amino acid metabolism
+K07151	Glycan metabolism
+K07173	Cysteine and methionine metabolism
+K07201	Cell signaling
+K07209	Cell signaling
+K07210	Cell signaling
+K07250	Other amino acid metabolism
+K07260	Drug resistance
+K07264	Drug resistance
+K07323	Saccharide, polyol, and lipid transport system
+K07342	Protein processing
+K07376	Cell signaling
+K07389	Pathogenicity
+K07404	Central carbohydrate metabolism
+K07419	Sterol biosynthesis
+K07431	Sterol biosynthesis
+K07432	Glycan metabolism
+K07433	Sterol biosynthesis
+K07434	Sterol biosynthesis
+K07438	Sterol biosynthesis
+K07441	Glycan metabolism
+K07466	Replication system
+K07508	Fatty acid metabolism
+K07509	Fatty acid metabolism
+K07511	Fatty acid metabolism
+K07511	Lysine metabolism
+K07511	Other carbohydrate metabolism
+K07512	Fatty acid metabolism
+K07513	Fatty acid metabolism
+K07514	Fatty acid metabolism
+K07514	Lysine metabolism
+K07514	Other carbohydrate metabolism
+K07515	Fatty acid metabolism
+K07515	Lysine metabolism
+K07515	Other carbohydrate metabolism
+K07516	Fatty acid metabolism
+K07534	Aromatics degradation
+K07535	Aromatics degradation
+K07536	Aromatics degradation
+K07537	Aromatics degradation
+K07538	Aromatics degradation
+K07539	Aromatics degradation
+K07540	Aromatics degradation
+K07542	Glycan metabolism
+K07543	Aromatics degradation
+K07544	Aromatics degradation
+K07545	Aromatics degradation
+K07546	Aromatics degradation
+K07547	Aromatics degradation
+K07548	Aromatics degradation
+K07549	Aromatics degradation
+K07550	Aromatics degradation
+K07553	Lipid metabolism
+K07573	RNA processing
+K07587	Aminoacyl tRNA
+K07590	Ribosome
+K07636	Two-component regulatory system
+K07637	Drug efflux transporter/pump
+K07637	Drug resistance
+K07637	Two-component regulatory system
+K07638	Drug resistance
+K07638	Two-component regulatory system
+K07639	Two-component regulatory system
+K07640	Drug resistance
+K07640	Two-component regulatory system
+K07641	Two-component regulatory system
+K07642	Drug efflux transporter/pump
+K07642	Two-component regulatory system
+K07643	Drug resistance
+K07643	Two-component regulatory system
+K07644	Drug resistance
+K07644	Two-component regulatory system
+K07645	Two-component regulatory system
+K07646	Two-component regulatory system
+K07647	Two-component regulatory system
+K07648	Two-component regulatory system
+K07649	Two-component regulatory system
+K07650	Two-component regulatory system
+K07651	Two-component regulatory system
+K07652	Two-component regulatory system
+K07653	Two-component regulatory system
+K07654	Two-component regulatory system
+K07655	Two-component regulatory system
+K07656	Two-component regulatory system
+K07657	Two-component regulatory system
+K07658	Two-component regulatory system
+K07659	Drug resistance
+K07659	Two-component regulatory system
+K07660	Drug efflux transporter/pump
+K07660	Drug resistance
+K07660	Two-component regulatory system
+K07661	Two-component regulatory system
+K07662	Drug resistance
+K07662	Two-component regulatory system
+K07663	Two-component regulatory system
+K07664	Drug efflux transporter/pump
+K07664	Two-component regulatory system
+K07665	Drug resistance
+K07665	Two-component regulatory system
+K07666	Two-component regulatory system
+K07667	Two-component regulatory system
+K07668	Two-component regulatory system
+K07669	Two-component regulatory system
+K07670	Two-component regulatory system
+K07671	Two-component regulatory system
+K07672	Two-component regulatory system
+K07673	Two-component regulatory system
+K07674	Two-component regulatory system
+K07675	Two-component regulatory system
+K07676	Two-component regulatory system
+K07677	Two-component regulatory system
+K07678	Two-component regulatory system
+K07679	Two-component regulatory system
+K07680	Two-component regulatory system
+K07681	Two-component regulatory system
+K07682	Two-component regulatory system
+K07683	Two-component regulatory system
+K07684	Two-component regulatory system
+K07685	Two-component regulatory system
+K07686	Two-component regulatory system
+K07687	Two-component regulatory system
+K07689	Two-component regulatory system
+K07690	Drug resistance
+K07690	Two-component regulatory system
+K07691	Two-component regulatory system
+K07692	Two-component regulatory system
+K07693	Two-component regulatory system
+K07694	Two-component regulatory system
+K07695	Two-component regulatory system
+K07696	Two-component regulatory system
+K07697	Two-component regulatory system
+K07698	Two-component regulatory system
+K07699	Two-component regulatory system
+K07700	Two-component regulatory system
+K07701	Two-component regulatory system
+K07702	Two-component regulatory system
+K07703	Two-component regulatory system
+K07704	Two-component regulatory system
+K07705	Two-component regulatory system
+K07706	Two-component regulatory system
+K07707	Two-component regulatory system
+K07708	Two-component regulatory system
+K07709	Two-component regulatory system
+K07710	Two-component regulatory system
+K07711	Two-component regulatory system
+K07712	Two-component regulatory system
+K07713	Two-component regulatory system
+K07714	Two-component regulatory system
+K07715	Two-component regulatory system
+K07716	Two-component regulatory system
+K07717	Two-component regulatory system
+K07718	Two-component regulatory system
+K07719	Two-component regulatory system
+K07720	Two-component regulatory system
+K07748	Sterol biosynthesis
+K07750	Sterol biosynthesis
+K07760	Cell signaling
+K07768	Two-component regulatory system
+K07769	Two-component regulatory system
+K07770	Two-component regulatory system
+K07771	Drug resistance
+K07771	Two-component regulatory system
+K07772	Two-component regulatory system
+K07773	Two-component regulatory system
+K07774	Two-component regulatory system
+K07775	Two-component regulatory system
+K07776	Two-component regulatory system
+K07777	Two-component regulatory system
+K07778	Two-component regulatory system
+K07788	Drug efflux transporter/pump
+K07789	Drug efflux transporter/pump
+K07799	Drug efflux transporter/pump
+K07806	Drug resistance
+K07806	Other carbohydrate metabolism
+K07819	Glycan metabolism
+K07820	Glycan metabolism
+K07953	Protein processing
+K07964	Glycosaminoglycan metabolism
+K07965	Glycosaminoglycan metabolism
+K07966	Glycan metabolism
+K07967	Glycan metabolism
+K07968	Glycan metabolism
+K07969	Glycan metabolism
+K08041	Cell signaling
+K08042	Cell signaling
+K08043	Cell signaling
+K08044	Cell signaling
+K08045	Cell signaling
+K08046	Cell signaling
+K08047	Cell signaling
+K08048	Cell signaling
+K08049	Cell signaling
+K08074	Central carbohydrate metabolism
+K08082	Two-component regulatory system
+K08083	Two-component regulatory system
+K08093	Central carbohydrate metabolism
+K08093	Methane metabolism
+K08094	Central carbohydrate metabolism
+K08094	Methane metabolism
+K08097	Methane metabolism
+K08151	Drug efflux transporter/pump
+K08153	Drug efflux transporter/pump
+K08167	Drug efflux transporter/pump
+K08167	Drug resistance
+K08168	Drug resistance
+K08170	Drug resistance
+K08218	Drug resistance
+K08289	Purine metabolism
+K08300	RNA processing
+K08323	Other carbohydrate metabolism
+K08475	Two-component regulatory system
+K08476	Two-component regulatory system
+K08477	Drug resistance
+K08479	Two-component regulatory system
+K08591	Lipid metabolism
+K08641	Drug resistance
+K08678	Nucleotide sugar
+K08680	Cofactor and vitamin biosynthesis
+K08689	Aromatics degradation
+K08690	Aromatics degradation
+K08691	Carbon fixation
+K08691	Methane metabolism
+K08691	Other carbohydrate metabolism
+K08692	Methane metabolism
+K08721	Drug resistance
+K08734	Repair system
+K08735	Repair system
+K08737	Repair system
+K08738	Sulfur metabolism
+K08748	Sterol biosynthesis
+K08764	Sterol biosynthesis
+K08791	Cell signaling
+K08845	Cell signaling
+K08928	Photosynthesis
+K08929	Photosynthesis
+K08940	Photosynthesis
+K08941	Photosynthesis
+K08942	Photosynthesis
+K08943	Photosynthesis
+K08963	Cysteine and methionine metabolism
+K08964	Cysteine and methionine metabolism
+K08965	Cysteine and methionine metabolism
+K08966	Cysteine and methionine metabolism
+K08967	Cysteine and methionine metabolism
+K08969	Cysteine and methionine metabolism
+K09007	Cofactor and vitamin biosynthesis
+K09011	Branched-chain amino acid metabolism
+K09249	Cell signaling
+K09291	RNA processing
+K09389	Cell signaling
+K09408	Cell signaling
+K09448	Cell signaling
+K09458	Cofactor and vitamin biosynthesis
+K09458	Fatty acid metabolism
+K09470	Polyamine biosynthesis
+K09471	Polyamine biosynthesis
+K09472	Polyamine biosynthesis
+K09473	Polyamine biosynthesis
+K09476	Drug resistance
+K09479	Fatty acid metabolism
+K09481	Protein processing
+K09564	Spliceosome
+K09567	Spliceosome
+K09587	Other terpenoid biosynthesis
+K09588	Other terpenoid biosynthesis
+K09590	Other terpenoid biosynthesis
+K09591	Other terpenoid biosynthesis
+K09653	Glycan metabolism
+K09661	Glycan metabolism
+K09662	Glycan metabolism
+K09663	Glycan metabolism
+K09680	Cofactor and vitamin biosynthesis
+K09688	ABC-2 type and other transport systems
+K09689	ABC-2 type and other transport systems
+K09690	ABC-2 type and other transport systems
+K09691	ABC-2 type and other transport systems
+K09692	ABC-2 type and other transport systems
+K09693	ABC-2 type and other transport systems
+K09694	ABC-2 type and other transport systems
+K09695	ABC-2 type and other transport systems
+K09696	ABC-2 type and other transport systems
+K09697	ABC-2 type and other transport systems
+K09698	Aminoacyl tRNA
+K09699	Branched-chain amino acid metabolism
+K09709	Carbon fixation
+K09753	Biosynthesis of secondary metabolites
+K09754	Biosynthesis of secondary metabolites
+K09755	Biosynthesis of secondary metabolites
+K09759	Aminoacyl tRNA
+K09789	Cofactor and vitamin biosynthesis
+K09808	ABC-2 type and other transport systems
+K09810	ABC-2 type and other transport systems
+K09811	ABC-2 type and other transport systems
+K09812	ABC-2 type and other transport systems
+K09813	ABC-2 type and other transport systems
+K09814	ABC-2 type and other transport systems
+K09815	Metallic cation, iron-siderophore and vitamin B12 transport system
+K09816	Metallic cation, iron-siderophore and vitamin B12 transport system
+K09817	Metallic cation, iron-siderophore and vitamin B12 transport system
+K09818	Metallic cation, iron-siderophore and vitamin B12 transport system
+K09819	Metallic cation, iron-siderophore and vitamin B12 transport system
+K09820	Metallic cation, iron-siderophore and vitamin B12 transport system
+K09827	Sterol biosynthesis
+K09828	Sterol biosynthesis
+K09829	Sterol biosynthesis
+K09831	Sterol biosynthesis
+K09833	Cofactor and vitamin biosynthesis
+K09834	Cofactor and vitamin biosynthesis
+K09835	Other terpenoid biosynthesis
+K09838	Other terpenoid biosynthesis
+K09840	Other terpenoid biosynthesis
+K09841	Other terpenoid biosynthesis
+K09842	Other terpenoid biosynthesis
+K09880	Cysteine and methionine metabolism
+K09969	Phosphate and amino acid transport system
+K09970	Phosphate and amino acid transport system
+K09971	Phosphate and amino acid transport system
+K09972	Phosphate and amino acid transport system
+K09996	Phosphate and amino acid transport system
+K09997	Phosphate and amino acid transport system
+K09998	Phosphate and amino acid transport system
+K09999	Phosphate and amino acid transport system
+K10000	Phosphate and amino acid transport system
+K10001	Phosphate and amino acid transport system
+K10002	Phosphate and amino acid transport system
+K10003	Phosphate and amino acid transport system
+K10004	Phosphate and amino acid transport system
+K10005	Phosphate and amino acid transport system
+K10006	Phosphate and amino acid transport system
+K10007	Phosphate and amino acid transport system
+K10008	Phosphate and amino acid transport system
+K10009	Phosphate and amino acid transport system
+K10010	Phosphate and amino acid transport system
+K10011	Drug resistance
+K10011	Other carbohydrate metabolism
+K10012	Drug resistance
+K10012	Other carbohydrate metabolism
+K10013	Phosphate and amino acid transport system
+K10014	Phosphate and amino acid transport system
+K10015	Phosphate and amino acid transport system
+K10016	Phosphate and amino acid transport system
+K10017	Phosphate and amino acid transport system
+K10018	Phosphate and amino acid transport system
+K10019	Phosphate and amino acid transport system
+K10020	Phosphate and amino acid transport system
+K10021	Phosphate and amino acid transport system
+K10022	Phosphate and amino acid transport system
+K10023	Phosphate and amino acid transport system
+K10024	Phosphate and amino acid transport system
+K10025	Phosphate and amino acid transport system
+K10036	Phosphate and amino acid transport system
+K10037	Phosphate and amino acid transport system
+K10038	Phosphate and amino acid transport system
+K10039	Phosphate and amino acid transport system
+K10040	Phosphate and amino acid transport system
+K10041	Phosphate and amino acid transport system
+K10046	Cofactor and vitamin biosynthesis
+K10047	Cofactor and vitamin biosynthesis
+K10047	Lipid metabolism
+K10088	Protein processing
+K10094	Metallic cation, iron-siderophore and vitamin B12 transport system
+K10099	Ubiquitin system
+K10100	Ubiquitin system
+K10107	ABC-2 type and other transport systems
+K10108	Saccharide, polyol, and lipid transport system
+K10109	Saccharide, polyol, and lipid transport system
+K10110	Saccharide, polyol, and lipid transport system
+K10111	Saccharide, polyol, and lipid transport system
+K10112	Saccharide, polyol, and lipid transport system
+K10117	Saccharide, polyol, and lipid transport system
+K10118	Saccharide, polyol, and lipid transport system
+K10119	Saccharide, polyol, and lipid transport system
+K10120	Saccharide, polyol, and lipid transport system
+K10121	Saccharide, polyol, and lipid transport system
+K10122	Saccharide, polyol, and lipid transport system
+K10125	Two-component regulatory system
+K10126	Two-component regulatory system
+K10140	Ubiquitin system
+K10150	Cysteine and methionine metabolism
+K10151	Cell signaling
+K10152	Cell signaling
+K10158	Glycosaminoglycan metabolism
+K10159	Cell signaling
+K10160	Cell signaling
+K10188	Saccharide, polyol, and lipid transport system
+K10189	Saccharide, polyol, and lipid transport system
+K10190	Saccharide, polyol, and lipid transport system
+K10191	Saccharide, polyol, and lipid transport system
+K10192	Saccharide, polyol, and lipid transport system
+K10193	Saccharide, polyol, and lipid transport system
+K10194	Saccharide, polyol, and lipid transport system
+K10195	Saccharide, polyol, and lipid transport system
+K10196	Saccharide, polyol, and lipid transport system
+K10197	Saccharide, polyol, and lipid transport system
+K10198	Saccharide, polyol, and lipid transport system
+K10199	Saccharide, polyol, and lipid transport system
+K10200	Saccharide, polyol, and lipid transport system
+K10201	Saccharide, polyol, and lipid transport system
+K10202	Saccharide, polyol, and lipid transport system
+K10203	Fatty acid metabolism
+K10205	Fatty acid metabolism
+K10206	Lysine metabolism
+K10214	Sterol biosynthesis
+K10216	Aromatics degradation
+K10217	Aromatic amino acid metabolism
+K10217	Aromatics degradation
+K10219	Aromatic amino acid metabolism
+K10222	Aromatics degradation
+K10227	Saccharide, polyol, and lipid transport system
+K10228	Saccharide, polyol, and lipid transport system
+K10229	Saccharide, polyol, and lipid transport system
+K10232	Saccharide, polyol, and lipid transport system
+K10233	Saccharide, polyol, and lipid transport system
+K10234	Saccharide, polyol, and lipid transport system
+K10235	Saccharide, polyol, and lipid transport system
+K10236	Saccharide, polyol, and lipid transport system
+K10237	Saccharide, polyol, and lipid transport system
+K10238	Saccharide, polyol, and lipid transport system
+K10240	Saccharide, polyol, and lipid transport system
+K10241	Saccharide, polyol, and lipid transport system
+K10242	Saccharide, polyol, and lipid transport system
+K10244	Fatty acid metabolism
+K10245	Fatty acid metabolism
+K10246	Fatty acid metabolism
+K10247	Fatty acid metabolism
+K10248	Fatty acid metabolism
+K10249	Fatty acid metabolism
+K10250	Fatty acid metabolism
+K10251	Fatty acid metabolism
+K10258	Fatty acid metabolism
+K10259	Ubiquitin system
+K10260	Ubiquitin system
+K10439	Saccharide, polyol, and lipid transport system
+K10440	Saccharide, polyol, and lipid transport system
+K10441	Saccharide, polyol, and lipid transport system
+K10523	Ubiquitin system
+K10525	Fatty acid metabolism
+K10526	Fatty acid metabolism
+K10527	Fatty acid metabolism
+K10532	Glycosaminoglycan metabolism
+K10534	Nitrogen metabolism
+K10535	Nitrogen metabolism
+K10537	Saccharide, polyol, and lipid transport system
+K10538	Saccharide, polyol, and lipid transport system
+K10539	Saccharide, polyol, and lipid transport system
+K10540	Saccharide, polyol, and lipid transport system
+K10541	Saccharide, polyol, and lipid transport system
+K10542	Saccharide, polyol, and lipid transport system
+K10543	Saccharide, polyol, and lipid transport system
+K10544	Saccharide, polyol, and lipid transport system
+K10545	Saccharide, polyol, and lipid transport system
+K10546	Saccharide, polyol, and lipid transport system
+K10547	Saccharide, polyol, and lipid transport system
+K10548	Saccharide, polyol, and lipid transport system
+K10549	Saccharide, polyol, and lipid transport system
+K10550	Saccharide, polyol, and lipid transport system
+K10551	Saccharide, polyol, and lipid transport system
+K10552	Saccharide, polyol, and lipid transport system
+K10553	Saccharide, polyol, and lipid transport system
+K10554	Saccharide, polyol, and lipid transport system
+K10555	Saccharide, polyol, and lipid transport system
+K10556	Saccharide, polyol, and lipid transport system
+K10557	Saccharide, polyol, and lipid transport system
+K10558	Saccharide, polyol, and lipid transport system
+K10559	Saccharide, polyol, and lipid transport system
+K10560	Saccharide, polyol, and lipid transport system
+K10561	Saccharide, polyol, and lipid transport system
+K10562	Saccharide, polyol, and lipid transport system
+K10570	Ubiquitin system
+K10572	Lipid metabolism
+K10577	RNA processing
+K10599	Spliceosome
+K10601	Protein processing
+K10605	Repair system
+K10606	Repair system
+K10609	Ubiquitin system
+K10610	Ubiquitin system
+K10611	Ubiquitin system
+K10612	Ubiquitin system
+K10616	Aromatics degradation
+K10617	Aromatics degradation
+K10618	Aromatics degradation
+K10619	Aromatics degradation
+K10620	Aromatics degradation
+K10621	Aromatics degradation
+K10622	Aromatics degradation
+K10623	Aromatics degradation
+K10673	Drug resistance
+K10681	Two-component regulatory system
+K10682	Two-component regulatory system
+K10697	Two-component regulatory system
+K10703	Fatty acid metabolism
+K10715	Two-component regulatory system
+K10732	Replication system
+K10733	Replication system
+K10734	Replication system
+K10735	Replication system
+K10739	Replication system
+K10740	Replication system
+K10741	Replication system
+K10754	Repair system
+K10754	Replication system
+K10755	Repair system
+K10755	Replication system
+K10756	Repair system
+K10756	Replication system
+K10771	Repair system
+K10772	Repair system
+K10775	Aromatic amino acid metabolism
+K10775	Biosynthesis of secondary metabolites
+K10776	Repair system
+K10780	Fatty acid metabolism
+K10798	Repair system
+K10803	Repair system
+K10807	Pyrimidine metabolism
+K10808	Pyrimidine metabolism
+K10817	Biosynthesis of secondary metabolites
+K10823	Peptide and nickel transport system
+K10824	Peptide and nickel transport system
+K10830	Metallic cation, iron-siderophore and vitamin B12 transport system
+K10831	Mineral and organic ion transport system
+K10842	Repair system
+K10843	Repair system
+K10844	Repair system
+K10845	Repair system
+K10852	Biosynthesis of secondary metabolites
+K10858	Repair system
+K10865	Repair system
+K10866	Repair system
+K10867	Repair system
+K10868	Repair system
+K10881	Proteasome
+K10884	Repair system
+K10885	Repair system
+K10888	Repair system
+K10889	Repair system
+K10890	Repair system
+K10892	Repair system
+K10893	Repair system
+K10894	Repair system
+K10896	Repair system
+K10898	Repair system
+K10901	Repair system
+K10909	Two-component regulatory system
+K10911	Two-component regulatory system
+K10912	Two-component regulatory system
+K10916	Two-component regulatory system
+K10942	Two-component regulatory system
+K10943	Two-component regulatory system
+K10944	Methane metabolism
+K10944	Nitrogen metabolism
+K10945	Methane metabolism
+K10945	Nitrogen metabolism
+K10946	Methane metabolism
+K10946	Nitrogen metabolism
+K10956	Protein processing
+K10977	Methane metabolism
+K10978	Methane metabolism
+K10981	Repair system
+K10984	Phosphotransferase system (PTS)
+K10985	Phosphotransferase system (PTS)
+K10986	Phosphotransferase system (PTS)
+K10990	Repair system
+K10993	Repair system
+K11003	Bacterial secretion system
+K11003	Pathogenicity
+K11004	Bacterial secretion system
+K11004	Pathogenicity
+K11006	Pathogenicity
+K11007	Pathogenicity
+K11023	Pathogenicity
+K11024	Pathogenicity
+K11025	Pathogenicity
+K11026	Pathogenicity
+K11027	Pathogenicity
+K11029	Pathogenicity
+K11050	ABC-2 type and other transport systems
+K11051	ABC-2 type and other transport systems
+K11067	Arginine and proline metabolism
+K11069	Mineral and organic ion transport system
+K11070	Mineral and organic ion transport system
+K11071	Mineral and organic ion transport system
+K11072	Mineral and organic ion transport system
+K11073	Mineral and organic ion transport system
+K11074	Mineral and organic ion transport system
+K11075	Mineral and organic ion transport system
+K11076	Mineral and organic ion transport system
+K11077	Mineral and organic ion transport system
+K11078	Mineral and organic ion transport system
+K11079	Mineral and organic ion transport system
+K11080	Mineral and organic ion transport system
+K11081	Mineral and organic ion transport system
+K11082	Mineral and organic ion transport system
+K11083	Mineral and organic ion transport system
+K11084	Mineral and organic ion transport system
+K11086	Spliceosome
+K11087	Spliceosome
+K11088	Spliceosome
+K11091	Spliceosome
+K11092	Spliceosome
+K11093	Spliceosome
+K11094	Spliceosome
+K11095	Spliceosome
+K11096	Spliceosome
+K11097	Spliceosome
+K11098	Spliceosome
+K11099	Spliceosome
+K11109	Replication system
+K11110	Replication system
+K11111	Replication system
+K11112	Replication system
+K11113	Replication system
+K11114	Replication system
+K11128	RNA processing
+K11129	RNA processing
+K11130	RNA processing
+K11131	RNA processing
+K11155	Lipid metabolism
+K11160	Lipid metabolism
+K11175	Purine metabolism
+K11176	Purine metabolism
+K11177	Purine metabolism
+K11178	Purine metabolism
+K11180	Sulfur metabolism
+K11181	Sulfur metabolism
+K11191	Phosphotransferase system (PTS)
+K11192	Phosphotransferase system (PTS)
+K11194	Phosphotransferase system (PTS)
+K11195	Phosphotransferase system (PTS)
+K11196	Phosphotransferase system (PTS)
+K11198	Phosphotransferase system (PTS)
+K11199	Phosphotransferase system (PTS)
+K11200	Phosphotransferase system (PTS)
+K11201	Phosphotransferase system (PTS)
+K11202	Phosphotransferase system (PTS)
+K11203	Phosphotransferase system (PTS)
+K11204	Cofactor and vitamin biosynthesis
+K11205	Cofactor and vitamin biosynthesis
+K11212	Methane metabolism
+K11217	Cell signaling
+K11218	Cell signaling
+K11219	Cell signaling
+K11220	Cell signaling
+K11221	Cell signaling
+K11222	Cell signaling
+K11223	Cell signaling
+K11224	Cell signaling
+K11225	Cell signaling
+K11231	Two-component regulatory system
+K11232	Two-component regulatory system
+K11233	Two-component regulatory system
+K11258	Branched-chain amino acid metabolism
+K11260	Methane metabolism
+K11261	Methane metabolism
+K11262	Fatty acid metabolism
+K11263	Fatty acid metabolism
+K11263	Other carbohydrate metabolism
+K11311	Aromatics degradation
+K11328	Two-component regulatory system
+K11329	Two-component regulatory system
+K11330	Two-component regulatory system
+K11332	Two-component regulatory system
+K11351	ATP synthesis
+K11352	ATP synthesis
+K11353	ATP synthesis
+K11354	Two-component regulatory system
+K11355	Two-component regulatory system
+K11357	Two-component regulatory system
+K11381	Branched-chain amino acid metabolism
+K11383	Two-component regulatory system
+K11384	Two-component regulatory system
+K11389	Central carbohydrate metabolism
+K11395	Central carbohydrate metabolism
+K11440	Serine and threonine metabolism
+K11443	Two-component regulatory system
+K11444	Two-component regulatory system
+K11517	Other carbohydrate metabolism
+K11519	Protein processing
+K11520	Two-component regulatory system
+K11521	Two-component regulatory system
+K11522	Two-component regulatory system
+K11523	Two-component regulatory system
+K11526	Two-component regulatory system
+K11528	Nucleotide sugar
+K11529	Methane metabolism
+K11532	Carbon fixation
+K11532	Central carbohydrate metabolism
+K11533	Fatty acid metabolism
+K11540	Pyrimidine metabolism
+K11541	Pyrimidine metabolism
+K11600	RNA processing
+K11601	Metallic cation, iron-siderophore and vitamin B12 transport system
+K11602	Metallic cation, iron-siderophore and vitamin B12 transport system
+K11603	Metallic cation, iron-siderophore and vitamin B12 transport system
+K11604	Metallic cation, iron-siderophore and vitamin B12 transport system
+K11605	Metallic cation, iron-siderophore and vitamin B12 transport system
+K11606	Metallic cation, iron-siderophore and vitamin B12 transport system
+K11607	Metallic cation, iron-siderophore and vitamin B12 transport system
+K11614	Two-component regulatory system
+K11615	Two-component regulatory system
+K11617	Drug resistance
+K11617	Two-component regulatory system
+K11618	Drug resistance
+K11618	Two-component regulatory system
+K11619	Drug resistance
+K11620	Drug resistance
+K11623	Two-component regulatory system
+K11624	Two-component regulatory system
+K11627	Aminoacyl tRNA
+K11629	Drug efflux transporter/pump
+K11629	Two-component regulatory system
+K11630	Drug efflux transporter/pump
+K11630	Two-component regulatory system
+K11631	ABC-2 type and other transport systems
+K11631	Drug efflux transporter/pump
+K11632	ABC-2 type and other transport systems
+K11632	Drug efflux transporter/pump
+K11633	Two-component regulatory system
+K11634	Two-component regulatory system
+K11635	ABC-2 type and other transport systems
+K11636	ABC-2 type and other transport systems
+K11637	Two-component regulatory system
+K11638	Two-component regulatory system
+K11640	Two-component regulatory system
+K11641	Two-component regulatory system
+K11645	Central carbohydrate metabolism
+K11691	Two-component regulatory system
+K11692	Two-component regulatory system
+K11704	Metallic cation, iron-siderophore and vitamin B12 transport system
+K11705	Metallic cation, iron-siderophore and vitamin B12 transport system
+K11706	Metallic cation, iron-siderophore and vitamin B12 transport system
+K11707	Metallic cation, iron-siderophore and vitamin B12 transport system
+K11708	Metallic cation, iron-siderophore and vitamin B12 transport system
+K11709	Metallic cation, iron-siderophore and vitamin B12 transport system
+K11710	Metallic cation, iron-siderophore and vitamin B12 transport system
+K11720	ABC-2 type and other transport systems
+K11742	Drug efflux transporter/pump
+K11743	Drug efflux transporter/pump
+K11752	Cofactor and vitamin biosynthesis
+K11753	Cofactor and vitamin biosynthesis
+K11754	Cofactor and vitamin biosynthesis
+K11755	Histidine metabolism
+K11779	Methane metabolism
+K11780	Methane metabolism
+K11781	Methane metabolism
+K11787	Purine metabolism
+K11788	Purine metabolism
+K11808	Purine metabolism
+K11812	Biosynthesis of secondary metabolites
+K11813	Biosynthesis of secondary metabolites
+K11814	Drug efflux transporter/pump
+K11815	Drug efflux transporter/pump
+K11818	Biosynthesis of secondary metabolites
+K11819	Biosynthesis of secondary metabolites
+K11820	Biosynthesis of secondary metabolites
+K11821	Biosynthesis of secondary metabolites
+K11891	Bacterial secretion system
+K11892	Bacterial secretion system
+K11893	Bacterial secretion system
+K11895	Bacterial secretion system
+K11896	Bacterial secretion system
+K11897	Bacterial secretion system
+K11900	Bacterial secretion system
+K11901	Bacterial secretion system
+K11902	Bacterial secretion system
+K11903	Bacterial secretion system
+K11904	Bacterial secretion system
+K11905	Bacterial secretion system
+K11906	Bacterial secretion system
+K11907	Bacterial secretion system
+K11910	Bacterial secretion system
+K11911	Bacterial secretion system
+K11919	Bacterial secretion system
+K11942	Other carbohydrate metabolism
+K11950	Mineral and organic ion transport system
+K11951	Mineral and organic ion transport system
+K11952	Mineral and organic ion transport system
+K11953	Mineral and organic ion transport system
+K11954	Phosphate and amino acid transport system
+K11955	Phosphate and amino acid transport system
+K11956	Phosphate and amino acid transport system
+K11957	Phosphate and amino acid transport system
+K11958	Phosphate and amino acid transport system
+K11959	Phosphate and amino acid transport system
+K11960	Phosphate and amino acid transport system
+K11961	Phosphate and amino acid transport system
+K11962	Phosphate and amino acid transport system
+K11963	Phosphate and amino acid transport system
+K11984	Spliceosome
+K11988	Cell signaling
+K11989	Cell signaling
+K11990	Cell signaling
+K11992	Sterol biosynthesis
+K12073	Cofactor and vitamin biosynthesis
+K12086	Pathogenicity
+K12087	Pathogenicity
+K12088	Pathogenicity
+K12089	Pathogenicity
+K12090	Pathogenicity
+K12091	Pathogenicity
+K12092	Pathogenicity
+K12093	Pathogenicity
+K12094	Pathogenicity
+K12095	Pathogenicity
+K12096	Pathogenicity
+K12097	Pathogenicity
+K12098	Pathogenicity
+K12099	Pathogenicity
+K12100	Pathogenicity
+K12101	Pathogenicity
+K12102	Pathogenicity
+K12103	Pathogenicity
+K12104	Pathogenicity
+K12105	Pathogenicity
+K12106	Pathogenicity
+K12107	Pathogenicity
+K12108	Pathogenicity
+K12109	Pathogenicity
+K12110	Pathogenicity
+K12160	RNA processing
+K12172	RNA processing
+K12182	Protein processing
+K12183	Protein processing
+K12184	Protein processing
+K12185	Protein processing
+K12186	Protein processing
+K12188	Protein processing
+K12189	Protein processing
+K12190	Protein processing
+K12191	Protein processing
+K12192	Protein processing
+K12193	Protein processing
+K12194	Protein processing
+K12195	Protein processing
+K12196	Protein processing
+K12197	Protein processing
+K12198	Protein processing
+K12234	Methane metabolism
+K12250	Biosynthesis of secondary metabolites
+K12257	Bacterial secretion system
+K12294	Two-component regulatory system
+K12295	Two-component regulatory system
+K12298	Lipid metabolism
+K12309	Glycosaminoglycan metabolism
+K12318	Cell signaling
+K12319	Cell signaling
+K12323	Cell signaling
+K12324	Cell signaling
+K12339	Cysteine and methionine metabolism
+K12340	Bacterial secretion system
+K12340	Drug efflux transporter/pump
+K12340	Drug resistance
+K12340	Pathogenicity
+K12348	Lipid metabolism
+K12349	Lipid metabolism
+K12368	Peptide and nickel transport system
+K12369	Peptide and nickel transport system
+K12370	Peptide and nickel transport system
+K12371	Peptide and nickel transport system
+K12372	Peptide and nickel transport system
+K12373	Glycosaminoglycan metabolism
+K12405	Sterol biosynthesis
+K12406	Central carbohydrate metabolism
+K12406	Purine metabolism
+K12407	Central carbohydrate metabolism
+K12407	Other carbohydrate metabolism
+K12408	Sterol biosynthesis
+K12413	Cell signaling
+K12420	Biosynthesis of secondary metabolites
+K12447	Other carbohydrate metabolism
+K12456	Ubiquitin system
+K12502	Cofactor and vitamin biosynthesis
+K12506	Terpenoid backbone biosynthesis
+K12524	Cysteine and methionine metabolism
+K12524	Lysine metabolism
+K12524	Serine and threonine metabolism
+K12525	Cysteine and methionine metabolism
+K12525	Lysine metabolism
+K12525	Serine and threonine metabolism
+K12526	Cysteine and methionine metabolism
+K12526	Lysine metabolism
+K12526	Serine and threonine metabolism
+K12530	Bacterial secretion system
+K12531	Bacterial secretion system
+K12532	Bacterial secretion system
+K12533	Bacterial secretion system
+K12534	Bacterial secretion system
+K12535	Bacterial secretion system
+K12536	Bacterial secretion system
+K12537	Bacterial secretion system
+K12538	Bacterial secretion system
+K12539	Bacterial secretion system
+K12540	Bacterial secretion system
+K12541	Bacterial secretion system
+K12542	Bacterial secretion system
+K12543	Bacterial secretion system
+K12585	RNA processing
+K12586	RNA processing
+K12587	RNA processing
+K12589	RNA processing
+K12590	RNA processing
+K12596	RNA processing
+K12597	RNA processing
+K12598	RNA processing
+K12599	RNA processing
+K12600	RNA processing
+K12601	RNA processing
+K12602	RNA processing
+K12610	RNA processing
+K12611	RNA processing
+K12612	RNA processing
+K12613	RNA processing
+K12614	RNA processing
+K12615	RNA processing
+K12617	RNA processing
+K12620	Spliceosome
+K12621	Spliceosome
+K12622	Spliceosome
+K12623	Spliceosome
+K12624	Spliceosome
+K12625	Spliceosome
+K12626	Spliceosome
+K12627	Spliceosome
+K12637	Other terpenoid biosynthesis
+K12638	Other terpenoid biosynthesis
+K12639	Other terpenoid biosynthesis
+K12640	Other terpenoid biosynthesis
+K12657	Arginine and proline metabolism
+K12659	Arginine and proline metabolism
+K12662	Spliceosome
+K12666	Glycan metabolism
+K12667	Glycan metabolism
+K12668	Glycan metabolism
+K12669	Glycan metabolism
+K12670	Glycan metabolism
+K12673	Biosynthesis of secondary metabolites
+K12674	Biosynthesis of secondary metabolites
+K12675	Biosynthesis of secondary metabolites
+K12676	Biosynthesis of secondary metabolites
+K12691	Glycan metabolism
+K12710	Other carbohydrate metabolism
+K12733	Spliceosome
+K12743	Biosynthesis of secondary metabolites
+K12744	Biosynthesis of secondary metabolites
+K12745	Biosynthesis of secondary metabolites
+K12760	Cell signaling
+K12784	Pathogenicity
+K12785	Pathogenicity
+K12786	Pathogenicity
+K12787	Pathogenicity
+K12788	Pathogenicity
+K12812	RNA processing
+K12816	Spliceosome
+K12825	Spliceosome
+K12826	Spliceosome
+K12827	Spliceosome
+K12828	Spliceosome
+K12829	Spliceosome
+K12830	Spliceosome
+K12831	Spliceosome
+K12832	Spliceosome
+K12833	Spliceosome
+K12834	Spliceosome
+K12835	Spliceosome
+K12843	Spliceosome
+K12844	Spliceosome
+K12845	Spliceosome
+K12846	Spliceosome
+K12847	Spliceosome
+K12852	Spliceosome
+K12853	Spliceosome
+K12854	Spliceosome
+K12855	Spliceosome
+K12856	Spliceosome
+K12857	Spliceosome
+K12858	Spliceosome
+K12859	Spliceosome
+K12860	Spliceosome
+K12861	Spliceosome
+K12862	Spliceosome
+K12863	Spliceosome
+K12864	Spliceosome
+K12865	Spliceosome
+K12866	Spliceosome
+K12867	Spliceosome
+K12868	Spliceosome
+K12869	Spliceosome
+K12870	Spliceosome
+K12871	Spliceosome
+K12872	Spliceosome
+K12873	Spliceosome
+K12874	Spliceosome
+K12875	RNA processing
+K12876	RNA processing
+K12877	RNA processing
+K12878	RNA processing
+K12879	RNA processing
+K12880	RNA processing
+K12881	RNA processing
+K12882	Spliceosome
+K12883	Spliceosome
+K12962	Drug resistance
+K12963	Drug resistance
+K12973	Drug resistance
+K12975	Drug resistance
+K13014	Drug resistance
+K13014	Other carbohydrate metabolism
+K13025	RNA processing
+K13027	Biosynthesis of secondary metabolites
+K13029	Biosynthesis of secondary metabolites
+K13030	Biosynthesis of secondary metabolites
+K13034	Cysteine and methionine metabolism
+K13037	Biosynthesis of secondary metabolites
+K13038	Cofactor and vitamin biosynthesis
+K13039	Methane metabolism
+K13040	Two-component regulatory system
+K13041	Two-component regulatory system
+K13063	Biosynthesis of secondary metabolites
+K13064	Aromatic amino acid metabolism
+K13064	Biosynthesis of secondary metabolites
+K13065	Biosynthesis of secondary metabolites
+K13066	Biosynthesis of secondary metabolites
+K13082	Biosynthesis of secondary metabolites
+K13099	Spliceosome
+K13114	RNA processing
+K13117	Spliceosome
+K13123	Spliceosome
+K13129	RNA processing
+K13130	RNA processing
+K13131	RNA processing
+K13132	RNA processing
+K13133	RNA processing
+K13134	RNA processing
+K13135	RNA processing
+K13136	RNA processing
+K13137	RNA processing
+K13171	RNA processing
+K13174	RNA processing
+K13175	RNA processing
+K13176	RNA processing
+K13247	Other carbohydrate metabolism
+K13249	Protein processing
+K13250	Protein processing
+K13251	Protein processing
+K13273	Terpenoid backbone biosynthesis
+K13301	Bacterial secretion system
+K13307	Other carbohydrate metabolism
+K13308	Other carbohydrate metabolism
+K13309	Other carbohydrate metabolism
+K13310	Other carbohydrate metabolism
+K13311	Other carbohydrate metabolism
+K13312	Other carbohydrate metabolism
+K13313	Other carbohydrate metabolism
+K13315	Other carbohydrate metabolism
+K13316	Other carbohydrate metabolism
+K13317	Other carbohydrate metabolism
+K13318	Other carbohydrate metabolism
+K13319	Other carbohydrate metabolism
+K13320	Biosynthesis of secondary metabolites
+K13322	Other carbohydrate metabolism
+K13326	Other carbohydrate metabolism
+K13327	Other carbohydrate metabolism
+K13328	Other carbohydrate metabolism
+K13329	Other carbohydrate metabolism
+K13330	Other carbohydrate metabolism
+K13332	Other carbohydrate metabolism
+K13373	Sterol biosynthesis
+K13375	Cell signaling
+K13376	Cell signaling
+K13377	Cell signaling
+K13378	ATP synthesis
+K13380	ATP synthesis
+K13402	Cofactor and vitamin biosynthesis
+K13403	Cofactor and vitamin biosynthesis
+K13408	Bacterial secretion system
+K13409	Bacterial secretion system
+K13421	Pyrimidine metabolism
+K13479	Purine metabolism
+K13480	Purine metabolism
+K13481	Purine metabolism
+K13482	Purine metabolism
+K13483	Purine metabolism
+K13484	Purine metabolism
+K13485	Purine metabolism
+K13490	Two-component regulatory system
+K13491	Two-component regulatory system
+K13497	Aromatic amino acid metabolism
+K13498	Aromatic amino acid metabolism
+K13499	Glycosaminoglycan metabolism
+K13501	Aromatic amino acid metabolism
+K13503	Aromatic amino acid metabolism
+K13506	Lipid metabolism
+K13507	Lipid metabolism
+K13508	Lipid metabolism
+K13509	Lipid metabolism
+K13513	Lipid metabolism
+K13517	Lipid metabolism
+K13519	Lipid metabolism
+K13523	Lipid metabolism
+K13524	Other amino acid metabolism
+K13525	Protein processing
+K13527	Proteasome
+K13532	Two-component regulatory system
+K13533	Two-component regulatory system
+K13534	Lipid metabolism
+K13542	Cofactor and vitamin biosynthesis
+K13543	Cofactor and vitamin biosynthesis
+K13567	Cell signaling
+K13571	Proteasome
+K13578	Cell signaling
+K13584	Two-component regulatory system
+K13587	Two-component regulatory system
+K13589	Two-component regulatory system
+K13591	Two-component regulatory system
+K13596	Cell signaling
+K13597	Cell signaling
+K13598	Two-component regulatory system
+K13599	Two-component regulatory system
+K13631	Drug efflux transporter/pump
+K13632	Drug efflux transporter/pump
+K13632	Drug resistance
+K13644	Lipid metabolism
+K13711	Lipid metabolism
+K13712	Lipid metabolism
+K13713	Purine metabolism
+K13728	DNA polymerase
+K13748	Glycan metabolism
+K13766	Branched-chain amino acid metabolism
+K13767	Fatty acid metabolism
+K13787	Terpenoid backbone biosynthesis
+K13788	Carbon fixation
+K13788	Methane metabolism
+K13789	Terpenoid backbone biosynthesis
+K13797	RNA polymerase
+K13798	RNA polymerase
+K13799	Cofactor and vitamin biosynthesis
+K13799	Pyrimidine metabolism
+K13800	Pyrimidine metabolism
+K13809	Pyrimidine metabolism
+K13810	Central carbohydrate metabolism
+K13810	Cofactor and vitamin biosynthesis
+K13811	Sulfur metabolism
+K13812	Central carbohydrate metabolism
+K13812	Methane metabolism
+K13815	Two-component regulatory system
+K13829	Aromatic amino acid metabolism
+K13830	Aromatic amino acid metabolism
+K13831	Central carbohydrate metabolism
+K13831	Methane metabolism
+K13832	Aromatic amino acid metabolism
+K13853	Aromatic amino acid metabolism
+K13888	Drug efflux transporter/pump
+K13889	Peptide and nickel transport system
+K13890	Peptide and nickel transport system
+K13891	Peptide and nickel transport system
+K13892	Peptide and nickel transport system
+K13893	Peptide and nickel transport system
+K13894	Peptide and nickel transport system
+K13895	Peptide and nickel transport system
+K13896	Peptide and nickel transport system
+K13924	Two-component regulatory system
+K13937	Central carbohydrate metabolism
+K13938	Cofactor and vitamin biosynthesis
+K13939	Cofactor and vitamin biosynthesis
+K13940	Cofactor and vitamin biosynthesis
+K13941	Cofactor and vitamin biosynthesis
+K13942	Methane metabolism
+K13989	Protein processing
+K13995	Cofactor and vitamin biosynthesis
+K13998	Cofactor and vitamin biosynthesis
+K13998	Pyrimidine metabolism
+K14004	Protein processing
+K14004	RNA processing
+K14005	Protein processing
+K14006	Protein processing
+K14007	Protein processing
+K14008	Protein processing
+K14015	Protein processing
+K14016	Protein processing
+K14025	Protein processing
+K14026	Protein processing
+K14027	Protein processing
+K14028	Methane metabolism
+K14029	Methane metabolism
+K14066	Terpenoid backbone biosynthesis
+K14067	Methane metabolism
+K14073	Lipid metabolism
+K14074	Lipid metabolism
+K14075	Lipid metabolism
+K14076	Lipid metabolism
+K14080	Methane metabolism
+K14081	Methane metabolism
+K14082	Methane metabolism
+K14083	Methane metabolism
+K14084	Methane metabolism
+K14085	Lysine metabolism
+K14085	Polyamine biosynthesis
+K14132	Biosynthesis of secondary metabolites
+K14134	Biosynthesis of secondary metabolites
+K14138	Carbon fixation
+K14152	Histidine metabolism
+K14153	Cofactor and vitamin biosynthesis
+K14154	Cofactor and vitamin biosynthesis
+K14156	Lipid metabolism
+K14157	Lysine metabolism
+K14159	DNA polymerase
+K14163	Aminoacyl tRNA
+K14163	Cofactor and vitamin biosynthesis
+K14164	Aminoacyl tRNA
+K14170	Aromatic amino acid metabolism
+K14187	Aromatic amino acid metabolism
+K14188	Drug resistance
+K14190	Cofactor and vitamin biosynthesis
+K14205	Drug resistance
+K14249	Biosynthesis of secondary metabolites
+K14250	Biosynthesis of secondary metabolites
+K14251	Biosynthesis of secondary metabolites
+K14252	Biosynthesis of secondary metabolites
+K14253	Biosynthesis of secondary metabolites
+K14254	Biosynthesis of secondary metabolites
+K14255	Biosynthesis of secondary metabolites
+K14256	Biosynthesis of secondary metabolites
+K14257	Biosynthesis of secondary metabolites
+K14263	Aromatic amino acid metabolism
+K14266	Biosynthesis of secondary metabolites
+K14267	Lysine metabolism
+K14272	Carbon fixation
+K14272	Other carbohydrate metabolism
+K14285	RNA processing
+K14295	RNA processing
+K14296	RNA processing
+K14297	RNA processing
+K14298	RNA processing
+K14299	RNA processing
+K14300	RNA processing
+K14301	RNA processing
+K14302	RNA processing
+K14303	RNA processing
+K14304	RNA processing
+K14305	RNA processing
+K14306	RNA processing
+K14307	RNA processing
+K14308	RNA processing
+K14309	RNA processing
+K14310	RNA processing
+K14311	RNA processing
+K14312	RNA processing
+K14313	RNA processing
+K14314	RNA processing
+K14315	RNA processing
+K14316	RNA processing
+K14317	RNA processing
+K14318	RNA processing
+K14319	RNA processing
+K14320	RNA processing
+K14321	RNA processing
+K14323	RNA processing
+K14324	RNA processing
+K14325	RNA processing
+K14326	RNA processing
+K14327	RNA processing
+K14328	RNA processing
+K14366	Biosynthesis of secondary metabolites
+K14367	Biosynthesis of secondary metabolites
+K14368	Biosynthesis of secondary metabolites
+K14369	Biosynthesis of secondary metabolites
+K14370	Biosynthesis of secondary metabolites
+K14371	Biosynthesis of secondary metabolites
+K14372	Biosynthesis of secondary metabolites
+K14373	Biosynthesis of secondary metabolites
+K14374	Biosynthesis of secondary metabolites
+K14375	Biosynthesis of secondary metabolites
+K14446	Other carbohydrate metabolism
+K14447	Other carbohydrate metabolism
+K14448	Other carbohydrate metabolism
+K14449	Carbon fixation
+K14449	Other carbohydrate metabolism
+K14451	Other carbohydrate metabolism
+K14452	Lipid metabolism
+K14454	Carbon fixation
+K14455	Carbon fixation
+K14456	Lipid metabolism
+K14465	Carbon fixation
+K14466	Carbon fixation
+K14467	Carbon fixation
+K14468	Carbon fixation
+K14469	Carbon fixation
+K14470	Carbon fixation
+K14471	Carbon fixation
+K14472	Carbon fixation
+K14505	Cell signaling
+K14534	Carbon fixation
+K14578	Aromatics degradation
+K14579	Aromatics degradation
+K14580	Aromatics degradation
+K14581	Aromatics degradation
+K14582	Aromatics degradation
+K14583	Aromatics degradation
+K14584	Aromatics degradation
+K14585	Aromatics degradation
+K14594	Other terpenoid biosynthesis
+K14626	Biosynthesis of secondary metabolites
+K14627	Biosynthesis of secondary metabolites
+K14628	Biosynthesis of secondary metabolites
+K14629	Biosynthesis of secondary metabolites
+K14630	Biosynthesis of secondary metabolites
+K14631	Biosynthesis of secondary metabolites
+K14632	Biosynthesis of secondary metabolites
+K14652	Cofactor and vitamin biosynthesis
+K14657	Symbiosis
+K14658	Symbiosis
+K14659	Symbiosis
+K14666	Symbiosis
+K14674	Lipid metabolism
+K14675	Lipid metabolism
+K14677	Arginine and proline metabolism
+K14681	Arginine and proline metabolism
+K14682	Arginine and proline metabolism
+K14721	RNA polymerase
+K14727	Aromatics degradation
+K14756	Cofactor and vitamin biosynthesis
+K14756	Other carbohydrate metabolism
+K14941	Methane metabolism
+K14974	Cofactor and vitamin biosynthesis
+K14978	Two-component regulatory system
+K14979	Two-component regulatory system
+K14980	Two-component regulatory system
+K14981	Two-component regulatory system
+K14982	Two-component regulatory system
+K14983	Two-component regulatory system
+K14986	Two-component regulatory system
+K14987	Two-component regulatory system
+K14988	Two-component regulatory system
+K14989	Two-component regulatory system
+K15011	Two-component regulatory system
+K15012	Two-component regulatory system
+K15013	Fatty acid metabolism
+K15016	Carbon fixation
+K15017	Carbon fixation
+K15018	Carbon fixation
+K15019	Carbon fixation
+K15020	Carbon fixation
+K15022	Carbon fixation
+K15023	Carbon fixation
+K15024	Carbon fixation
+K15036	Carbon fixation
+K15036	Other carbohydrate metabolism
+K15037	Carbon fixation
+K15037	Other carbohydrate metabolism
+K15038	Carbon fixation
+K15039	Carbon fixation
+K15052	Carbon fixation
+K15053	Protein processing
+K15226	Aromatic amino acid metabolism
+K15227	Aromatic amino acid metabolism
+K15230	Carbon fixation
+K15231	Carbon fixation
+K15232	Carbon fixation
+K15233	Carbon fixation
+K15234	Carbon fixation
+K15314	Biosynthesis of secondary metabolites
+K15320	Biosynthesis of secondary metabolites
+K15357	Cofactor and vitamin biosynthesis
+K15359	Aromatics degradation
+K15365	Repair system
+K15397	Fatty acid metabolism
+K15408	ATP synthesis
+K15422	Lipid metabolism
+K15495	Mineral and organic ion transport system
+K15496	Mineral and organic ion transport system
+K15497	Mineral and organic ion transport system
+K15551	Mineral and organic ion transport system
+K15552	Mineral and organic ion transport system
+K15553	Mineral and organic ion transport system
+K15554	Mineral and organic ion transport system
+K15555	Mineral and organic ion transport system
+K15556	Mineral and organic ion transport system
+K15557	Mineral and organic ion transport system
+K15558	Mineral and organic ion transport system
+K15576	Mineral and organic ion transport system
+K15577	Mineral and organic ion transport system
+K15578	Mineral and organic ion transport system
+K15579	Mineral and organic ion transport system
+K15580	Peptide and nickel transport system
+K15581	Peptide and nickel transport system
+K15582	Peptide and nickel transport system
+K15583	Peptide and nickel transport system
+K15584	Peptide and nickel transport system
+K15585	Peptide and nickel transport system
+K15586	Peptide and nickel transport system
+K15587	Peptide and nickel transport system
+K15598	Mineral and organic ion transport system
+K15599	Mineral and organic ion transport system
+K15600	Mineral and organic ion transport system
+K15633	Central carbohydrate metabolism
+K15634	Central carbohydrate metabolism
+K15635	Central carbohydrate metabolism
+K15680	Sterol biosynthesis
+K15739	Drug resistance
+K15744	Other terpenoid biosynthesis
+K15746	Other terpenoid biosynthesis
+K15747	Other terpenoid biosynthesis
+K15750	Aromatics degradation
+K15751	Aromatics degradation
+K15752	Aromatics degradation
+K15753	Aromatics degradation
+K15754	Aromatics degradation
+K15755	Aromatics degradation
+K15756	Aromatics degradation
+K15757	Aromatics degradation
+K15758	Aromatics degradation
+K15759	Lipid metabolism
+K15760	Aromatics degradation
+K15761	Aromatics degradation
+K15762	Aromatics degradation
+K15763	Aromatics degradation
+K15764	Aromatics degradation
+K15765	Aromatics degradation
+K15770	Saccharide, polyol, and lipid transport system
+K15771	Saccharide, polyol, and lipid transport system
+K15772	Saccharide, polyol, and lipid transport system
+K15778	Cofactor and vitamin biosynthesis
+K15842	Pathogenicity
+K15849	Aromatic amino acid metabolism
+K15859	Two-component regulatory system
+K15862	ATP synthesis
+K15863	ATP synthesis
+K15864	Nitrogen metabolism
+K15876	Nitrogen metabolism
+K15877	Nitrogen metabolism
+K15884	Biosynthesis of secondary metabolites
+K15885	Biosynthesis of secondary metabolites
+K15886	Biosynthesis of secondary metabolites
+K15893	Other carbohydrate metabolism
+K15907	Biosynthesis of secondary metabolites
+K15916	Central carbohydrate metabolism
+K15916	Cofactor and vitamin biosynthesis
+K15918	Other carbohydrate metabolism
+K15919	Other carbohydrate metabolism
+K15941	Biosynthesis of secondary metabolites
+K15942	Biosynthesis of secondary metabolites
+K15943	Biosynthesis of secondary metabolites
+K15944	Biosynthesis of secondary metabolites
+K15959	Biosynthesis of secondary metabolites
+K15960	Biosynthesis of secondary metabolites
+K15961	Biosynthesis of secondary metabolites
+K15963	Biosynthesis of secondary metabolites
+K15964	Biosynthesis of secondary metabolites
+K15965	Biosynthesis of secondary metabolites
+K15966	Biosynthesis of secondary metabolites
+K15967	Biosynthesis of secondary metabolites
+K15968	Biosynthesis of secondary metabolites
+K15969	Biosynthesis of secondary metabolites
+K15970	Biosynthesis of secondary metabolites
+K15971	Biosynthesis of secondary metabolites
+K15972	Biosynthesis of secondary metabolites
+K15974	Drug efflux transporter/pump
+K15988	Biosynthesis of secondary metabolites
+K15989	Biosynthesis of secondary metabolites
+K15990	Biosynthesis of secondary metabolites
+K15991	Biosynthesis of secondary metabolites
+K15992	Biosynthesis of secondary metabolites
+K15993	Biosynthesis of secondary metabolites
+K15994	Biosynthesis of secondary metabolites
+K15995	Biosynthesis of secondary metabolites
+K15996	Biosynthesis of secondary metabolites
+K15997	Biosynthesis of secondary metabolites
+K16000	Biosynthesis of secondary metabolites
+K16001	Biosynthesis of secondary metabolites
+K16002	Biosynthesis of secondary metabolites
+K16003	Biosynthesis of secondary metabolites
+K16004	Biosynthesis of secondary metabolites
+K16005	Biosynthesis of secondary metabolites
+K16006	Biosynthesis of secondary metabolites
+K16007	Biosynthesis of secondary metabolites
+K16008	Biosynthesis of secondary metabolites
+K16009	Biosynthesis of secondary metabolites
+K16010	Biosynthesis of secondary metabolites
+K16011	Cofactor and vitamin biosynthesis
+K16011	Nucleotide sugar
+K16041	Pathogenicity
+K16042	Pathogenicity
+K16054	Cysteine and methionine metabolism
+K16149	Other carbohydrate metabolism
+K16157	Methane metabolism
+K16158	Methane metabolism
+K16159	Methane metabolism
+K16160	Methane metabolism
+K16161	Methane metabolism
+K16162	Methane metabolism
+K16171	Aromatic amino acid metabolism
+K16172	Cell signaling
+K16176	Methane metabolism
+K16177	Methane metabolism
+K16178	Methane metabolism
+K16179	Methane metabolism
+K16190	Other carbohydrate metabolism
+K16199	Peptide and nickel transport system
+K16200	Peptide and nickel transport system
+K16201	Peptide and nickel transport system
+K16202	Peptide and nickel transport system
+K16242	Aromatics degradation
+K16243	Aromatics degradation
+K16244	Aromatics degradation
+K16245	Aromatics degradation
+K16246	Aromatics degradation
+K16249	Aromatics degradation
+K16268	Aromatics degradation
+K16269	Aromatics degradation
+K16299	Bacterial secretion system
+K16300	Bacterial secretion system
+K16303	Aromatics degradation
+K16304	Aromatics degradation
+K16305	Central carbohydrate metabolism
+K16306	Central carbohydrate metabolism
+K16319	Aromatics degradation
+K16320	Aromatics degradation
+K16363	Fatty acid metabolism
+K16363	Lipopolysaccharide metabolism
+K16369	Lipid metabolism
+K16370	Central carbohydrate metabolism
+K16370	Methane metabolism
+K16431	Biosynthesis of secondary metabolites
+K16435	Other carbohydrate metabolism
+K16436	Other carbohydrate metabolism
+K16438	Other carbohydrate metabolism
+K16593	Cofactor and vitamin biosynthesis
+K16620	Cell signaling
+K16621	Cell signaling
+K16622	Cell signaling
+K16683	Cell signaling
+K16684	Cell signaling
+K16685	Cell signaling
+K16686	Cell signaling
+K16687	Cell signaling
+K16783	Metallic cation, iron-siderophore and vitamin B12 transport system
+K16784	Metallic cation, iron-siderophore and vitamin B12 transport system
+K16785	Metallic cation, iron-siderophore and vitamin B12 transport system
+K16786	Metallic cation, iron-siderophore and vitamin B12 transport system
+K16787	Metallic cation, iron-siderophore and vitamin B12 transport system
+K16790	Cell signaling
+K16791	Cell signaling
+K16792	Lysine metabolism
+K16792	Methane metabolism
+K16793	Lysine metabolism
+K16793	Methane metabolism
+K16797	Cell signaling
+K16798	Cell signaling
+K16799	Cell signaling
+K16816	Lipid metabolism
+K16820	Cell signaling
+K16821	Cell signaling
+K16822	Cell signaling
+K16838	Purine metabolism
+K16839	Purine metabolism
+K16840	Purine metabolism
+K16842	Purine metabolism
+K16849	Other carbohydrate metabolism
+K16850	Other carbohydrate metabolism
+K16871	Other amino acid metabolism
+K16881	Cofactor and vitamin biosynthesis
+K16881	Nucleotide sugar
+K16905	ABC-2 type and other transport systems
+K16906	ABC-2 type and other transport systems
+K16907	ABC-2 type and other transport systems
+K16915	Metallic cation, iron-siderophore and vitamin B12 transport system
+K16916	ABC-2 type and other transport systems
+K16917	ABC-2 type and other transport systems
+K16918	ABC-2 type and other transport systems
+K16919	ABC-2 type and other transport systems
+K16920	ABC-2 type and other transport systems
+K16921	ABC-2 type and other transport systems
+K16923	Metallic cation, iron-siderophore and vitamin B12 transport system
+K16924	Metallic cation, iron-siderophore and vitamin B12 transport system
+K16925	Metallic cation, iron-siderophore and vitamin B12 transport system
+K16926	Metallic cation, iron-siderophore and vitamin B12 transport system
+K16927	Metallic cation, iron-siderophore and vitamin B12 transport system
+K16928	Metallic cation, iron-siderophore and vitamin B12 transport system
+K16929	Metallic cation, iron-siderophore and vitamin B12 transport system
+K16956	Phosphate and amino acid transport system
+K16957	Phosphate and amino acid transport system
+K16958	Phosphate and amino acid transport system
+K16959	Phosphate and amino acid transport system
+K16960	Phosphate and amino acid transport system
+K16961	Phosphate and amino acid transport system
+K16962	Phosphate and amino acid transport system
+K16963	Phosphate and amino acid transport system
+K17060	Two-component regulatory system
+K17061	Two-component regulatory system
+K17062	Phosphate and amino acid transport system
+K17063	Phosphate and amino acid transport system
+K17066	Methane metabolism
+K17069	Cysteine and methionine metabolism
+K17073	Phosphate and amino acid transport system
+K17074	Phosphate and amino acid transport system
+K17076	Phosphate and amino acid transport system
+K17100	Methane metabolism
+K17103	Lipid metabolism
+K17202	Saccharide, polyol, and lipid transport system
+K17203	Saccharide, polyol, and lipid transport system
+K17204	Saccharide, polyol, and lipid transport system
+K17205	Saccharide, polyol, and lipid transport system
+K17206	Saccharide, polyol, and lipid transport system
+K17207	Saccharide, polyol, and lipid transport system
+K17208	Saccharide, polyol, and lipid transport system
+K17209	Saccharide, polyol, and lipid transport system
+K17210	Saccharide, polyol, and lipid transport system
+K17213	Saccharide, polyol, and lipid transport system
+K17214	Saccharide, polyol, and lipid transport system
+K17215	Saccharide, polyol, and lipid transport system
+K17216	Cysteine and methionine metabolism
+K17217	Cysteine and methionine metabolism
+K17222	Sulfur metabolism
+K17223	Sulfur metabolism
+K17224	Sulfur metabolism
+K17225	Sulfur metabolism
+K17226	Sulfur metabolism
+K17227	Sulfur metabolism
+K17234	Saccharide, polyol, and lipid transport system
+K17235	Saccharide, polyol, and lipid transport system
+K17236	Saccharide, polyol, and lipid transport system
+K17237	Saccharide, polyol, and lipid transport system
+K17238	Saccharide, polyol, and lipid transport system
+K17239	Saccharide, polyol, and lipid transport system
+K17240	Saccharide, polyol, and lipid transport system
+K17241	Saccharide, polyol, and lipid transport system
+K17242	Saccharide, polyol, and lipid transport system
+K17243	Saccharide, polyol, and lipid transport system
+K17244	Saccharide, polyol, and lipid transport system
+K17245	Saccharide, polyol, and lipid transport system
+K17246	Saccharide, polyol, and lipid transport system
+K17311	Saccharide, polyol, and lipid transport system
+K17312	Saccharide, polyol, and lipid transport system
+K17313	Saccharide, polyol, and lipid transport system
+K17314	Saccharide, polyol, and lipid transport system
+K17315	Saccharide, polyol, and lipid transport system
+K17316	Saccharide, polyol, and lipid transport system
+K17317	Saccharide, polyol, and lipid transport system
+K17318	Saccharide, polyol, and lipid transport system
+K17319	Saccharide, polyol, and lipid transport system
+K17320	Saccharide, polyol, and lipid transport system
+K17321	Saccharide, polyol, and lipid transport system
+K17322	Saccharide, polyol, and lipid transport system
+K17323	Saccharide, polyol, and lipid transport system
+K17324	Saccharide, polyol, and lipid transport system
+K17325	Saccharide, polyol, and lipid transport system
+K17326	Saccharide, polyol, and lipid transport system
+K17327	Saccharide, polyol, and lipid transport system
+K17328	Saccharide, polyol, and lipid transport system
+K17329	Saccharide, polyol, and lipid transport system
+K17330	Saccharide, polyol, and lipid transport system
+K17331	Saccharide, polyol, and lipid transport system
+K17398	Cysteine and methionine metabolism
+K17399	Cysteine and methionine metabolism
+K17450	Lysine metabolism
+K17454	Cell signaling
+K17462	Cysteine and methionine metabolism
+K17463	Other carbohydrate metabolism
+K17464	Phosphotransferase system (PTS)
+K17465	Phosphotransferase system (PTS)
+K17466	Phosphotransferase system (PTS)
+K17467	Phosphotransferase system (PTS)
+K17475	Biosynthesis of secondary metabolites
+K17476	Biosynthesis of secondary metabolites
+K17497	Cofactor and vitamin biosynthesis
+K17534	Cell signaling
+K17625	Other carbohydrate metabolism
+K17716	Nucleotide sugar
+K17722	Pyrimidine metabolism
+K17723	Pyrimidine metabolism
+K17744	Cofactor and vitamin biosynthesis
+K17747	Biosynthesis of secondary metabolites
+K17755	Serine and threonine metabolism
+K17825	Biosynthesis of secondary metabolites
+K17826	Biosynthesis of secondary metabolites
+K17827	Biosynthesis of secondary metabolites
+K17828	Pyrimidine metabolism
+K17836	Drug resistance
+K17850	Drug resistance
+K17865	Other carbohydrate metabolism
+K17877	Nitrogen metabolism
+K17900	Lipid metabolism
+K17989	Branched-chain amino acid metabolism
+K18020	Central carbohydrate metabolism
+K18021	Central carbohydrate metabolism
+K18022	Central carbohydrate metabolism
+K18028	Cofactor and vitamin biosynthesis
+K18029	Cofactor and vitamin biosynthesis
+K18030	Cofactor and vitamin biosynthesis
+K18056	Biosynthesis of secondary metabolites
+K18057	Biosynthesis of secondary metabolites
+K18062	Biosynthesis of secondary metabolites
+K18063	Biosynthesis of secondary metabolites
+K18065	Cell signaling
+K18067	Aromatics degradation
+K18068	Aromatics degradation
+K18069	Aromatics degradation
+K18072	Drug resistance
+K18072	Two-component regulatory system
+K18073	Drug resistance
+K18073	Two-component regulatory system
+K18074	Aromatics degradation
+K18075	Aromatics degradation
+K18076	Aromatics degradation
+K18077	Aromatics degradation
+K18087	Aromatics degradation
+K18088	Aromatics degradation
+K18089	Aromatics degradation
+K18090	Aromatics degradation
+K18091	Biosynthesis of secondary metabolites
+K18093	Drug resistance
+K18094	Drug resistance
+K18095	Drug resistance
+K18099	Drug efflux transporter/pump
+K18102	Other carbohydrate metabolism
+K18103	Other carbohydrate metabolism
+K18104	Drug resistance
+K18106	Other carbohydrate metabolism
+K18107	Other carbohydrate metabolism
+K18118	Central carbohydrate metabolism
+K18126	Central carbohydrate metabolism
+K18127	Central carbohydrate metabolism
+K18128	Central carbohydrate metabolism
+K18129	Drug resistance
+K18131	Drug resistance
+K18138	Drug efflux transporter/pump
+K18138	Drug resistance
+K18139	Drug efflux transporter/pump
+K18139	Drug resistance
+K18140	Drug resistance
+K18141	Drug resistance
+K18142	Drug resistance
+K18143	Drug resistance
+K18143	Two-component regulatory system
+K18144	Drug resistance
+K18144	Two-component regulatory system
+K18145	Drug resistance
+K18146	Drug resistance
+K18147	Drug resistance
+K18209	Carbon fixation
+K18210	Carbon fixation
+K18216	Drug efflux transporter/pump
+K18217	Drug efflux transporter/pump
+K18218	Drug efflux transporter/pump
+K18219	Drug efflux transporter/pump
+K18227	Aromatics degradation
+K18232	ABC-2 type and other transport systems
+K18233	ABC-2 type and other transport systems
+K18240	Cofactor and vitamin biosynthesis
+K18242	Aromatics degradation
+K18243	Aromatics degradation
+K18248	Aromatics degradation
+K18249	Aromatics degradation
+K18251	Aromatics degradation
+K18252	Aromatics degradation
+K18253	Aromatics degradation
+K18254	Aromatics degradation
+K18255	Aromatics degradation
+K18256	Aromatics degradation
+K18276	Aromatics degradation
+K18279	Biosynthesis of secondary metabolites
+K18280	Biosynthesis of secondary metabolites
+K18281	Biosynthesis of secondary metabolites
+K18283	Cell signaling
+K18284	Cysteine and methionine metabolism
+K18293	Aromatics degradation
+K18294	Drug resistance
+K18295	Drug resistance
+K18296	Drug resistance
+K18297	Drug resistance
+K18298	Drug resistance
+K18299	Drug resistance
+K18300	Drug resistance
+K18301	Drug resistance
+K18302	Drug resistance
+K18303	Drug resistance
+K18304	Drug efflux transporter/pump
+K18304	Drug resistance
+K18305	Drug efflux transporter/pump
+K18306	Drug efflux transporter/pump
+K18307	Drug efflux transporter/pump
+K18308	Drug efflux transporter/pump
+K18315	Biosynthesis of secondary metabolites
+K18316	Biosynthesis of secondary metabolites
+K18317	Biosynthesis of secondary metabolites
+K18321	Drug efflux transporter/pump
+K18322	Drug efflux transporter/pump
+K18323	Drug efflux transporter/pump
+K18324	Drug efflux transporter/pump
+K18325	Drug efflux transporter/pump
+K18344	Drug resistance
+K18344	Two-component regulatory system
+K18345	Drug resistance
+K18345	Two-component regulatory system
+K18346	Drug resistance
+K18347	Drug resistance
+K18348	Drug resistance
+K18349	Drug resistance
+K18349	Two-component regulatory system
+K18350	Drug resistance
+K18350	Two-component regulatory system
+K18351	Drug resistance
+K18351	Two-component regulatory system
+K18352	Drug resistance
+K18352	Two-component regulatory system
+K18353	Drug resistance
+K18354	Drug resistance
+K18364	Aromatics degradation
+K18365	Aromatics degradation
+K18366	Aromatics degradation
+K18368	Biosynthesis of secondary metabolites
+K18373	Plant pathogenicity
+K18374	Plant pathogenicity
+K18375	Plant pathogenicity
+K18376	Plant pathogenicity
+K18377	Plant pathogenicity
+K18378	Plant pathogenicity
+K18379	Plant pathogenicity
+K18380	Plant pathogenicity
+K18381	Plant pathogenicity
+K18385	Biosynthesis of secondary metabolites
+K18386	Biosynthesis of secondary metabolites
+K18387	Biosynthesis of secondary metabolites
+K18444	Two-component regulatory system
+K18472	Fatty acid metabolism
+K18472	Other carbohydrate metabolism
+K18473	Fatty acid metabolism
+K18476	Drug efflux transporter/pump
+K18480	Saccharide, polyol, and lipid transport system
+K18481	Saccharide, polyol, and lipid transport system
+K18513	Drug resistance
+K18514	Drug resistance
+K18532	Purine metabolism
+K18533	Purine metabolism
+K18533	Pyrimidine metabolism
+K18534	Cofactor and vitamin biosynthesis
+K18555	Drug resistance
+K18556	Carbon fixation
+K18557	Carbon fixation
+K18558	Carbon fixation
+K18559	Carbon fixation
+K18560	Carbon fixation
+K18649	Cofactor and vitamin biosynthesis
+K18649	Histidine metabolism
+K18649	Lipid metabolism
+K18766	Drug resistance
+K18800	Cofactor and vitamin biosynthesis
+K18806	Cell signaling
+K18809	Cell signaling
+K18810	Cell signaling
+K18811	Cell signaling
+K18812	Cell signaling
+K18813	Cell signaling
+K18824	Cofactor and vitamin biosynthesis
+K18825	Cofactor and vitamin biosynthesis
+K18851	Lipid metabolism
+K18856	Drug resistance
+K18859	Central carbohydrate metabolism
+K18860	Carbon fixation
+K18860	Central carbohydrate metabolism
+K18861	Carbon fixation
+K18866	Drug resistance
+K18887	Drug efflux transporter/pump
+K18888	Drug efflux transporter/pump
+K18889	Drug efflux transporter/pump
+K18890	Drug efflux transporter/pump
+K18891	Drug efflux transporter/pump
+K18892	Drug efflux transporter/pump
+K18898	Drug resistance
+K18899	Drug resistance
+K18900	Drug resistance
+K18901	Drug resistance
+K18902	Drug resistance
+K18903	Drug resistance
+K18904	Drug efflux transporter/pump
+K18905	Drug efflux transporter/pump
+K18906	Drug efflux transporter/pump
+K18906	Drug resistance
+K18907	Drug resistance
+K18908	Drug resistance
+K18909	Drug resistance
+K18924	Drug efflux transporter/pump
+K18925	Drug efflux transporter/pump
+K18926	Drug efflux transporter/pump
+K18937	Drug efflux transporter/pump
+K18938	Drug resistance
+K18939	Drug efflux transporter/pump
+K18940	Drug efflux transporter/pump
+K18940	Two-component regulatory system
+K18941	Drug efflux transporter/pump
+K18941	Two-component regulatory system
+K18974	Cofactor and vitamin biosynthesis
+K18978	Central carbohydrate metabolism
+K18986	Two-component regulatory system
+K18987	Two-component regulatory system
+K18989	Drug efflux transporter/pump
+K18990	Drug efflux transporter/pump
+K18991	Drug efflux transporter/pump
+K18992	Drug efflux transporter/pump
+K19060	Drug resistance
+K19077	Drug resistance
+K19077	Two-component regulatory system
+K19078	Drug resistance
+K19078	Two-component regulatory system
+K19079	ABC-2 type and other transport systems
+K19079	Drug resistance
+K19080	ABC-2 type and other transport systems
+K19080	Drug resistance
+K19081	Drug efflux transporter/pump
+K19081	Two-component regulatory system
+K19082	Drug efflux transporter/pump
+K19082	Two-component regulatory system
+K19083	ABC-2 type and other transport systems
+K19083	Drug efflux transporter/pump
+K19084	ABC-2 type and other transport systems
+K19084	Drug efflux transporter/pump
+K19102	Biosynthesis of secondary metabolites
+K19103	Biosynthesis of secondary metabolites
+K19104	Biosynthesis of secondary metabolites
+K19105	Biosynthesis of secondary metabolites
+K19106	Biosynthesis of secondary metabolites
+K19185	Aromatics degradation
+K19186	Aromatics degradation
+K19187	Aromatics degradation
+K19188	Aromatics degradation
+K19221	Cofactor and vitamin biosynthesis
+K19222	Cofactor and vitamin biosynthesis
+K19226	Peptide and nickel transport system
+K19227	Peptide and nickel transport system
+K19228	Peptide and nickel transport system
+K19229	Peptide and nickel transport system
+K19230	Peptide and nickel transport system
+K19243	Central carbohydrate metabolism
+K19268	Other carbohydrate metabolism
+K19269	Other carbohydrate metabolism
+K19280	Other carbohydrate metabolism
+K19281	Other carbohydrate metabolism
+K19282	Other carbohydrate metabolism
+K19309	ABC-2 type and other transport systems
+K19310	ABC-2 type and other transport systems
+K19312	Other carbohydrate metabolism
+K19340	ABC-2 type and other transport systems
+K19341	ABC-2 type and other transport systems
+K19412	Arginine and proline metabolism
+K19416	Drug resistance
+K19506	Phosphotransferase system (PTS)
+K19507	Phosphotransferase system (PTS)
+K19508	Phosphotransferase system (PTS)
+K19509	Phosphotransferase system (PTS)
+K19515	Aromatics degradation
+K19516	Aromatics degradation
+K19546	Biosynthesis of secondary metabolites
+K19547	Biosynthesis of secondary metabolites
+K19548	Biosynthesis of secondary metabolites
+K19549	Biosynthesis of secondary metabolites
+K19550	Biosynthesis of secondary metabolites
+K19560	Cofactor and vitamin biosynthesis
+K19561	Cofactor and vitamin biosynthesis
+K19562	Cofactor and vitamin biosynthesis
+K19563	Cofactor and vitamin biosynthesis
+K19566	Biosynthesis of secondary metabolites
+K19567	Biosynthesis of secondary metabolites
+K19568	Biosynthesis of secondary metabolites
+K19569	Biosynthesis of secondary metabolites
+K19570	Biosynthesis of secondary metabolites
+K19575	Drug efflux transporter/pump
+K19578	Drug efflux transporter/pump
+K19585	Drug efflux transporter/pump
+K19586	Drug efflux transporter/pump
+K19587	Drug efflux transporter/pump
+K19591	Drug resistance
+K19592	Drug efflux transporter/pump
+K19593	Drug resistance
+K19594	Drug efflux transporter/pump
+K19594	Drug resistance
+K19595	Drug efflux transporter/pump
+K19595	Drug resistance
+K19609	Two-component regulatory system
+K19610	Two-component regulatory system
+K19616	Two-component regulatory system
+K19617	Two-component regulatory system
+K19634	Other carbohydrate metabolism
+K19641	Two-component regulatory system
+K19661	Two-component regulatory system
+K19690	Two-component regulatory system
+K19691	Two-component regulatory system
+K19692	Two-component regulatory system
+K19700	Aromatics degradation
+K19723	Biosynthesis of secondary metabolites
+K19724	Biosynthesis of secondary metabolites
+K19725	Biosynthesis of secondary metabolites
+K19726	Biosynthesis of secondary metabolites
+K19727	Biosynthesis of secondary metabolites
+K19741	Biosynthesis of secondary metabolites
+K19801	Lipid metabolism
+K19818	Aromatics degradation
+K19819	Aromatics degradation
+K19820	Aromatics degradation
+K19826	Aromatics degradation
+K19834	Biosynthesis of secondary metabolites
+K19835	Biosynthesis of secondary metabolites
+K19853	Other carbohydrate metabolism
+K19854	Other carbohydrate metabolism
+K19855	Other carbohydrate metabolism
+K19856	Other carbohydrate metabolism
+K19857	Other carbohydrate metabolism
+K19858	Other carbohydrate metabolism
+K19859	Other carbohydrate metabolism
+K19884	Biosynthesis of secondary metabolites
+K19885	Biosynthesis of secondary metabolites
+K19886	Biosynthesis of secondary metabolites
+K19887	Biosynthesis of secondary metabolites
+K19888	Biosynthesis of secondary metabolites
+K19889	Biosynthesis of secondary metabolites
+K19890	Aromatics degradation
+K19969	Biosynthesis of secondary metabolites
+K19971	Metallic cation, iron-siderophore and vitamin B12 transport system
+K19972	Metallic cation, iron-siderophore and vitamin B12 transport system
+K19973	Metallic cation, iron-siderophore and vitamin B12 transport system
+K19974	Biosynthesis of secondary metabolites
+K19975	Metallic cation, iron-siderophore and vitamin B12 transport system
+K19976	Metallic cation, iron-siderophore and vitamin B12 transport system
+K19979	Biosynthesis of secondary metabolites
+K19981	Biosynthesis of secondary metabolites
+K19982	Biosynthesis of secondary metabolites
+K20075	Biosynthesis of secondary metabolites
+K20076	Biosynthesis of secondary metabolites
+K20077	Biosynthesis of secondary metabolites
+K20078	Biosynthesis of secondary metabolites
+K20079	Biosynthesis of secondary metabolites
+K20080	Biosynthesis of secondary metabolites
+K20081	Biosynthesis of secondary metabolites
+K20082	Biosynthesis of secondary metabolites
+K20086	Biosynthesis of secondary metabolites
+K20087	Biosynthesis of secondary metabolites
+K20088	Biosynthesis of secondary metabolites
+K20089	Biosynthesis of secondary metabolites
+K20090	Biosynthesis of secondary metabolites
+K20107	Phosphotransferase system (PTS)
+K20108	Phosphotransferase system (PTS)
+K20112	Phosphotransferase system (PTS)
+K20113	Phosphotransferase system (PTS)
+K20114	Phosphotransferase system (PTS)
+K20116	Phosphotransferase system (PTS)
+K20117	Phosphotransferase system (PTS)
+K20118	Phosphotransferase system (PTS)
+K20155	Aromatics degradation
+K20156	Biosynthesis of secondary metabolites
+K20158	Aromatics degradation
+K20159	Biosynthesis of secondary metabolites
+K20169	Aromatics degradation
+K20170	Aromatics degradation
+K20171	Aromatics degradation
+K20172	Aromatics degradation
+K20260	Biosynthesis of secondary metabolites
+K20261	Biosynthesis of secondary metabolites
+K20262	Biosynthesis of secondary metabolites
+K20263	Two-component regulatory system
+K20264	Two-component regulatory system
+K20339	Two-component regulatory system
+K20340	Two-component regulatory system
+K20420	Biosynthesis of secondary metabolites
+K20421	Biosynthesis of secondary metabolites
+K20422	Biosynthesis of secondary metabolites
+K20423	Biosynthesis of secondary metabolites
+K20424	Biosynthesis of secondary metabolites
+K20425	Biosynthesis of secondary metabolites
+K20426	Biosynthesis of secondary metabolites
+K20427	Biosynthesis of secondary metabolites
+K20430	Biosynthesis of secondary metabolites
+K20431	Biosynthesis of secondary metabolites
+K20432	Biosynthesis of secondary metabolites
+K20433	Biosynthesis of secondary metabolites
+K20434	Biosynthesis of secondary metabolites
+K20435	Biosynthesis of secondary metabolites
+K20436	Biosynthesis of secondary metabolites
+K20437	Biosynthesis of secondary metabolites
+K20438	Biosynthesis of secondary metabolites
+K20457	Cofactor and vitamin biosynthesis
+K20459	ABC-2 type and other transport systems
+K20460	ABC-2 type and other transport systems
+K20461	ABC-2 type and other transport systems
+K20487	Two-component regulatory system
+K20488	Two-component regulatory system
+K20490	ABC-2 type and other transport systems
+K20491	ABC-2 type and other transport systems
+K20492	ABC-2 type and other transport systems
+K20494	ABC-2 type and other transport systems
+K20772	Cysteine and methionine metabolism
+K20860	Cofactor and vitamin biosynthesis
+K20861	Cofactor and vitamin biosynthesis
+K20862	Cofactor and vitamin biosynthesis
+K20884	Cofactor and vitamin biosynthesis
+K20940	Biosynthesis of secondary metabolites
+K20973	Two-component regulatory system
+K20974	Two-component regulatory system
+K20975	Two-component regulatory system
+K20976	Two-component regulatory system
+K20977	Two-component regulatory system
+K20994	Cell signaling
+K20995	Cell signaling
+K20996	Cell signaling
+K21063	Cofactor and vitamin biosynthesis
+K21064	Cofactor and vitamin biosynthesis
+K21103	Biosynthesis of secondary metabolites
+K21133	Drug efflux transporter/pump
+K21134	Drug efflux transporter/pump
+K21135	Drug efflux transporter/pump
+K21136	Drug efflux transporter/pump
+K21137	Drug efflux transporter/pump
+K21160	Biosynthesis of secondary metabolites
+K21161	Biosynthesis of secondary metabolites
+K21162	Biosynthesis of secondary metabolites
+K21163	Biosynthesis of secondary metabolites
+K21164	Biosynthesis of secondary metabolites
+K21165	Biosynthesis of secondary metabolites
+K21166	Biosynthesis of secondary metabolites
+K21167	Biosynthesis of secondary metabolites
+K21168	Biosynthesis of secondary metabolites
+K21169	Biosynthesis of secondary metabolites
+K21170	Biosynthesis of secondary metabolites
+K21171	Biosynthesis of secondary metabolites
+K21172	Biosynthesis of secondary metabolites
+K21173	Biosynthesis of secondary metabolites
+K21174	Biosynthesis of secondary metabolites
+K21175	Biosynthesis of secondary metabolites
+K21176	Biosynthesis of secondary metabolites
+K21177	Biosynthesis of secondary metabolites
+K21178	Biosynthesis of secondary metabolites
+K21179	Biosynthesis of secondary metabolites
+K21181	Biosynthesis of secondary metabolites
+K21182	Biosynthesis of secondary metabolites
+K21183	Biosynthesis of secondary metabolites
+K21184	Biosynthesis of secondary metabolites
+K21185	Biosynthesis of secondary metabolites
+K21188	Biosynthesis of secondary metabolites
+K21189	Biosynthesis of secondary metabolites
+K21190	Biosynthesis of secondary metabolites
+K21191	Biosynthesis of secondary metabolites
+K21192	Biosynthesis of secondary metabolites
+K21221	Biosynthesis of secondary metabolites
+K21222	Biosynthesis of secondary metabolites
+K21223	Biosynthesis of secondary metabolites
+K21224	Biosynthesis of secondary metabolites
+K21225	Biosynthesis of secondary metabolites
+K21227	Biosynthesis of secondary metabolites
+K21228	Biosynthesis of secondary metabolites
+K21254	Biosynthesis of secondary metabolites
+K21255	Biosynthesis of secondary metabolites
+K21256	Biosynthesis of secondary metabolites
+K21257	Biosynthesis of secondary metabolites
+K21258	Biosynthesis of secondary metabolites
+K21259	Biosynthesis of secondary metabolites
+K21260	Biosynthesis of secondary metabolites
+K21261	Biosynthesis of secondary metabolites
+K21262	Biosynthesis of secondary metabolites
+K21263	Biosynthesis of secondary metabolites
+K21283	Cell signaling
+K21297	Biosynthesis of secondary metabolites
+K21301	Biosynthesis of secondary metabolites
+K21344	Lipopolysaccharide metabolism
+K21345	Lipopolysaccharide metabolism
+K21456	Cofactor and vitamin biosynthesis
+M00161	Metabolic capacity
+M00163	Metabolic capacity
+M00165	Metabolic capacity
+M00173	Metabolic capacity
+M00176	Metabolic capacity
+M00185	Metabolic capacity
+M00356	Metabolic capacity
+M00357	Metabolic capacity
+M00376	Metabolic capacity
+M00377	Metabolic capacity
+M00438	Metabolic capacity
+M00531	Metabolic capacity
+M00563	Metabolic capacity
+M00567	Metabolic capacity
+M00579	Metabolic capacity
+M00597	Metabolic capacity
+M00598	Metabolic capacity
