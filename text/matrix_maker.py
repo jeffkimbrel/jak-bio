@@ -48,9 +48,13 @@ for fileName in dirs:
 print("Printing results", file = sys.stderr)
 outFile = open(args.out, 'w')
 
-for sampleName in columnNames:
-    outFile.write(sampleName+"\t")
-outFile.write("\n")
+#for sampleName in columnNames:
+#    outFile.write(sampleName+"\t")
+#outFile.write("\n")
+
+header = '\t'.join(columnNames)
+
+outFile.write(header+"\n")
 
 for rowName in sorted(dictionary.keys()):
     outFile.write(rowName)
