@@ -7,55 +7,56 @@ parser = argparse.ArgumentParser(description = 'XXX')
 
 parser.add_argument('-d', '--directory', help = "Folder containing the files", required = True)
 parser.add_argument('-n', '--name', help = "Common feature of name to identify files", required = True)
-parser.add_argument('-c', '--column', default = 3, help = "Column with counts to be used" )
-parser.add_argument('-m', '--minimum', default = 0, help = "Minimum value" )
+parser.add_argument('-c', '--column', default = 3, type = int, help = "Column with counts to be used (1-based)" )
+parser.add_argument('-m', '--minimum', default = 0, type = int, help = "Minimum value" )
+parser.add_argument('-o', '--out', help = "Out file name", required = True)
 
 args = parser.parse_args()
-args.column = int(args.column) - 1
-args.minimum = int(args.minimum)
-
+args.column = args.column - 1
 
 # global variables
 dirs = os.listdir(args.directory)
 dictionary = {}
 columnNames = []
-#rowNames = []
 
 for fileName in dirs:
-    if args.name in fileName:
+    if fileName != args.out:
+        if args.name in fileName:
 
-        # Get Sample Name
-        fileNameSplit = fileName.split(".")
-        sampleName = fileNameSplit[0]
-        columnNames.append(sampleName)
+            # Get Sample Name
+            fileNameSplit = fileName.split(".")
+            sampleName = fileNameSplit[0]
 
-        # Process file
-        with open(args.directory+"/"+fileName) as f:
-            for line in f:
-                split = line.strip().split("\t")
+            print("Processing "+fileName, file = sys.stderr)
 
-                rowName = split[0]
-                #if rowName not in rowNames:
-                #    rowNames.append(rowName)
+            columnNames.append(sampleName)
 
-                value = int(split[args.column])
-                if value > args.minimum:
-                    if rowName in dictionary:
-                        dictionary[rowName][sampleName] = value
-                    else:
-                        dictionary[rowName] = {sampleName : value}
+            # Process file
+            with open(args.directory+"/"+fileName) as f:
+                for line in f:
+                    split = line.strip().split("\t")
 
+                    rowName = split[0]
 
-# print header
+                    value = int(split[args.column])
+                    if value > args.minimum:
+                        if rowName in dictionary:
+                            dictionary[rowName][sampleName] = value
+                        else:
+                            dictionary[rowName] = {sampleName : value}
+
+print("Printing results", file = sys.stderr)
+outFile = open(args.out, 'w')
+
 for sampleName in columnNames:
-    print(sampleName, end = "\t")
-print()
+    outFile.write(sampleName+"\t")
+outFile.write("\n")
 
 for rowName in sorted(dictionary.keys()):
-    print(rowName, end = "\t")
+    outFile.write(rowName)
     for sampleName in columnNames:
         if sampleName in dictionary[rowName]:
-            print(dictionary[rowName][sampleName], end = "\t")
+            outFile.write("\t"+str(dictionary[rowName][sampleName]))
         else:
-            print(0, end = "\t")
-    print()
+            outFile.write("\t0")
+    outFile.write("\n")
