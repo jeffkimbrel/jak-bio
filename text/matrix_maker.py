@@ -45,7 +45,7 @@ for fileName in dirs:
                         else:
                             dictionary[rowName] = {sampleName : value}
 
-print("Printing results", file = sys.stderr)
+print("Printing results to ", args.out, file = sys.stderr)
 outFile = open(args.out, 'w')
 
 #for sampleName in columnNames:
