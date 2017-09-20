@@ -26,7 +26,7 @@ def systemCall(command):
 systemCall("pwd")
 
 # run hmmsearch
-systemCall("hmmsearch -o " + args.out + "/dbcan.log --domT 25 --cpu 4 --domtblout "  + unsortedName + " ~/Dropbox/scripts/FOAM/FOAM-hmm_rel1a.hmm " + args.file )
+systemCall("hmmsearch -o " + args.out + "/foam.log --domT 25 --cpu 4 --domtblout "  + unsortedName + " ~/Dropbox/scripts/FOAM/FOAM-hmm_rel1a.hmm " + args.file )
 systemCall("sort " + unsortedName + " > " + sortedName)
 systemCall("rm " + unsortedName)
 
