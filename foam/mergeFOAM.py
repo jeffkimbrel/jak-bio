@@ -25,26 +25,26 @@ for line in ontFile:
         list(set(ontology[KO]['L4']))
         ontology[KO]['KO'].append[KO]
         list(set(ontology[KO]['KO']))
-        
+
     else:
         ontology[KO] = {'L1' : L1, 'L2' : L2, 'L3' : L3, 'L4' : L4, 'KO' : KO}
-        
+
 for f in glob.glob('*.KO'):
-    
+
     S[f] = {}
     lines = [line.strip() for line in open(f)]
-        
+
     for line in lines:
         kegg,count = line.split()
-        
+
         if kegg not in ontology:
             notInOntology[kegg] = kegg
-        
+
         if level == 'KO':
             K[kegg] = kegg
             S[f][kegg] = count
         elif level == 'L1':
-            
+
 
 sortedK = sorted(list(K))
 sortedS = sorted(list(S))
@@ -66,7 +66,7 @@ for kegg in sortedK:
         print("\t"+str(S[sample].get(kegg, 0)),end="")
     print()
 
-    
+
 # NON-ONTOLOGY
 for kegg in notInOntology:
     print(kegg)
