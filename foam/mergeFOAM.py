@@ -29,13 +29,13 @@ for line in ontFile:
     else:
         ontology[KO] = {'L1' : L1, 'L2' : L2, 'L3' : L3, 'L4' : L4, 'KO' : KO}
 
-for f in glob.glob('*.KO'):
+for f in glob.glob('*.ko.txt'):
 
     S[f] = {}
     lines = [line.strip() for line in open(f)]
 
     for line in lines:
-        kegg,count = line.split()
+        kegg, count = line.split()
 
         if kegg not in ontology:
             notInOntology[kegg] = kegg
@@ -43,7 +43,7 @@ for f in glob.glob('*.KO'):
         if level == 'KO':
             K[kegg] = kegg
             S[f][kegg] = count
-        elif level == 'L1':
+        #elif level == 'L1':
 
 
 sortedK = sorted(list(K))
@@ -51,16 +51,17 @@ sortedS = sorted(list(S))
 
 
 ## HEADER
-print(level,end="")
+print(level, end="")
 for sample in sortedS:
-    split = sample.split("_")
+    split = sample.split(".")
     print("\t"+split[0],end="")
+    #print("\t"+sample, end = "")
 
 print()
 
 ## COUNTS
 for kegg in sortedK:
-    print(kegg,end="")
+    print(kegg, end="")
     for sample in sortedS:
         #print(S[sample][kegg])
         print("\t"+str(S[sample].get(kegg, 0)),end="")
