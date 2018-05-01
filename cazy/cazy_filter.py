@@ -25,6 +25,7 @@ for line in lines:
         model = split[3]
 
         model = model.split(".")[0]
+        model = model.split("_")[0]
 
         evalue = float(split[6])
         alignmentLength = int(split[18]) - int(split[17]) + 1
