@@ -20,7 +20,7 @@ if not os.path.exists(args.out):
     os.makedirs(args.out)
 
 def systemCall(command):
-    print("\n> $ " + command)
+    print("> $ " + command)
     os.system(command)
 
 systemCall("pwd")

@@ -8,6 +8,7 @@ parser = argparse.ArgumentParser(description = 'filters hmmsearch output based o
 parser.add_argument('-f', '--file', help = "Output from hmmsearch", required = True)
 parser.add_argument('-l', '--length', default = 80, help = "Minimum alignment length for a 'good' hit" )
 parser.add_argument('-c', '--covered', default = 0.3, help = "Minimum fraction of hmm covered for a 'bad' hit" )
+parser.add_argument('--subfamily', '-s', action='store_true', help = 'Keep subfamilies' )
 parser.add_argument('--verbose', '-v', action='store_true', help='Print original line' )
 
 args = parser.parse_args()
@@ -25,7 +26,9 @@ for line in lines:
         model = split[3]
 
         model = model.split(".")[0]
-        model = model.split("_")[0]
+
+        if args.subfamily == False:
+            model = model.split("_")[0]
 
         evalue = float(split[6])
         alignmentLength = int(split[18]) - int(split[17]) + 1
