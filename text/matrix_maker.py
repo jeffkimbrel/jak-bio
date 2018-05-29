@@ -7,7 +7,7 @@ parser = argparse.ArgumentParser(description = 'XXX')
 
 parser.add_argument('-d', '--directory', help = "Folder containing the files", required = True)
 parser.add_argument('-n', '--name', help = "Common feature of name to identify files", required = True)
-parser.add_argument('-c', '--column', default = 3, type = int, help = "Column with counts to be used (1-based)" )
+parser.add_argument('-c', '--column', default = 2, type = int, help = "Column with counts to be used (1-based)" )
 parser.add_argument('-m', '--minimum', default = 0, type = int, help = "Minimum value" )
 parser.add_argument('-o', '--out', help = "Out file name", required = True)
 
@@ -19,7 +19,7 @@ dirs = os.listdir(args.directory)
 dictionary = {}
 columnNames = []
 
-for fileName in dirs:
+for fileName in sorted(dirs):
     if fileName != args.out:
         if args.name in fileName:
 
