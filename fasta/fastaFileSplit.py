@@ -1,13 +1,11 @@
 #!/usr/bin/python
 
-# Give it a multifasta input and an integer "x", and it will make as many smaller files necessary with at most that x sequences
-
 import sys
 from Bio import SeqIO
 import argparse
 
 # Arguments
-parser = argparse.ArgumentParser(description = 'XXX')
+parser = argparse.ArgumentParser(description = 'Give it a multifasta input and an integer "x", and it will make as many smaller files necessary with at most that x sequences.')
 
 parser.add_argument('-f', '--fasta',
     help = "Fasta input",
