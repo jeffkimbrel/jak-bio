@@ -14,6 +14,13 @@ parser.add_argument('-o', '--out', help = "Out file name", required = True)
 args = parser.parse_args()
 args.column = args.column - 1
 
+def is_number(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
+
 # global variables
 dirs = os.listdir(args.directory)
 dictionary = {}
@@ -27,7 +34,7 @@ for fileName in sorted(dirs):
             fileNameSplit = fileName.split(".")
             sampleName = fileNameSplit[0]
 
-            print("Processing "+fileName, file = sys.stderr)
+            print("Processing " + fileName, file = sys.stderr)
 
             columnNames.append(sampleName)
 
@@ -38,12 +45,14 @@ for fileName in sorted(dirs):
 
                     rowName = split[0]
 
-                    value = int(split[args.column])
-                    if value > args.minimum:
-                        if rowName in dictionary:
-                            dictionary[rowName][sampleName] = value
-                        else:
-                            dictionary[rowName] = {sampleName : value}
+                    if is_number(split[args.column]):
+
+                        value = float(split[args.column])
+                        if value > args.minimum:
+                            if rowName in dictionary:
+                                dictionary[rowName][sampleName] = value
+                            else:
+                                dictionary[rowName] = {sampleName : value}
 
 print("Printing results to ", args.out, file = sys.stderr)
 outFile = open(args.out, 'w')

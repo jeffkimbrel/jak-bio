@@ -11,7 +11,7 @@ parser.add_argument('-a', '--proteinA',
     required = True)
 
 parser.add_argument('-b', '--proteinB',
-    help = "First protein fasta file",
+    help = "Second protein fasta file",
     required = True)
 
 parser.add_argument('-l', '--length',
@@ -30,7 +30,7 @@ args = parser.parse_args()
 args.length = float(args.length)
 args.eval = float(args.eval)
 args.percentID = float(args.percentID)
-if args.percentID < 1: # blast gives as percentage rather than ratio
+if args.percentID < 1: # blast given as percentage rather than ratio
     args.percentID = args.percentID * 100
 
 ########### Process File A ###########
