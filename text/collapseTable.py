@@ -12,6 +12,11 @@ parser.add_argument('-t', '--table',
     help = "Table File",
     required = True)
 
+parser.add_argument('-s', '--split',
+    help = "Character to split the xref on, if necessary",
+    default = "NA",
+    required = False)
+
 parser.add_argument('-c', '--column',
     help = "Column in cross-reference file with new identifier (1-based)",
     default = 2,
@@ -43,7 +48,13 @@ class XREF:
         self.new = []
 
     def addNew(self, new):
-        self.new.append(new)
+
+        if args.split != "NA":
+            newSplit = new.split(args.split)
+            for subNew in newSplit:
+                self.new.append(subNew)
+        else:
+            self.new.append(new)
 
         if args.multiples == True:
             self.new = list(set(self.new))
@@ -93,7 +104,7 @@ for line in xrefFile:
 
     new = "NONE"
 
-    if len(split) >= args.column:
+    if len(split) > args.column:
         new = split[args.column]
 
     xrefs[id].addNew(new)
