@@ -21,6 +21,10 @@ parser.add_argument('--divide', '-d',
     action = 'store_true',
     help = 'Divide multiple hits' )
 
+parser.add_argument('--multiples', '-m',
+    action = 'store_false',
+    help = 'Allow multiples' )
+
 args = parser.parse_args()
 
 args.column -= 1
@@ -40,6 +44,9 @@ class XREF:
 
     def addNew(self, new):
         self.new.append(new)
+
+        if args.multiples == True:
+            self.new = list(set(self.new))
 
 rows = {}
 class ROW:
