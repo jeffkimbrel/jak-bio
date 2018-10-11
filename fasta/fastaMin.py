@@ -4,8 +4,25 @@
 
 import sys
 from Bio import SeqIO
+import argparse
 
-for seq_record in SeqIO.parse(sys.argv[1], "fasta"):
-    if len(seq_record.seq) >= int(sys.argv[2]):
+# Arguments
+parser = argparse.ArgumentParser(description = '')
+
+parser.add_argument('-f', '--fasta',
+    help = "Fasta input",
+    required = True)
+
+parser.add_argument('-l', '--length',
+    help = "Length",
+    type = int,
+    required = True)
+
+args = parser.parse_args()
+
+##
+
+for seq_record in SeqIO.parse(args.fasta, "fasta"):
+    if len(seq_record.seq) >= args.length:
         #print seq_record.format("fasta") # with wrapping
         print(">" + str(seq_record.id) + "\n" + str(seq_record.seq))

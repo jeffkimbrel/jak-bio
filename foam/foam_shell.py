@@ -20,19 +20,19 @@ tempB = args.out + "/B.temp"
 tempC = args.out + "/C.temp"
 
 def systemCall(command):
-    print("\n### SYSTEM CALL: "+command)
+    print("\n$> "+command)
     os.system(command)
 
 systemCall("pwd")
 
 # run hmmsearch
-systemCall("hmmsearch -o " + args.out + "/foam.log --domT 25 --cpu 4 --domtblout "  + unsortedName + " ~/Dropbox/scripts/FOAM/FOAM-hmm_rel1a.hmm " + args.file )
-systemCall("sort " + unsortedName + " > " + sortedName)
-systemCall("rm " + unsortedName)
+#systemCall("hmmsearch -o " + args.out + "/foam.log --domT 25 --cpu 4 --domtblout "  + unsortedName + " ~/Dropbox/scripts/FOAM/FOAM-hmm_rel1a.hmm " + args.file )
+#systemCall("sort " + unsortedName + " > " + sortedName)
+#systemCall("rm " + unsortedName)
 
-systemCall("python ~/Dropbox/scripts/bio/foam/bmn-HMMerBestHit.py " + sortedName + " > " + tempA)
-systemCall("python ~/Dropbox/scripts/bio/foam/cleanupBH.py " + tempA + " > " + bhName)
+systemCall("python ~/Dropbox/scripts/jak-bio/foam/bmn-HMMerBestHit.py " + sortedName + " > " + tempA)
+systemCall("python ~/Dropbox/scripts/jak-bio/foam/cleanupBH.py " + tempA + " > " + bhName)
 
 systemCall("awk '{print $4}' " + bhName + " > " + tempB)
-systemCall("python ~/Dropbox/scripts/bio/foam/bmn-CountEachElement.py " + tempB + " > " + tempC)
-systemCall("python ~/Dropbox/scripts/bio/foam/bmn-KOoneCount.py " + tempC + " | sed s/KO://g | sort -k 1 > " + koName)
+systemCall("python ~/Dropbox/scripts/jak-bio/foam/bmn-CountEachElement.py " + tempB + " > " + tempC)
+systemCall("python ~/Dropbox/scripts/jak-bio/foam/bmn-KOoneCount.py " + tempC + " | sed s/KO://g | sort -k 1 > " + koName)
