@@ -154,9 +154,17 @@ for row in rows:
 print(*tableHeader, sep = "\t")
 
 for id in sorted(merges.keys()):
-    print(id, end = "\t")
 
+    # get row sum
+    sum = 0
     for column in tableHeader:
-        print(merges[id].dict[column], end = "\t")
+        sum += merges[id].dict[column]
 
-    print()
+    if sum > 0:
+
+        print(id, end = "\t")
+
+        for column in tableHeader:
+            print(merges[id].dict[column], end = "\t")
+
+        print()
