@@ -69,7 +69,6 @@ def addSamples():
             samples[split[1]] = Sample(split[0], split[1])
 
 def readFiles():
-
     total = 0
     errors = 0
 
@@ -109,7 +108,7 @@ def main():
 
     print("Processed " + str(total) + " total pairs with " + str(errors) + " pairing errors")
 
-    # a final write
+    # final write
     for barcode in samples:
         samples[barcode].write_to_file(True)
 
