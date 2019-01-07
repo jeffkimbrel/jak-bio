@@ -1,6 +1,6 @@
 import sys
 
-cutoff = 0.8 # 0.5 (50%) is recommended for reads less than 300bp. However, this might have changed to 250bp at some recent version of RDP: https://rdp.cme.msu.edu/classifier/class_help.jsp#conf
+cutoff = 0.5 # 0.5 (50%) is recommended for reads less than 300bp. However, this might have changed to 250bp at some recent version of RDP: https://rdp.cme.msu.edu/classifier/class_help.jsp#conf
 
 def p2f(x):
     return float(x.strip('%'))/100
