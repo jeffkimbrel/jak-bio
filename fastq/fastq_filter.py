@@ -22,6 +22,10 @@ parser.add_argument('--contaminants', '-c',
     action = 'store_true',
     help = 'filter contaminants' )
 
+parser.add_argument('--test', '-t',
+    action = 'store_true',
+    help = 'Test commands without running them' )
+
 args = parser.parse_args()
 
 args.directory = os.path.abspath(args.directory)
@@ -94,17 +98,22 @@ def filter_pair(sample, pair):
     args.out + "/" + sample + "_R2.filtered.fastq.gz"
 
     if args.quality == True:
-        call += " maq=20 "
+        call += " maq=20"
 
     if args.contaminants == True:
-        call += " ref=~/Dropbox/Lab/Resources/contam_seqs.fa k=31 hdist=1 "
+        call += " ref=" + os.path.dirname(os.path.abspath(sys.argv[0])) + "/contam_seqs.fa k=31 hdist=1 "
 
-    p1 = subprocess.Popen(call, shell = True, stdin = None, stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-    out, err = p1.communicate()
-    err = err.decode()
-    lines = err.split('\n')
-    stats = extract_stats(lines)
-    return(stats)
+    print("---\n$> " + call)
+
+    if args.test == True:
+        p1 = subprocess.Popen(call, shell = True, stdin = None, stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+        out, err = p1.communicate()
+        err = err.decode()
+        lines = err.split('\n')
+        stats = extract_stats(lines)
+        return(stats)
+    else:
+        return("TEST")
 
 def format_results(results):
     print("SAMPLE", "READS", "CONTAMINANTS", "LOW-Q", "REMOVED", "REMAIN", sep = " | ")
@@ -125,4 +134,5 @@ results = {}
 for sample in sorted(pairs.keys()):
     results[sample] = filter_pair(sample, pairs[sample])
 
-format_results(results)
+if args.test == False:
+    format_results(results)
