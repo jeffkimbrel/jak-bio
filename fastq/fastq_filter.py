@@ -26,13 +26,24 @@ parser.add_argument('--test', '-t',
     action = 'store_true',
     help = 'Test commands without running them' )
 
+parser.add_argument('--stats', '-s',
+    action = 'store_true',
+    help = 'Save bbduk stats file' )
+
 args = parser.parse_args()
 
 args.directory = os.path.abspath(args.directory)
 args.out = os.path.abspath(args.out)
 
-if not os.path.exists(args.out):
-    os.makedirs(args.out)
+if args.test == False:
+    if not os.path.exists(args.out):
+        os.makedirs(args.out)
+
+## CLASSES #####################################################################
+
+class SAMPLE:
+    def __init__(self, name):
+        self.name = name
 
 ## FUNCTIONS ###################################################################
 
@@ -59,19 +70,42 @@ def identify_pairs(path):
 
     return(pairs)
 
-def verify_pairs(pairs):
+def file_pairs(pairs):
 
     # makes sure each pair has exactly on set of forward and reverse reads.
 
     for sample in pairs:
+
         if len(pairs[sample]["R1"]) != 1 or len(pairs[sample]["R2"]) != 1:
             print(sample + " has a read pair error!! Stopping.")
             sys.exit()
 
-    print("\n*** All fastq file names in " + args.directory + " appear to be correct! Nice!!\n")
+    print("\n*** All fastq file names in " + args.directory + " appear to be correct! Nice!!")
+
+def verify_read_pairs(sample, pair):
+    call = 'reformat.sh in1=' + \
+    args.directory + "/" + pair['R1'][0] + \
+    ' in2=' + \
+    args.directory + "/" + pair['R2'][0] + \
+    ' verifypaired=t'
+
+    #print("---\n$> " + call)
+
+    if args.test == False:
+        p1 = subprocess.Popen(call, shell = True, stdin = None, stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+        out, err = p1.communicate()
+        err = err.decode()
+        lines = err.split('\n')
+
+        if "Names appear to be correctly paired." in lines:
+            return(True)
+        else:
+            return(False)
+    else:
+        return("TEST")
 
 def extract_stats(lines):
-    stats = {"input" : 0, "low" : 0, "contamination" : 0, "removed" : 0, "remain" : 0}
+    stats = {"input" : 0, "lowQC" : 0, "contamination" : 0, "removed" : 0, "remain" : 0}
 
     for line in lines:
         if line.startswith("Input:"):
@@ -79,7 +113,7 @@ def extract_stats(lines):
         elif line.startswith("Contaminants:"):
             stats["contamination"] = line.split()[1]
         elif line.startswith("Low quality discards:"):
-            stats["low"] = line.split()[3]
+            stats["lowQC"] = line.split()[3]
         elif line.startswith("Total Removed:"):
             stats["removed"] = line.split()[2]
         elif line.startswith("Result:"):
@@ -103,9 +137,12 @@ def filter_pair(sample, pair):
     if args.contaminants == True:
         call += " ref=" + os.path.dirname(os.path.abspath(sys.argv[0])) + "/contam_seqs.fa k=31 hdist=1 "
 
-    print("---\n$> " + call)
+    if args.stats == True:
+        call += " stats=" + args.out + "/" + sample + "_stats.txt "
 
-    if args.test == True:
+    #print("---\n$> " + call)
+
+    if args.test == False:
         p1 = subprocess.Popen(call, shell = True, stdin = None, stdout = subprocess.PIPE, stderr = subprocess.PIPE)
         out, err = p1.communicate()
         err = err.decode()
@@ -116,23 +153,37 @@ def filter_pair(sample, pair):
         return("TEST")
 
 def format_results(results):
-    print("SAMPLE", "READS", "CONTAMINANTS", "LOW-Q", "REMOVED", "REMAIN", sep = " | ")
-    print("---", "---", "---", "---", "---", "---", sep = " | ")
+    print("SAMPLE", "READS", "ORDERED", "CONTAMINANTS", "LOW-Q", "REMOVED", "REMAIN", sep = " | ")
+    print("---", "---", "---", "---", "---", "---", "---", sep = " | ")
 
     for sample in results:
-        print(sample, results[sample]["input"], results[sample]["contamination"], results[sample]["low"], results[sample]["removed"], results[sample]["remain"], sep = " | ")
+        #print(type(results))
+        print(sample, results[sample]["input"], results[sample]["contamination"], results[sample]["lowQC"], results[sample]["removed"], results[sample]["remain"], sep = " | ")
 
 
 ## MAIN ########################################################################
 
 pairs = identify_pairs(args.directory)
 
-verify_pairs(pairs)
+file_pairs(pairs)
 
-results = {}
+filter_results = {}
 
 for sample in sorted(pairs.keys()):
-    results[sample] = filter_pair(sample, pairs[sample])
+    print("\n--- " + sample + " ---")
+    print(pairs[sample]["R1"], pairs[sample]["R2"], sep = "\t")
+
+    ordered = False
+    if verify_read_pairs(sample, pairs[sample]) == False:
+        print(sample + " has incorrect pairs! Exiting")
+    else:
+        ordered = True
+        print("Files have ordered read pairs. ")
+
+    sample_results = filter_pair(sample, pairs[sample])
+    sample_results['ordered'] = ordered
+    print(sample_results)
+    filter_results[sample] = sample_results
 
 if args.test == False:
-    format_results(results)
+    format_results(filter_results)
