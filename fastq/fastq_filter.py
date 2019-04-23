@@ -10,99 +10,128 @@ parser = argparse.ArgumentParser(description = 'Takes all fastq pairs in -d and 
 parser.add_argument('-d', '--directory',
     help = "Directory with fastq files",
     required = True)
+
 parser.add_argument('-o', '--out',
     default = "fastq_filter/",
     help = "Output Folder")
 
-parser.add_argument('--quality', '-q',
-    action = 'store_true',
-    help = 'quality filter' )
+parser.add_argument('-q', '--quality',
+    default = None,
+    help = "Minimum average quality")
 
 parser.add_argument('--contaminants', '-c',
     action = 'store_true',
     help = 'filter contaminants' )
-
-parser.add_argument('--test', '-t',
-    action = 'store_true',
-    help = 'Test commands without running them' )
-
-parser.add_argument('--stats', '-s',
-    action = 'store_true',
-    help = 'Save bbduk stats file' )
 
 args = parser.parse_args()
 
 args.directory = os.path.abspath(args.directory)
 args.out = os.path.abspath(args.out)
 
-if args.test == False:
-    if not os.path.exists(args.out):
-        os.makedirs(args.out)
+if not os.path.exists(args.out):
+    os.makedirs(args.out)
 
 ## CLASSES #####################################################################
 
-class SAMPLE:
+samples = {}
+class Sample:
     def __init__(self, name):
         self.name = name
+        self.R1 = []
+        self.R2 = []
+        self.valid_file_pairs = True
+        self.ordered = False
+
+    def add_file(self, file):
+        if "R1" in file:
+            self.R1.append(args.directory + "/" + file)
+
+        if "R2" in file:
+            self.R2.append(args.directory + "/" + file)
+
+    def validate_file_pairs(self):
+        if len(self.R1) != 1 or len(self.R2) != 1:
+            self.valid_file_pairs = False
+
+        for R1 in self.R1:
+            print("R1_in:", R1, sep = "\t")
+        for R2 in self.R2:
+            print("R2_in:", R2, sep = "\t")
+
+        if self.valid_file_pairs == False:
+            print("\n***  ERROR  ***\n" + self.name + " doesn't have proper file names. Each sample should have exactly one R1 and one R2 file. \n*** EXITING ***\n")
+            sys.exit()
+        else:
+            print("Proper file pairs have been found.")
+
+        return(self.valid_file_pairs)
+
+    def verify_read_pairs(self):
+        call = 'reformat.sh in1=' + self.R1[0] + ' in2=' + self.R2[0] + ' verifypaired=t'
+        lines = system_call(call)
+
+        if "Names appear to be correctly paired." in lines:
+            self.ordered = True
+            print("Reads are in the same order in both files.")
+        else:
+            print("\n***  ERROR  ***\nThe read pairs are not in the same order in both files for " + self.name + "\n*** EXITING ***\n")
+            sys.exit()
+
+    def set_out_names(self):
+        self.R1_out = args.out + "/" + self.name + "_filtered.R1.fastq.gz"
+        self.R2_out = args.out + "/" + self.name + "_filtered.R2.fastq.gz"
+
+        print("R1_out:", self.R1_out, sep = "\t")
+        print("R2_out:", self.R2_out, sep = "\t")
+
+    def filter_pair(self):
+        call = 'bbduk.sh in1=' + self.R1[0] + ' in2=' + self.R2[0] + ' out1=' + self.R1_out + ' out2=' + self.R2_out
+
+        if args.quality != None:
+            call += " maq=" + str(args.quality)
+            print("Quality filtering at maq=" + str(args.quality))
+        if args.contaminants == True:
+            call += " ref=" + os.path.dirname(os.path.abspath(sys.argv[0])) + "/contam_seqs.fa k=31 hdist=1 "
+            print("Removing contaminants from " + os.path.dirname(os.path.abspath(sys.argv[0])) + "/contam_seqs.fa")
+
+        # stats
+        call += " stats=" + args.out + "/" + self.name + "_stats.txt "
+
+        self.stats = extract_stats(system_call(call))
+
+    def print_verbose_stats(self):
+
+        print("\nReads in:", self.stats["input"], sep = "\t\t")
+        print("Order Verified:", self.ordered, sep = "\t\t")
+        print("Contaminants Removed:", self.stats["contamination"], cp(self.stats["contamination"], self.stats["input"]), sep = "\t")
+        print("Low-Quality Removed:", self.stats["lowQC"], cp(self.stats["lowQC"], self.stats["input"]), sep = "\t")
+        print("Total Removed:\t", self.stats["removed"], cp(self.stats["removed"], self.stats["input"]), sep = "\t")
+        print("Remaining Reads:", self.stats["remain"], cp(self.stats["remain"], self.stats["input"]), sep = "\t")
+        print()
 
 ## FUNCTIONS ###################################################################
 
-def identify_pairs(path):
+def system_call(call):
+    p1 = subprocess.Popen(call, shell = True, stdin = None, stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+    out, err = p1.communicate()
+    err = err.decode()
+    lines = err.split('\n')
+    return(lines)
 
-    # identify fastq pairs with the same sample name (text before first underscore)
+def cp(n, d): #convert percentage
+    return(str("{0:.6g}".format(100 * int(n) / int(d))) + "%")
 
-    d = os.listdir(path)
-    pairs = {}
-
-    for fileName in d:
-        if fileName.endswith('fastq') or fileName.endswith('fastq.gz'):
-            split = fileName.split("_")
+def add_files():
+    files = os.listdir(args.directory)
+    for file in sorted(files):
+        if file.endswith('fastq') or file.endswith('fastq.gz'):
+            split = file.split("_")
             sample = split[0]
 
-            if not sample in pairs:
-                pairs[sample] = {"R1" : [], "R2" : []}
+            if sample not in samples:
+                samples[sample] = Sample(sample)
 
-            if "R1" in split:
-                pairs[sample]['R1'].append(fileName)
-
-            if "R2" in split:
-                pairs[sample]['R2'].append(fileName)
-
-    return(pairs)
-
-def file_pairs(pairs):
-
-    # makes sure each pair has exactly on set of forward and reverse reads.
-
-    for sample in pairs:
-
-        if len(pairs[sample]["R1"]) != 1 or len(pairs[sample]["R2"]) != 1:
-            print(sample + " has a read pair error!! Stopping.")
-            sys.exit()
-
-    print("\n*** All fastq file names in " + args.directory + " appear to be correct! Nice!!")
-
-def verify_read_pairs(sample, pair):
-    call = 'reformat.sh in1=' + \
-    args.directory + "/" + pair['R1'][0] + \
-    ' in2=' + \
-    args.directory + "/" + pair['R2'][0] + \
-    ' verifypaired=t'
-
-    #print("---\n$> " + call)
-
-    if args.test == False:
-        p1 = subprocess.Popen(call, shell = True, stdin = None, stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-        out, err = p1.communicate()
-        err = err.decode()
-        lines = err.split('\n')
-
-        if "Names appear to be correctly paired." in lines:
-            return(True)
-        else:
-            return(False)
-    else:
-        return("TEST")
+            samples[sample].add_file(file)
 
 def extract_stats(lines):
     stats = {"input" : 0, "lowQC" : 0, "contamination" : 0, "removed" : 0, "remain" : 0}
@@ -121,69 +150,21 @@ def extract_stats(lines):
 
     return(stats)
 
-def filter_pair(sample, pair):
-    call = 'bbduk.sh in1=' + \
-    args.directory + "/" + pair['R1'][0] + \
-    ' in2=' + \
-    args.directory + "/" + pair['R2'][0] + \
-    ' out1=' + \
-    args.out + "/" + sample + "_R1.filtered.fastq.gz" + \
-    ' out2=' + \
-    args.out + "/" + sample + "_R2.filtered.fastq.gz"
+def print_all_stats():
+    print("SAMPLE", "READS", "ORDERED", "CONTAMINANTS", "LOWQ", "REMOVED", "REMAIN", sep = "\t")
+    for sample in samples:
+        print(sample, samples[sample].stats["input"], samples[sample].ordered, samples[sample].stats["contamination"], samples[sample].stats["lowQC"], samples[sample].stats["removed"], samples[sample].stats["remain"], sep = "\t")
 
-    if args.quality == True:
-        call += " maq=20"
+def main():
+    add_files()
 
-    if args.contaminants == True:
-        call += " ref=" + os.path.dirname(os.path.abspath(sys.argv[0])) + "/contam_seqs.fa k=31 hdist=1 "
+    for number, sample in enumerate(samples):
+        print("--- " + sample + " (" + str(number + 1) + "/" + str(len(samples)) + ") ----------------------------------")
+        samples[sample].validate_file_pairs()
+        samples[sample].verify_read_pairs()
+        samples[sample].set_out_names()
+        samples[sample].filter_pair()
+        samples[sample].print_verbose_stats()
 
-    if args.stats == True:
-        call += " stats=" + args.out + "/" + sample + "_stats.txt "
-
-    #print("---\n$> " + call)
-
-    if args.test == False:
-        p1 = subprocess.Popen(call, shell = True, stdin = None, stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-        out, err = p1.communicate()
-        err = err.decode()
-        lines = err.split('\n')
-        stats = extract_stats(lines)
-        return(stats)
-    else:
-        return("TEST")
-
-def format_results(results):
-    print("SAMPLE", "READS", "ORDERED", "CONTAMINANTS", "LOW-Q", "REMOVED", "REMAIN", sep = " | ")
-    print("---", "---", "---", "---", "---", "---", "---", sep = " | ")
-
-    for sample in results:
-        #print(type(results))
-        print(sample, results[sample]["input"], results[sample]["contamination"], results[sample]["lowQC"], results[sample]["removed"], results[sample]["remain"], sep = " | ")
-
-
-## MAIN ########################################################################
-
-pairs = identify_pairs(args.directory)
-
-file_pairs(pairs)
-
-filter_results = {}
-
-for sample in sorted(pairs.keys()):
-    print("\n--- " + sample + " ---")
-    print(pairs[sample]["R1"], pairs[sample]["R2"], sep = "\t")
-
-    ordered = False
-    if verify_read_pairs(sample, pairs[sample]) == False:
-        print(sample + " has incorrect pairs! Exiting")
-    else:
-        ordered = True
-        print("Files have ordered read pairs. ")
-
-    sample_results = filter_pair(sample, pairs[sample])
-    sample_results['ordered'] = ordered
-    print(sample_results)
-    filter_results[sample] = sample_results
-
-if args.test == False:
-    format_results(filter_results)
+    print_all_stats()
+main()
