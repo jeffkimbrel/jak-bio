@@ -1,11 +1,30 @@
 import sys
+import argparse
 
-cutoff = 0.5 # 0.5 (50%) is recommended for reads less than 300bp. However, this might have changed to 250bp at some recent version of RDP: https://rdp.cme.msu.edu/classifier/class_help.jsp#conf
+# Arguments
+parser = argparse.ArgumentParser(description = 'XXX')
+
+parser.add_argument('-f', '--file',
+    help = "RDP fixrank file",
+    required = True)
+
+parser.add_argument('-t', '--threshold',
+    help = "RDP confidence threshold",
+    type = float,
+    default = 0.8,
+    required = True)
+
+args = parser.parse_args()
+
+if args.threshold > 1:
+    args.threshold /= 100
+
+###
 
 def p2f(x):
     return float(x.strip('%'))/100
 
-f = open(sys.argv[1],'r')
+f = open(args.file,'r')
 lines = f.readlines()[7:]
 f.close()
 
@@ -26,7 +45,7 @@ for line in lines:
 
     # domain
     domain = ""
-    if p2f(split[3]) >= cutoff:
+    if p2f(split[3]) >= args.threshold:
         domain = split[2]
         domain = domain.replace('"', '')
         lastSuccess = domain
@@ -37,7 +56,7 @@ for line in lines:
 
     # phylum
     phylum = ""
-    if p2f(split[5]) >= cutoff:
+    if p2f(split[5]) >= args.threshold:
         phylum = split[4]
         phylum = phylum.replace('"', '')
         lastSuccess = phylum
@@ -48,7 +67,7 @@ for line in lines:
 
     # class
     classC = ""
-    if p2f(split[7]) >= cutoff:
+    if p2f(split[7]) >= args.threshold:
         classC = split[6]
         classC = classC.replace('"', '')
         lastSuccess = classC
@@ -60,7 +79,7 @@ for line in lines:
 
     # order
     order = ""
-    if p2f(split[9]) >= cutoff:
+    if p2f(split[9]) >= args.threshold:
         order = split[8]
         order = order.replace('"', '')
         lastSuccess = order
@@ -71,7 +90,7 @@ for line in lines:
 
     # family
     family = ""
-    if p2f(split[11]) >= cutoff:
+    if p2f(split[11]) >= args.threshold:
         family = split[10]
         family = family.replace('"', '')
         lastSuccess = family
@@ -82,7 +101,7 @@ for line in lines:
 
     # genus
     genus = ""
-    if p2f(split[13]) >= cutoff:
+    if p2f(split[13]) >= args.threshold:
         genus = split[12]
         genus = genus.replace('"', '')
         lastSuccess = genus

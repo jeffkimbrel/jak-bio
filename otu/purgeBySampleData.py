@@ -133,6 +133,7 @@ for line in tableFile:
 
     counter = 1
     while counter < len(split):
+
         sample = ASVheader[counter]
         count = int(split[counter])
 
