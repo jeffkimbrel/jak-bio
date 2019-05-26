@@ -2,6 +2,8 @@ import sys
 from Bio import SeqIO
 import argparse
 
+## OPTIONS #####################################################################
+
 parser = argparse.ArgumentParser(description='Extract a sequence range from a fasta file')
 
 parser.add_argument('-f', '--fasta',
@@ -30,14 +32,12 @@ args = parser.parse_args()
 
 args.begin -= 1
 
-##
+## MAIN ########################################################################
 
 for seq_record in SeqIO.parse(args.fasta, "fasta"):
     id = str(seq_record.id)
 
     if len(args.sequence) > 0:
-
-
         if id == args.sequence:
             id = id + "_" + str(args.begin + 1) + "-" + str(args.end)
 

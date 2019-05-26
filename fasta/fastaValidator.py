@@ -2,7 +2,7 @@ import sys
 from Bio import SeqIO
 
 fileName = sys.argv[1]
-handle = open(fileName, "rU")
+handle = open(fileName, "r")
 
 seqCount = 0
 emptyHeaders = 0

@@ -2,6 +2,8 @@ import sys
 from Bio import SeqIO
 import argparse
 
+## OPTIONS #####################################################################
+
 parser = argparse.ArgumentParser(description='xxx')
 
 parser.add_argument('-f', '--fasta',
@@ -17,6 +19,8 @@ parser.add_argument('--sort', '-s',
     help = 'Sort from largest to smallest before re-numbering' )
 
 args = parser.parse_args()
+
+## MAIN ########################################################################
 
 seqs = {}
 lengths = {}

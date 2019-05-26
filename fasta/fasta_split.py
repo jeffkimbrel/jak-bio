@@ -4,7 +4,8 @@ import sys
 from Bio import SeqIO
 import argparse
 
-# Arguments
+## OPTIONS #####################################################################
+
 parser = argparse.ArgumentParser(description = 'Give it a multifasta input and an integer "x", and it will make as many smaller files necessary with at most that x sequences.')
 
 parser.add_argument('-f', '--fasta',
@@ -22,7 +23,7 @@ parser.add_argument('-o', '--out',
 args = parser.parse_args()
 args.sequences = int(args.sequences)
 
-# Process File
+## MAIN ########################################################################
 
 seqCounter = 0
 fileCounter = 1

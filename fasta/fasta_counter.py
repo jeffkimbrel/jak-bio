@@ -1,6 +1,8 @@
 from Bio import SeqIO
 import argparse
 
+## OPTIONS #####################################################################
+
 parser = argparse.ArgumentParser(description = 'Given a fasta file, returns the total or subsequence nt/aa count.')
 parser.add_argument('-f', '--fasta', help = "fasta file", required = True)
 parser.add_argument('--total', '-t', action = 'store_true', help = 'Print total of all subsequences' )

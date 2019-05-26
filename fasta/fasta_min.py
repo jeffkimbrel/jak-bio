@@ -1,13 +1,12 @@
 #!/usr/bin/python
 
-# Give it a multifasta input and a length, it will return a fasta list of sequences that length or longer
-
 import sys
 from Bio import SeqIO
 import argparse
 
-# Arguments
-parser = argparse.ArgumentParser(description = '')
+## OPTIONS #####################################################################
+
+parser = argparse.ArgumentParser(description = 'Give it a multifasta input (-f) and a length )-l), it will return a fasta list of sequences that length or longer')
 
 parser.add_argument('-f', '--fasta',
     help = "Fasta input",
@@ -20,7 +19,7 @@ parser.add_argument('-l', '--length',
 
 args = parser.parse_args()
 
-##
+## MAIN ########################################################################
 
 for seq_record in SeqIO.parse(args.fasta, "fasta"):
     if len(seq_record.seq) >= args.length:

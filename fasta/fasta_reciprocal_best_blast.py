@@ -3,8 +3,9 @@ import sys
 import argparse
 from Bio import SeqIO
 
-########### ARGUMENTS ###########
-parser = argparse.ArgumentParser(description='XXX')
+## OPTIONS #####################################################################
+
+parser = argparse.ArgumentParser(description='Reciprocal best blast, yo.')
 
 parser.add_argument('-a', '--proteinA',
     help = "First protein fasta file",
