@@ -4,11 +4,11 @@ import sys
 import argparse
 
 # Arguments
-parser = argparse.ArgumentParser(description = 'XXX')
+parser = argparse.ArgumentParser(description='XXX')
 
 parser.add_argument('-t', '--tax',
-    help = "Tax Table",
-    required = True)
+                    help="Tax Table",
+                    required=True)
 
 args = parser.parse_args()
 
@@ -19,7 +19,7 @@ with open(args.tax) as f:
         line = line.strip()
         split = line.split("\t")
 
-        print(split[0], end = "\t")
+        print(split[0], end="\t")
 
         counter = 1
         lastGood = ""
@@ -28,10 +28,12 @@ with open(args.tax) as f:
             # if good
             if split[counter] != "NA":
                 lastGood = split[counter]
-                print(split[counter], end = "\t")
+                print(split[counter], end="\t")
                 counter += 1
             else:
-                print("unclassified_" + lastGood, end = "\t")
+                tax = "unclassified_" + lastGood
+                tax = tax.replace("unclassified_unclassified_", "unclassified_")
+                print(tax, end="\t")
                 counter += 1
 
         print()
