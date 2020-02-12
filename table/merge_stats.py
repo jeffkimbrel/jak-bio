@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+from natsort import natsorted
 
 import argparse
 
@@ -14,8 +15,9 @@ args = parser.parse_args()
 
 all = None
 
-for fileName in os.listdir(args.directory):
+for fileName in natsorted(os.listdir(args.directory)):
     if args.text in fileName:
+
         split = fileName.split("_")
         file = pd.read_csv(os.path.join(args.directory, fileName), sep="\t")
         file['SAMPLE'] = split[0]
@@ -24,7 +26,7 @@ for fileName in os.listdir(args.directory):
             all = file
 
         else:
-            all = pd.concat([all, file])
+            all = pd.concat([all, file], sort=False)
 
 
 all.to_csv(args.out, sep="\t", index=False)
