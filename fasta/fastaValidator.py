@@ -9,6 +9,7 @@ emptyHeaders = 0
 dupHeaders = {}
 
 for record in SeqIO.parse(handle, "fasta"):
+    print(record.format("fasta"))
     seqCount += 1
     if record.id == "":
         emptyHeaders += 1
@@ -16,7 +17,7 @@ for record in SeqIO.parse(handle, "fasta"):
         dupHeaders[record.id] = dupHeaders.get(record.id, 0) + 1
 
 dupHeaderFound = 0
-print("Duplicate Headers: ")
+print("---\n\nDuplicate Headers: ")
 
 for header in dupHeaders:
     if dupHeaders[header] > 1:
@@ -26,4 +27,4 @@ for header in dupHeaders:
 if dupHeaderFound == 0:
     print("None")
 
-print("\nSeqs: ",seqCount,"\nEmpty Headers: ", emptyHeaders)
+print("\nSeqs: ", seqCount, "\nEmpty Headers: ", emptyHeaders)

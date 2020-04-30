@@ -8,58 +8,63 @@ from Bio import SeqIO
 parser = argparse.ArgumentParser(description='Reciprocal best blast, yo.')
 
 parser.add_argument('-a', '--proteinA',
-    help = "First protein fasta file",
-    required = True)
+                    help="First protein fasta file",
+                    required=True)
 
 parser.add_argument('-b', '--proteinB',
-    help = "Second protein fasta file",
-    required = True)
+                    help="Second protein fasta file",
+                    required=True)
 
 parser.add_argument('-l', '--length',
-    help="Minimum homology length",
-    default = 0.5)
+                    help="Minimum homology length",
+                    default=0.5)
 
 parser.add_argument('-e', '--eval',
-    help="Minimum e-value",
-    default = 1e-15)
+                    help="Minimum e-value",
+                    default=1e-15)
 
 parser.add_argument('-i', '--percentID',
-    help="Minimum percent identity",
-    default = 0.5)
+                    help="Minimum percent identity",
+                    default=0.5)
 
 args = parser.parse_args()
 args.length = float(args.length)
 args.eval = float(args.eval)
 args.percentID = float(args.percentID)
-if args.percentID < 1: # blast given as percentage rather than ratio
+if args.percentID < 1:  # blast given as percentage rather than ratio
     args.percentID = args.percentID * 100
 
 ########### Process File A ###########
 
-os.system('formatdb -i '+args.proteinA+' -o T -p T')
+os.system('makeblastdb -in '+args.proteinA+' -dbtype prot')
 aDict = {}
 for seq_record in SeqIO.parse(args.proteinA, "fasta"):
     seq_record.seq = seq_record.seq.rstrip("*")
-    aDict[seq_record.id] = {'length' : len(seq_record.seq), "hit" : "", "percentLength" : 0, "eval" : 1, "percentID" : 0, "reciprocal" : 0}
+    aDict[seq_record.id] = {'length': len(
+        seq_record.seq), "hit": "", "percentLength": 0, "eval": 1, "percentID": 0, "reciprocal": 0}
 
 ########### Process File B ###########
 
-os.system('formatdb -i '+args.proteinB+' -o T -p T')
+os.system('makeblastdb -in '+args.proteinB+' -dbtype prot')
 bDict = {}
 for seq_record in SeqIO.parse(args.proteinB, "fasta"):
     seq_record.seq = seq_record.seq.rstrip("*")
-    bDict[seq_record.id] = {'length' : len(seq_record.seq), "hit" : "", "percentLength" : 0, "eval" : 1, "percentID" : 0, "reciprocal" : 0}
+    bDict[seq_record.id] = {'length': len(
+        seq_record.seq), "hit": "", "percentLength": 0, "eval": 1, "percentID": 0, "reciprocal": 0}
 
 ########### RUN BLASTs ###########
 
-os.system('blastall -p blastp -i '+args.proteinA+' -d '+args.proteinB+' -m 8 -e 1e-7 -o a_against_b.blastp')
-os.system('blastall -p blastp -d '+args.proteinA+' -i '+args.proteinB+' -m 8 -e 1e-7 -o b_against_a.blastp')
+os.system('blastp -query '+args.proteinA+' -db ' +
+          args.proteinB+' -evalue 1e-7 -outfmt 6 -out a_against_b.blastp')
+os.system('blastp -query '+args.proteinB+' -db ' +
+          args.proteinA+' -evalue 1e-7 -outfmt 6 -out b_against_a.blastp')
 
 ########### PROCESS BLASTs ###########
 
 for line in open('a_against_b.blastp', 'rt'):
     line = line.rstrip()
-    [query, subject, percent_id, alignment_length, mismatches, gap_openings, query_start, query_end, subject_start, subject_end, E_value, bit_score] = line.split("\t")
+    [query, subject, percent_id, alignment_length, mismatches, gap_openings, query_start,
+        query_end, subject_start, subject_end, E_value, bit_score] = line.split("\t")
 
     # add hits satisfying criteria to dictionary
     percentLength = int(alignment_length) / aDict[query]['length']
@@ -76,7 +81,8 @@ for line in open('a_against_b.blastp', 'rt'):
 
 for line in open('b_against_a.blastp', 'rt'):
     line = line.rstrip()
-    [query, subject, percent_id, alignment_length, mismatches, gap_openings, query_start, query_end, subject_start, subject_end, E_value, bit_score] = line.split("\t")
+    [query, subject, percent_id, alignment_length, mismatches, gap_openings, query_start,
+        query_end, subject_start, subject_end, E_value, bit_score] = line.split("\t")
 
     # add hits satisfying criteria to dictionary
     percentLength = int(alignment_length) / bDict[query]['length']
@@ -103,11 +109,13 @@ for query in aDict:
 for query in sorted(aDict.keys()):
     if aDict[query]['reciprocal'] == 1:
         subject = aDict[query]['hit']
-        print(query, aDict[query]['length'], aDict[query]['alignLength'], aDict[query]['percentID'], aDict[query]['eval'], sep = "\t", end = "\t")
-        print(subject, bDict[subject]['length'], bDict[subject]['alignLength'], bDict[subject]['percentID'], bDict[subject]['eval'], sep = "\t")
+        print(query, aDict[query]['length'], aDict[query]['alignLength'],
+              aDict[query]['percentID'], aDict[query]['eval'], sep="\t", end="\t")
+        print(subject, bDict[subject]['length'], bDict[subject]['alignLength'],
+              bDict[subject]['percentID'], bDict[subject]['eval'], sep="\t")
     else:
-        print(query, "-", "-", "-", "-", "None", "-", "-", "-", "-", sep = "\t")
+        print(query, "-", "-", "-", "-", "None", "-", "-", "-", "-", sep="\t")
 
 for query in sorted(bDict.keys()):
     if bDict[query]['reciprocal'] != 1:
-        print("None", "-", "-", "-", "-", query, "-", "-", "-", "-", sep = "\t")
+        print("None", "-", "-", "-", "-", query, "-", "-", "-", "-", sep="\t")
