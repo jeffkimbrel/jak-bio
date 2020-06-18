@@ -2,17 +2,17 @@ import sys
 import argparse
 
 # Arguments
-parser = argparse.ArgumentParser(description = 'XXX')
+parser = argparse.ArgumentParser(description='XXX')
 
 parser.add_argument('-f', '--file',
-    help = "RDP fixrank file",
-    required = True)
+                    help="RDP fixrank file",
+                    required=True)
 
 parser.add_argument('-t', '--threshold',
-    help = "RDP confidence threshold",
-    type = float,
-    default = 0.8,
-    required = True)
+                    help="RDP confidence threshold",
+                    type=float,
+                    default=0.8,
+                    required=True)
 
 args = parser.parse_args()
 
@@ -21,24 +21,26 @@ if args.threshold > 1:
 
 ###
 
+
 def p2f(x):
     return float(x.strip('%'))/100
 
-f = open(args.file,'r')
+
+f = open(args.file, 'r')
 lines = f.readlines()[7:]
 f.close()
 
 # header
-print("", "domain", "phylum", "class", "order", "family", "genus", sep = "\t")
+print("", "domain", "phylum", "class", "order", "family", "genus", sep="\t")
 
 
 for line in lines:
     line = line.strip()
     split = line.split(";")
 
-    #print(line)
+    # print(line)
 
-    print(split[0],end = "\t")
+    print(split[0], end="\t")
 
     # last success
     lastSuccess = "root"
@@ -52,7 +54,7 @@ for line in lines:
     else:
         domain = "unclassified_" + lastSuccess
 
-    print(domain, end = "\t")
+    print(domain, end="\t")
 
     # phylum
     phylum = ""
@@ -63,7 +65,7 @@ for line in lines:
     else:
         phylum = "unclassified_" + lastSuccess
 
-    print(phylum, end = "\t")
+    print(phylum, end="\t")
 
     # class
     classC = ""
@@ -74,8 +76,7 @@ for line in lines:
     else:
         classC = "unclassified_" + lastSuccess
 
-    print(classC, end = "\t")
-
+    print(classC, end="\t")
 
     # order
     order = ""
@@ -86,7 +87,7 @@ for line in lines:
     else:
         order = "unclassified_" + lastSuccess
 
-    print(order, end = "\t")
+    print(order, end="\t")
 
     # family
     family = ""
@@ -97,7 +98,7 @@ for line in lines:
     else:
         family = "unclassified_" + lastSuccess
 
-    print(family, end = "\t")
+    print(family, end="\t")
 
     # genus
     genus = ""
@@ -108,6 +109,6 @@ for line in lines:
     else:
         genus = "unclassified_" + lastSuccess
 
-    print(genus, end = "\t")
+    print(genus)
 
-    print()
+    # print()
