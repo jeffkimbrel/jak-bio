@@ -78,7 +78,6 @@ if __name__ == "__main__":
     rpk = calc_rpk(df)
     per_million = rpk.sum(axis=0) / 1000000
     tpm = calc_tpm(rpk, per_million)
-    print(tpm)
 
     if tpm.index.name == "Unnamed: 0":
         tpm.index.name = "TPM"
@@ -87,4 +86,7 @@ if __name__ == "__main__":
 
     tpm.to_csv(args.out, sep="\t")
 
-    print("TPM adjusted values saved to " + args.out)
+    print("\nPreview:")
+    print(tpm)
+
+    print("\nTPM adjusted values saved to " + args.out)
