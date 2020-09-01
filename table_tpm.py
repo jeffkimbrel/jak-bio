@@ -2,10 +2,11 @@
 
 import pandas as pd
 import argparse
-import jak_utils
 import sys
-from jakomics import colors
+from Bio import SeqIO
 
+import jak_utils
+from jakomics import colors
 jak_utils.header()
 
 # OPTIONS #####################################################################
@@ -41,22 +42,30 @@ def get_lengths():
         lengths = pd.read_csv(args.lengths, sep="\t")
         lengths = lengths.set_index('feature')
         lengths = lengths['length']
-        return lengths
     else:
-        return("Logic for fasta files not ready yet!")
+        lengths = pd.DataFrame(columns=['feature', 'length'])
+        for seq_record in SeqIO.parse(args.fasta, "fasta"):
+            id = str(seq_record.id)
+            count = len(str(seq_record.seq))
+            lengths = lengths.append({'feature': id, 'length': count}, ignore_index=True)
+        lengths = lengths.set_index('feature')
+    print(f'Lengths file has {len(lengths)} features')
+    return lengths
 
 
 def prepare_table():
     table = pd.read_csv(args.table, sep="\t")
     table = table.set_index(list(table.columns[[0]]))
     table = table.fillna(0)
+    print(f'Counts table has {len(table)} features')
     return table
 
 
 def merge_tables(table, lengths):
-    df = pd.concat([table, lengths], axis=1)
+    df = pd.concat([table, lengths], join='inner', axis=1)
     df.index.name = table.index.name
-    return(df)
+    print(f'Final table merged {len(df)} common features')
+    return df
 
 
 def calc_rpk(df):
@@ -88,7 +97,7 @@ if __name__ == "__main__":
 
     tpm.to_csv(args.out, sep="\t")
 
-    print("\nPreview:")
-    print(tpm)
+    # print("\nPreview:")
+    # print(tpm)
 
     print("\nTPM adjusted values saved to " + args.out)
