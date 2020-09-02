@@ -11,4 +11,4 @@ def header():
         data = yaml.load(f, Loader=yaml.FullLoader)
 
     print(
-        f'{colors.bcolors.BLUE}{code_name} v{data["version"]} JAK-BIO{colors.bcolors.END}')
+        f'{colors.bcolors.BLUE}{code_name} v{data["version"]} JAK-BIO{colors.bcolors.END}', file=sys.stderr)
