@@ -11,7 +11,7 @@ jak_utils.header()
 # OPTIONS #####################################################################
 
 parser = argparse.ArgumentParser(
-    description='Give it a multifasta input (-f) and a length )-l), it will return a fasta list of sequences that length or longer')
+    description='Give it a multifasta input (-f) and a length (-l), it will return a fasta list of sequences that length or longer')
 
 parser.add_argument('-f', '--fasta',
                     help="Fasta input",
