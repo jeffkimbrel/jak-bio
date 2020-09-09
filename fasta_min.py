@@ -1,11 +1,10 @@
 #!/usr/bin/env python
 
 from Bio import SeqIO
-import sys
 import argparse
 
 import jak_utils
-from jakomics import colors, utilities
+from jakomics import colors
 jak_utils.header()
 
 # OPTIONS #####################################################################
