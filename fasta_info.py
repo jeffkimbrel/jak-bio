@@ -12,7 +12,7 @@ jak_utils.header()
 # OPTIONS #####################################################################
 
 parser = argparse.ArgumentParser(
-    description='Given a fasta file, returns the total or subsequence nt/aa count.')
+    description='Given a (list of) fasta file(s), returns the total or subsequence nt/aa length and GC%.')
 
 parser.add_argument('--in_dir',
                     help="Directory with fasta files",
