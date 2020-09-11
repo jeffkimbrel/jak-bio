@@ -14,6 +14,9 @@ from skimage import (
     color, feature, filters, io, measure, morphology, segmentation, util
 )
 
+import jak_utils
+jak_utils.header()
+
 # OPTIONS #####################################################################
 
 parser = argparse.ArgumentParser(
