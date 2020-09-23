@@ -5,8 +5,8 @@ import argparse
 import sys
 from Bio.SeqUtils import GC
 
-import jak_utils
 from jakomics import colors, utilities
+import jak_utils
 jak_utils.header()
 
 # OPTIONS #####################################################################
