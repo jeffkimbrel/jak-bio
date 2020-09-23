@@ -4,6 +4,7 @@ import argparse
 import pandas as pd
 
 from jakomics.fastq import FASTQ, run_info
+from jakomics import colors
 
 import jak_utils
 jak_utils.header()
