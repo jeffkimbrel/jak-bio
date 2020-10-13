@@ -12,3 +12,11 @@ def header():
 
     print(
         f'{colors.bcolors.BLUE}JAK-BIO v{data["version"]}: {code_name}{colors.bcolors.END}', file=sys.stderr)
+
+
+def get_yaml(field):
+    yaml_path = os.path.join(os.path.dirname(sys.argv[0]), 'jak_meta.yml')
+    with open(yaml_path) as f:
+        data = yaml.load(f, Loader=yaml.FullLoader)
+
+    return data[field]

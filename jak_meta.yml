@@ -1,2 +1,5 @@
 version:
-    0.1.11
+    0.1.12
+
+contams_db:
+    "/Users/kimbrel1/Science/repos/jak-bio/db/contam_seqs.fa"
