@@ -3,7 +3,7 @@
 import argparse
 import pandas as pd
 from tqdm import tqdm
-from multiprocessing import Pool
+from multiprocessing import Pool, Manager
 
 from jakomics.fastq import FASTQ, run_info
 from jakomics import colors
@@ -27,6 +27,9 @@ args = parser.parse_args()
 
 
 def get_info(sample):
+
+    global results
+
     for fastq_file in sample.files:
         if args.md5:
             fastq_file.get_md5()
@@ -40,11 +43,14 @@ def get_info(sample):
                 f"\n{colors.bcolors.RED}WARNING: {fastq_file.name} appears to be a combination of different Illumina runs!{colors.bcolors.END}")
 
         for result in run_info_results:
-            print(sample.sample, fastq_file.name, sample.type, fastq_file.read,
-                  result, run_info_results[result], fastq_file.md5, sep="\t")
+            results.append([sample.sample, fastq_file.name, sample.type, fastq_file.read,
+                            result, run_info_results[result], fastq_file.md5])
 
 
 if __name__ == "__main__":
+    manager = Manager()
+    results = manager.list()
+
     jak_utils.header()
     files = pd.read_excel(args.samples, index_col=0)
 
@@ -58,3 +64,6 @@ if __name__ == "__main__":
     for _ in tqdm(pool.imap_unordered(get_info, sample_list), total=len(sample_list), desc="Finished", unit=" samples"):
         pass
     pool.close()
+
+    for result in results:
+        print(result)
