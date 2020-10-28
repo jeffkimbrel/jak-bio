@@ -2,3 +2,5 @@
 *.pdf
 *test*
 *.pyc
+db/TASmania_HMMs/*
+db/TADB_2.0/*

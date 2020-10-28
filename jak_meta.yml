@@ -1,5 +1,17 @@
 version:
-    0.2.1
+    0.3.0
 
 contams_db:
     "/Users/kimbrel1/Science/repos/jak-bio/db/contam_seqs.fa"
+
+TASmania_HMMs_path:
+    "/Users/kimbrel1/Science/repos/jak-bio/db/TASmania_HMMs/"
+
+TADB2:
+    "/Users/kimbrel1/Science/repos/jak-bio/db/TADB_2.0/TADB2.xlsx"
+
+TADB2_faa:
+    /Users/kimbrel1/Science/repos/jak-bio/db/TADB_2.0/TADB2.faa
+
+TADB2_ffn:
+    /Users/kimbrel1/Science/repos/jak-bio/db/TADB_2.0/TADB2.faa
