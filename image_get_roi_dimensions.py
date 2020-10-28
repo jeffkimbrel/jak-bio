@@ -20,7 +20,7 @@ jak_utils.header()
 # OPTIONS #####################################################################
 
 parser = argparse.ArgumentParser(
-    description='XXX')
+    description='X', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
 parser.add_argument('--in_dir',
                     help="Directory with fasta files",
@@ -124,7 +124,7 @@ def subtract_background(image, radius=50, light_bg=False):
 # MAIN ########################################################################
 
 
-images = utilities.get_files(args.files, args.in_dir, ['tif', 'tiff'])
+images = utilities.get_files(args.files, args.in_dir, ['tif', 'tiff', 'jpg'])
 
 for file in images:
 

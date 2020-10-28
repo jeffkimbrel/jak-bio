@@ -28,6 +28,21 @@ parser.add_argument('-q', '--quiet',
 
 args = parser.parse_args()
 
+
+def format_stats(sample, type, stats, sep="|"):
+    print(f'{sample}{sep}{type}{sep}IN{sep}{stats["IN"]["READS"]}{sep}{stats["IN"]["BP"]}')
+    print(
+        f'{sample}{sep}{type}{sep}REMOVED{sep}{stats["REMOVED"]["READS"]}{sep}{stats["REMOVED"]["BP"]}')
+    print(f'{sample}{sep}{type}{sep}OUT{sep}{stats["OUT"]["READS"]}{sep}{stats["OUT"]["BP"]}')
+
+    for s in stats:
+        if s != "IN":
+            if s != "OUT":
+                if s != "REMOVED":
+                    print(
+                        f'{sample}{sep}{type}{sep}{s}{sep}{stats[s]["READS"]}{sep}{stats[s]["BP"]}')
+
+
 if __name__ == "__main__":
     jak_utils.header()
     files = pd.read_excel(args.samples, index_col=0)
@@ -36,17 +51,24 @@ if __name__ == "__main__":
 
     sample_list = []
 
+    print('SAMPLE|STEP|STAT|READS|BP\n---|---|---|---|---')
+
     for sample, row in files.iterrows():
         d = FASTQ(sample, row)
         sample_list.append(d)
 
-        print(f'### {d.sample} ###')
+        # print(f'{colors.bcolors.CYAN}\n### {d.sample} ###{colors.bcolors.END}')
 
         d.verify_read_pairs(echo=args.quiet, run=True)
 
         if args.amplicons:
-            d.contaminant_filtering(contam_seqs, echo=args.quiet, run=True)
+            cf = d.contaminant_filtering(contam_seqs, echo=args.quiet, run=True)
+            format_stats(d.sample, 'CF', cf)
+
         else:
-            d.adapter_trimming(contam_seqs, echo=args.quiet, run=True)
-            d.contaminant_filtering(contam_seqs, echo=args.quiet, run=True)
-            d.quality_filtering(echo=args.quiet, run=True)
+            rt = d.adapter_trimming(contam_seqs, echo=args.quiet, run=True)
+            format_stats(d.sample, 'RT', rt)
+            cf = d.contaminant_filtering(contam_seqs, echo=args.quiet, run=True)
+            format_stats(d.sample, 'CF', cf)
+            qf = d.quality_filtering(echo=args.quiet, run=True)
+            format_stats(d.sample, 'QF', qf)
