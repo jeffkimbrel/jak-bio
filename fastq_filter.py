@@ -18,11 +18,13 @@ parser.add_argument('-s', '--samples',
                     help="excel file with samples in S, F, R, I columns",
                     required=True)
 
-parser.add_argument('-w', '--workflow',
-                    help="amplicon (a) or shotgun (s) workflow",
-                    required=False,
-                    default="s")
+parser.add_argument('-a', '--amplicons',
+                    action='store_true',
+                    help='Run amplicon workflow instead of shotgun workflow')
 
+parser.add_argument('-q', '--quiet',
+                    action='store_false',
+                    help='Print out commands')
 
 args = parser.parse_args()
 
@@ -38,11 +40,13 @@ if __name__ == "__main__":
         d = FASTQ(sample, row)
         sample_list.append(d)
 
-        d.current_name = d.sample
-        d.verify_read_pairs()
+        print(f'### {d.sample} ###')
 
-        if args.workflow == 's':
-            d.adapter_trimming(contam_seqs, echo=True, run=True)
+        d.verify_read_pairs(echo=args.quiet, run=True)
 
-        if args.workflow == 'a':
-            d.contaminant_filtering(contam_seqs, echo=True, run=True)
+        if args.amplicons:
+            d.contaminant_filtering(contam_seqs, echo=args.quiet, run=True)
+        else:
+            d.adapter_trimming(contam_seqs, echo=args.quiet, run=True)
+            d.contaminant_filtering(contam_seqs, echo=args.quiet, run=True)
+            d.quality_filtering(echo=args.quiet, run=True)
