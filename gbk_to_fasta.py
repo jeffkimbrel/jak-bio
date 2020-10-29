@@ -12,7 +12,7 @@ from Bio import BiopythonWarning
 warnings.simplefilter('ignore', BiopythonWarning)
 
 
-def main(gbk, write_contig = None, write_faa = None, write_nt = None, feature_identifier = 'locus_tag', return_gene_dict = False):
+def main(gbk, write_contig=None, write_faa=None, write_nt=None, feature_identifier='locus_tag', return_gene_dict=False):
 
     if write_contig != None:
         ct_file = open(write_contig, 'w')
@@ -81,6 +81,7 @@ def main(gbk, write_contig = None, write_faa = None, write_nt = None, feature_id
         return gene_dict
 
 # MAIN ########################################################################
+
 
 if __name__ == "__main__":
 

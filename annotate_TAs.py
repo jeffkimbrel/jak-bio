@@ -7,9 +7,11 @@ import sys
 import yaml
 import pandas as pd
 from natsort import natsorted
-from Bio import SearchIO
+# from Bio import SearchIO
 from collections import Counter
 import math
+from multiprocessing import Manager, Pool
+from tqdm import tqdm
 
 import jak_utils
 
@@ -36,22 +38,14 @@ args = parser.parse_args()
 
 args.out_dir = os.path.abspath(args.out_dir) + '/'
 
-if not os.path.exists(args.out_dir):
-    print("\nCreating directory " + args.out_dir)
-    os.makedirs(args.out_dir)
-
-TASmania_HMMs_path = jak_utils.get_yaml("TASmania_HMMs_path")
-
-
-TASmania_metadata_A = pd.read_excel(os.path.join(
-    TASmania_HMMs_path, "journal.pcbi.1006946.s008.xlsx"), sheet_name='antitoxin_profiles_annotation')
-TASmania_metadata_T = pd.read_excel(os.path.join(
-    TASmania_HMMs_path, "journal.pcbi.1006946.s008.xlsx"), sheet_name='toxin_profiles_annotation')
+# PREP DATABASES ##############################################################
 
 tadb_data = pd.read_excel(jak_utils.get_yaml("TADB2"), sheet_name="merged")
 tadb_type = pd.read_excel(jak_utils.get_yaml("TADB2"), sheet_name="type")
-
 tadb_type = tadb_type.set_index('TA_ID')
+
+blast.make_blast_db('prot', jak_utils.get_yaml("TADB2_faa"))
+blast.make_blast_db('nucl', jak_utils.get_yaml("TADB2_ffn"))
 
 # CLASSES #####################################################################
 
@@ -156,7 +150,7 @@ def get_tadb_family(tadb):
 
 
 def score_tadb_pairs(pairs):
-    print(f'{colors.bcolors.PURPLE}Scoring Potential Pairs{colors.bcolors.END}')
+    # print(f'Scoring Potential Pairs')
     processed_pairs = []
 
     for pair in pairs:
@@ -243,7 +237,7 @@ def parse_tadb_results(gene):
 
 
 def get_potential_tadb_pairs(genome, overlapping_ids=1, max_distance=500):
-    print(f'{colors.bcolors.PURPLE}Finding Potential Pairs{colors.bcolors.END}')
+    # print(f'Finding Potential Pairs')
 
     pairs = []
 
@@ -260,14 +254,14 @@ def get_potential_tadb_pairs(genome, overlapping_ids=1, max_distance=500):
 
 
 def blast_tadb(genome, aa=True, nt=False):
-    print(f'{colors.bcolors.PURPLE}Starting BLASTs{colors.bcolors.END}')
+    # print(f'Starting BLASTs')
 
     if aa:
         tadb_aa_results = blast.run_blast(type="prot",
                                           q=genome.faa_path,
                                           db=jak_utils.get_yaml("TADB2_faa"),
                                           e=1e-7,
-                                          make=True)
+                                          make=False)
 
         for query in natsorted(tadb_aa_results.keys()):
             genome.genes[query].tadb_blast = tadb_aa_results[query]
@@ -278,8 +272,8 @@ def blast_tadb(genome, aa=True, nt=False):
         tadb_nt_results = blast.run_blast(type="nucl",
                                           q=genome.nt_path,
                                           db=jak_utils.get_yaml("TADB2_ffn"),
-                                          e=1e-7,
-                                          make=True)
+                                          e=1e-2,
+                                          make=False)
 
         for query in natsorted(tadb_nt_results.keys()):
             genome.genes[query].tadb_blast = tadb_nt_results[query]
@@ -297,53 +291,66 @@ def blast_tadb(genome, aa=True, nt=False):
     #     genome.genes[query].tadb.append(tadb_contig_results[query])
 
 
-def annotate_tasmania(file_path, df):
-    print(file_path)
-
-    for toxin, row in df.iterrows():
-        hmm.run_hmmsearch(file_path, "temp.log", "temp_output.txt",
-                          TASmania_HMMs_path + row['hmm_profile_id'] + '.hmm3', eval=1e-15)
-        with open('temp_output.txt', 'rU') as input:
-            for qresult in SearchIO.parse(input, 'hmmsearch3-domtab'):
-
-                query_name = qresult.id  # sequence ID from fasta
-                qlen = qresult.seq_len
-                hits = qresult.hits
-                # ?? full_score = qresult.score
-                # ?? full_eval = qresult.evalue
-                num_hits = len(hits)
-                if num_hits > 0:
-                    for i in range(0, num_hits):
-                        target_name = hits[i].id
-                        hit_evalue = hits[i].evalue
-                        hit_score = hits[i].bitscore
-                        hmm_name = hits[i].accession
-                        tlen = hits[i].seq_len
-
-                        for hsp in hits[i]:
-                            query_range = str(hsp.query_start + 1) + "-" + str(hsp.query_end)
-                            hit_range = str(hsp.hit_start + 1) + "-" + str(hsp.hit_end)
-                            print(row['hmm_cluster_group_id'], row['hmm_profile_id'], row['nearest_pfam_identifier'], row['nearest_pfam_desc'], query_name, qlen, num_hits, query_range,
-                                  target_name, tlen, hit_evalue, hit_score, hmm_name, hit_range, sep="\t")
-
-
-def view_tadb_results(pairs, min_score):
+def view_tadb_results(name, pairs, min_score):
     print('GENOME', 'GENOME_PAIR', 'REPLICON', 'RANGE', 'TYPE', 'TOXIN_LOCUS', 'TOXIN_NAME', 'ANTITOXIN_LOCUS', 'ANTITOXIN_NAME', 'SHARED_FAMILIES',
           'SHARED_TADB_IDS', 'SCORE', 'SCORE_NOTE', 'TOXIN_TADB_IDS', 'ANTITOXIN_TADB_IDS', 'TOXIN_NAMES', 'ANTITOXIN_NAMES', sep="\t")
+
     for pair in pairs:
         if pair.score >= min_score:
-            pair.view(genome.name)
+            pair.view(name)
+
+
+def make_empty_df():
+    return(pd.DataFrame(columns=['GENOME', 'GENOME_PAIR', 'REPLICON', 'RANGE', 'TYPE', 'TOXIN_LOCUS', 'TOXIN_NAME', 'ANTITOXIN_LOCUS', 'ANTITOXIN_NAME', 'SHARED_FAMILIES',
+                                 'SHARED_TADB_IDS', 'SCORE', 'SCORE_NOTE', 'TOXIN_TADB_IDS', 'ANTITOXIN_TADB_IDS', 'TOXIN_NAMES', 'ANTITOXIN_NAMES']))
+
+
+def tadb_results_to_df(name, pairs, min_score):
+    details = make_empty_df()
+
+    for pair in pairs:
+        if pair.score >= min_score:
+            # pair.view(name)
+            details = details.append(
+                pd.Series(data={
+                    'GENOME': name,
+                    'GENOME_PAIR': pair.id,
+                    'REPLICON': pair.get_replicon(),
+                    'RANGE': pair.get_range(),
+                    'TYPE': pair.get_type(),
+                    'TOXIN_LOCUS': pair.toxin,
+                    'TOXIN_NAME': pair.toxin_name,
+                    'ANTITOXIN_LOCUS': pair.antitoxin,
+                    'ANTITOXIN_NAME': pair.antitoxin_name,
+                    'SHARED_FAMILIES': pair.shared_tadb_families,
+                    'SHARED_TADB_IDS': pair.shared_tadb_ids,
+                    'SCORE': pair.score,
+                    'SCORE_NOTE': scores[pair.score],
+                    'TOXIN_TADB_IDS': pair.all_toxin_tabd_ids(),
+                    'ANTITOXIN_TADB_IDS': pair.all_antitoxin_tabd_ids(),
+                    'TOXIN_NAMES': pair.get_all_toxin_names(),
+                    'ANTITOXIN_NAMES': pair.get_all_antitoxin_names()
+                }
+                ),
+                ignore_index=True)
+
+    return details
 
 
 def find_TAs(genome):
-    print(f'{colors.bcolors.PURPLE}Finding TAs{colors.bcolors.END}')
+
+    global shared_results
+    results = []
 
     # write genes to genomes and gene class dictionary
     genome.faa_path = os.path.join(args.out_dir, genome.name + ".faa")
     genome.nt_path = os.path.join(args.out_dir, genome.name + ".ffn")
     genome.contig_path = os.path.join(args.out_dir, genome.name + ".fa")
-    genome.genes = gbk_to_fasta.main(genome.file_path, write_faa=genome.faa_path,
-                                     write_nt=genome.nt_path, write_contig=genome.contig_path, return_gene_dict=True)
+    genome.genes = gbk_to_fasta.main(genome.file_path,
+                                     write_faa=genome.faa_path,
+                                     write_nt=genome.nt_path,
+                                     write_contig=genome.contig_path,
+                                     return_gene_dict=True)
     genome.potential_TA_list = []
 
     blast_tadb(genome, aa=True, nt=True)
@@ -355,21 +362,39 @@ def find_TAs(genome):
             genome.potential_TA_list.append(genome.genes[gene].id)
 
     pairs = get_potential_tadb_pairs(genome)
-
-    processed_pairs = score_tadb_pairs(pairs)
-    view_tadb_results(processed_pairs, min_score=5)
-
-    # annotate_tasmania(genome.faa_path, TASmania_metadata_A)
-    # annotate_tasmania(genome.faa_path, TASmania_metadata_T)
+    shared_results[genome.name] = score_tadb_pairs(pairs)
 
 # MAIN LOOP ###################################################################
 
 
 if __name__ == "__main__":
+    jak_utils.header()
+
+    manager = Manager()
+    shared_results = manager.dict()
+
+    if not os.path.exists(args.out_dir):
+        print("\nCreating directory " + args.out_dir)
+        os.makedirs(args.out_dir)
 
     genome_list = utilities.get_files(args.files, args.in_dir, ["gbk", "gbff", "gb"])
 
-    for genome in genome_list:
-        print(f'Processing {genome.name}')
+    pool = Pool(processes=8)
+    for _ in tqdm(pool.imap_unordered(find_TAs, genome_list), total=len(genome_list), desc="Finished", unit=" genomes"):
+        pass
+    pool.close()
 
-        find_TAs(genome)
+    results_df = make_empty_df()
+    for genome in shared_results:
+        details = tadb_results_to_df(genome, shared_results[genome], min_score=5)
+        results_df = pd.concat([results_df, details])
+
+    print(results_df)
+
+    # write to file with comments
+    f = open(os.path.join(args.out_dir, "results.txt"), 'a')
+    for c in jak_utils.header(r=True):
+        print(f'# {c}', file=f)
+    for arg in vars(args):
+        print(f'# ARG {arg} = {getattr(args, arg)}', file=f)
+    results_df.to_csv(f, sep="\t", index=False)

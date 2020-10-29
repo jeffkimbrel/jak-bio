@@ -2,7 +2,6 @@
 
 import argparse
 import pandas as pd
-from tqdm import tqdm
 
 from jakomics.fastq import FASTQ
 from jakomics import colors
