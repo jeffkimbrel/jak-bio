@@ -4,6 +4,7 @@ import argparse
 from Bio import SeqIO
 
 from jakomics import utilities, colors
+import jak_utils
 
 # OPTIONS #####################################################################
 
@@ -37,10 +38,12 @@ args = parser.parse_args()
 
 if __name__ == '__main__':
 
+    jak_utils.header()
+
     file_list = utilities.get_files(args.files, args.in_dir, ["fa", "fna", "fasta", "faa"])
 
     for file in file_list:
-        file.out_path = file.name + ".partial_parsed." + file.suffix
+        file.out_path = file.name + ".partial_parsed" + file.suffix
         with open(file.out_path, 'w') as out_f:
             for record in SeqIO.parse(file.file_path, 'fasta'):
                 for partial in args.partial:
