@@ -16,6 +16,7 @@ parser.add_argument('--in_dir',
 parser.add_argument('--out_dir',
                     help="Directory to write .gff and .faa fasta files",
                     required=True)
+
 parser.add_argument('-m',
                     '--meta',
                     help="Enable prodigal meta mode",
