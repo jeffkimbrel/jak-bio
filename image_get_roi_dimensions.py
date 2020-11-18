@@ -271,6 +271,19 @@ for file in images:
 
     # get region properties
 
+    def print_region_props(rp, ax):
+        # feature_count = 0
+        for feature in rp:
+            if feature.area > args.area_treshold:
+                # feature_count += 1
+                ax.text(feature.centroid[1] - (feature.major_axis_length / 2),
+                        feature.centroid[0] + (feature.major_axis_length / 2),
+                        feature.label,
+                        fontsize=2,
+                        color="white")
+
+        return(ax)
+
     props = measure.regionprops(img_watershed)
 
     entries = []
@@ -282,14 +295,24 @@ for file in images:
     df = pd.DataFrame(entries, columns=['label', 'area', 'perimeter', 'y', 'x', 'length', 'width'])
     df = df[df['area'] >= args.area_treshold]
 
-    df['length'] = df['length'] * args.scale
-    df['width'] = df['width'] * args.scale
-    df['perimeter'] = df['perimeter'] * args.scale
-    df['area'] = df['area'] * args.scale * args.scale
+    df['scaled_length'] = df['length'] * args.scale
+    df['scaled_width'] = df['width'] * args.scale
+    df['scaled_perimeter'] = df['perimeter'] * args.scale
+    df['scaled_area'] = df['area'] * args.scale * args.scale
 
     # plotting
 
     color_labels = color.label2rgb(img_watershed, img_gaussian, alpha=0.5, bg_label=0)
+
+    fig, ax = plt.subplots()
+    ax.imshow(color_labels, cmap=plt.cm.gray)
+    ax = print_region_props(props, ax)
+    ax.axis('image')
+    ax.set_xticks([])
+    ax.set_yticks([])
+    fig.tight_layout()
+
+    plt.savefig(file.file_path + '_ROI_labels.png', dpi=600)
 
     # if args.visual:
     #     fig, ax = plt.subplots(ncols=2, figsize=(10, 10), sharex=True, sharey=True)
