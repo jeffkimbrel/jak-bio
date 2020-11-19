@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import sys
+import os
 import pandas as pd
 import numpy as np
 import argparse
@@ -25,7 +26,7 @@ jak_utils.header()
 # OPTIONS #####################################################################
 
 parser = argparse.ArgumentParser(
-    description='X',
+    description='Return ROI Information for a list or directory of images',
     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
 parser.add_argument('--in_dir',
@@ -38,6 +39,12 @@ parser.add_argument('-f', '--files',
                     nargs='*',
                     required=False,
                     default=[])
+
+parser.add_argument('-o',
+                    '--out',
+                    help="File to write results to",
+                    default="ROIs.txt",
+                    required=False)
 
 parser.add_argument('--crop_lrtb',
                     help="Comma-separated list of pixels to crop from ",
@@ -130,6 +137,10 @@ def subtract_background(image, radius=50, light_bg=False):
 # MAIN ########################################################################
 
 
+cols = ['label', 'area', 'perimeter', 'y', 'x', 'length', 'width',
+        'scaled_length', 'scaled_width', 'scaled_perimeter', 'scaled_area', 'Image']
+results = pd.DataFrame(columns=cols)
+
 images = utilities.get_files(args.files, args.in_dir, ['tif', 'tiff', 'jpg'])
 
 if args.interactive and len(images) > 1:
@@ -141,8 +152,8 @@ for file in images:
     file.view()
 
     img_orig = io.imread(file.file_path, as_gray=True)
-    img_cropped = img_orig[int(args.crop_lrtb[2]):img_orig.shape[0]-int(args.crop_lrtb[3]),
-                           int(args.crop_lrtb[0]):img_orig.shape[1]-int(args.crop_lrtb[1])]  # y axis, x-axis
+    img_cropped = img_orig[int(args.crop_lrtb[2]): img_orig.shape[0]-int(args.crop_lrtb[3]),
+                           int(args.crop_lrtb[0]): img_orig.shape[1]-int(args.crop_lrtb[1])]  # y axis, x-axis
 
 
 #####################################################################################
@@ -153,7 +164,7 @@ for file in images:
             viewer = napari.Viewer()
             viewer.add_image(img_cropped, name="Cropped Original", blending='additive')
 
-            @magicgui(
+            @ magicgui(
                 auto_call=True,
                 background={"widget_type": QDoubleSlider, "maximum": 1, "minimum": 0},
                 low={"maximum": 0.1, "minimum": 0.01},
@@ -181,7 +192,7 @@ for file in images:
             viewer.add_image(img_background, name="Background Adjusted", blending='additive')
             viewer.add_image(img_cropped, name="Cropped Original", blending='additive')
 
-            @magicgui(
+            @ magicgui(
                 auto_call=True,
                 sigma={"maximum": 5, "minimum": 0},
                 factor={"maximum": 9, "minimum": 1},
@@ -208,7 +219,7 @@ for file in images:
             viewer.add_image(img_gaussian, name="Gaussian Adjusted", blending='additive')
             viewer.add_image(img_cropped, name="Cropped Original", blending='additive')
 
-            @magicgui(
+            @ magicgui(
                 auto_call=True,
                 block_size={"maximum": 35, "minimum": 1},
                 distance={"maximum": 15, "minimum": 1},
@@ -293,12 +304,16 @@ for file in images:
         entries.append(entry)
 
     df = pd.DataFrame(entries, columns=['label', 'area', 'perimeter', 'y', 'x', 'length', 'width'])
-    df = df[df['area'] >= args.area_treshold]
 
     df['scaled_length'] = df['length'] * args.scale
     df['scaled_width'] = df['width'] * args.scale
     df['scaled_perimeter'] = df['perimeter'] * args.scale
     df['scaled_area'] = df['area'] * args.scale * args.scale
+    df['Image'] = file.name
+
+    df = df[df['area'] >= args.area_treshold]
+
+    results = pd.concat([results, df])
 
     # plotting
 
@@ -332,11 +347,22 @@ for file in images:
     #
     #     plt.show()
 
-    df['Image'] = file.name
-
     # print(df)
-    df.to_csv(file.file_path + "_ROIs.txt", sep="\t", index=False)
+    # df.to_csv(file.file_path + "_ROIs.txt", sep="\t", index=False)
     io.imsave(file.file_path + '_ROIs.png', util.img_as_ubyte(color_labels))
+
+# write to file with comments
+
+if os.path.exists(args.out):
+    os.remove(args.out)
+
+f = open(args.out, 'a')
+for c in jak_utils.header(r=True):
+    print(f'# {c}', file=f)
+for arg in vars(args):
+    print(f'# ARG {arg} = {getattr(args, arg)}', file=f)
 
 for arg in vars(args):
     print(arg, getattr(args, arg))
+
+results.to_csv(f, sep="\t", index=False)
