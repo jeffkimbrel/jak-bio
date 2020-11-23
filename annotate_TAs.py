@@ -1,5 +1,5 @@
 from jakomics import utilities, blast, hmm, gene, colors
-import gbk_to_fasta
+from jakomics.genome import GENOME
 import argparse
 import os
 import re
@@ -343,14 +343,18 @@ def find_TAs(genome):
     results = []
 
     # write genes to genomes and gene class dictionary
+    gbk = GENOME(genome)
+
+    # write genes to genomes and gene class dictionary
     genome.faa_path = os.path.join(args.out_dir, genome.name + ".faa")
     genome.nt_path = os.path.join(args.out_dir, genome.name + ".ffn")
     genome.contig_path = os.path.join(args.out_dir, genome.name + ".fa")
-    genome.genes = gbk_to_fasta.main(genome.file_path,
-                                     write_faa=genome.faa_path,
-                                     write_nt=genome.nt_path,
-                                     write_contig=genome.contig_path,
-                                     return_gene_dict=True)
+
+    genome.genes = gbk.genbank_to_fasta(write_faa=genome.faa_path,
+                                        write_nt=genome.nt_path,
+                                        write_contig=genome.contig_path,
+                                        return_gene_dict=True)
+
     genome.potential_TA_list = []
 
     blast_tadb(genome, aa=True, nt=True)

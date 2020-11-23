@@ -56,22 +56,6 @@ genomes = genomes.set_index('NAME')
 
 for name, row in genomes.iterrows():
     print(name, row['local_filename'], sep="\t")
-    # print(name)
     command = "gunzip -qkc " + row['local_filename'] + \
         " > " + args.out_dir + name + '.' + args.filetype
     os.system(command)
-
-
-#
-# # Print Stats File ############################################################
-# stats = stats[['bin', 'completeness', 'contamination', 'GC',
-#                'lineage', 'contigs', 'N50', 'size', 'OLD_PATH', 'NEW_PATH']]
-#
-# stats = stats.rename(columns={'lineage': 'checkM_lineage'})
-#
-# out_file = args.out_dir + args.name + "_rename_stats.txt"
-#
-# stats.to_csv(out_file, sep="\t")
-#
-# print("\nNew stats file:\n\t", out_file)
-# print("\nFinished processing " + str(len(stats.index)) + " MAGs!!")

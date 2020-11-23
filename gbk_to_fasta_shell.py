@@ -1,5 +1,7 @@
 from jakomics import utilities, colors
-import gbk_to_fasta
+from jakomics.genome import GENOME
+
+# import gbk_to_fasta
 import argparse
 import os
 import sys
@@ -35,16 +37,16 @@ args.out_dir = os.path.abspath(args.out_dir) + '/'
 
 def write_fasta(genome):
 
-    # write genes to genomes and gene class dictionary
-    genome.faa_path = os.path.join(args.out_dir, genome.name + ".faa")
-    genome.nt_path = os.path.join(args.out_dir, genome.name + ".ffn")
-    genome.contig_path = os.path.join(args.out_dir, genome.name + ".fa")
+    gbk = GENOME(genome)
 
-    genome.genes = gbk_to_fasta.main(genome.file_path,
-                                     write_faa=genome.faa_path,
-                                     write_nt=genome.nt_path,
-                                     write_contig=genome.contig_path,
-                                     return_gene_dict=False)
+    # write genes to genomes and gene class dictionary
+    gbk.faa_path = os.path.join(args.out_dir, genome.name + ".faa")
+    gbk.nt_path = os.path.join(args.out_dir, genome.name + ".ffn")
+    gbk.contig_path = os.path.join(args.out_dir, genome.name + ".fa")
+
+    gbk.genbank_to_fasta(write_faa=gbk.faa_path,
+                         write_nt=gbk.nt_path,
+                         write_contig=gbk.contig_path)
 
 
 # MAIN LOOP ###################################################################
