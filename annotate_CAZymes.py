@@ -154,8 +154,8 @@ def main(file_path):
 if __name__ == "__main__":
     jak_utils.header()
 
-    file_list = utilities.get_file_list(args.files, [''])
-    file_list = utilities.get_directory_file_list(args.in_dir, [''], file_list)
+    file_list = utilities.get_file_list(args.files, ['faa'])
+    file_list = utilities.get_directory_file_list(args.in_dir, ['faa'], file_list)
 
     if len(file_list) == 0:
         sys.exit(
