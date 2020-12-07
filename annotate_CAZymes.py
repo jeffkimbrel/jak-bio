@@ -36,10 +36,6 @@ parser.add_argument('-f', '--files',
                     required=False,
                     default=[])
 
-# parser.add_argument('-b', '--berlemont',
-#                     action="store_true",
-#                     help="Save berlemont GH summary file")
-
 parser.add_argument('--qc',
                     help="QC codes to include",
                     required=False,
@@ -139,9 +135,6 @@ def main(file_path):
 
     global counter
 
-    # print(f'> Finished {len(counter)} of {len(file_list)} files...',
-    #       end="\r", file=sys.stderr)
-
     file = File(file_path)
 
     hmm.run_hmmsearch(file.file_path, file.temp_log, file.temp_output,
@@ -152,11 +145,7 @@ def main(file_path):
 
     # cleanup
     file.remove_temp()
-
-    # summary stuff
     counter[file.results_file] = file.file_name
-    # print(f'> Finished {len(counter)} of {len(file_list)} files...',
-    #       end="\r", file=sys.stderr)
 
 
 ## MAIN LOOP ###################################################################
@@ -176,16 +165,6 @@ if __name__ == "__main__":
     for _ in tqdm(pool.imap_unordered(main, file_list), total=len(file_list), desc="Finished", unit=" files"):
         pass
     pool.close()
-
-    print("\n\n---\n")
-
-    # for file in sorted(counter.keys()):
-    #     print(
-    #         f'{file} results written to {colors.bcolors.GREEN}{counter[file]}{colors.bcolors.END}')
-
-    print("\nFinished searching for cazymes!")
-
-    # print(counter)
 
     # write merged results
     if args.hmm is not None:
