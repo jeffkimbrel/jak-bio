@@ -6,14 +6,12 @@ from multiprocessing import Manager, Pool
 from tqdm import tqdm
 
 from jakomics import hmm, utilities, colors
-import count_and_merge_tables
-
+from jakomics.table import TABLE, merge_value_counts
 import jak_utils
 
 # OPTIONS #####################################################################
 
 parser = argparse.ArgumentParser(description='''
-
             Find CAZYmes in an amino acid file
 
             QC_CODE refers to different scoring rules set forth by DBCAN6:
@@ -21,9 +19,8 @@ parser = argparse.ArgumentParser(description='''
                 1B = E-value <= 1e-15 AND HMM coverage >= 35%
                 2 = E-value <= 1e-5  AND Alignment Length >= 80
                 3 = E-value <= 1e-3  AND HMM coverage >= 30%
-                0 = Low-quality hit that did not pass any metrics''',
-
-                                 formatter_class=argparse.RawTextHelpFormatter)
+                0 = Low-quality hit that did not pass any metrics
+                ''', formatter_class=argparse.RawTextHelpFormatter)
 
 parser.add_argument('--in_dir',
                     help="Directory with faa files",
@@ -52,100 +49,48 @@ parser.add_argument('--substrate',
                     required=False,
                     default=None)
 
+parser.add_argument('--remove_duplicates',
+                    action='store_true',
+                    help="""Remove duplicates (hits with the same gene and model)
+from the optional merge files. Note, this won't remove
+all duplicates (e.g. models such AA1_1 and AA1_2 won't
+be considered duplicates). If there is a duplicate, the
+row with the highest HMM_COVERAGE will be retained""")
+
 args = parser.parse_args()
 
 manager = Manager()
-counter = manager.dict()
-
-# CLASSES #####################################################################
-
-genes = {}
-
-
-class File:
-
-    def __init__(self, file_path):
-        self.file_path = file_path
-        self.run_id = utilities.get_unique_ID()
-        self.file_name = os.path.basename(file_path)
-        self.results_file = self.file_name + '.dbcan8.txt'
-        self.results_class_file = self.file_name + '.class_summary.txt'
-        # self.results_berlemont_file = self.file_name + '.berlemont_summary.txt'
-        self.temp_log = self.run_id + '.log'
-        self.temp_output = self.run_id + '.temp.txt'
-
-    def remove_temp(self):
-        os.system('rm ' + self.temp_log)
-        os.system('rm ' + self.temp_output)
-
-    def process_dbcan_results(self):
-        '''
-        read the raw HMMER file and produce HMM classes
-        '''
-
-        rawResult = [line.strip() for line in open(self.temp_output)]
-
-        self.cazymes = {}
-
-        for line in rawResult:
-            if not line.startswith("#"):
-
-                cazyme = hmm.CAZYME(line)
-                cazyme.pass_cazy()
-                if cazyme.gene in self.cazymes:
-                    self.cazymes[cazyme.gene].append(cazyme)
-                else:
-                    self.cazymes[cazyme.gene] = [cazyme]
-
-    def write_results(self):
-        hmm_output = open(self.results_file, 'w')
-        hmm_output.write(
-            "LOCUS\tHMM\tEVAL\tSCORE\tC-EVAL\tI-EVAL\tSEQ_COORDS\tHMM_COORDS\tALIGN_LENGTH\tHMM_COVERAGE\tQC_CODE\tCLASS\tSUBSTRATE\n")
-
-        for gene in sorted(self.cazymes.keys()):
-            for hit in self.cazymes[gene]:
-                if hit.pass_qc in args.qc:
-                    hit.assign_cazy_class()
-                    hit.assign_substrate()
-                    hmm_output.write(hit.write())
-
-        hmm_output.close()
-
+result_files = manager.list()
 
 # FUNCTIONS ###################################################################
 
-def processHMMER(file):
-    '''
-    read the raw HMMER file and produce HMM classes
-    '''
 
-    rawResult = [line.strip() for line in open(file.temp_output)]
+def main(file):
 
-    formattedResult = {}
+    global result_files
 
-    for line in rawResult:
-        if not line.startswith("#"):
+    file.temp_files['temp_log'] = file.id + '.log'
+    file.temp_files['temp_out'] = file.id + '.temp.txt'
+    file.results_file = file.short_name + '.dbcan8.txt'
 
-            formattedResult[uuid.uuid4().hex] = hmm.CAZYME(line)
-
-    return(formattedResult)
-
-
-def main(file_path):
-
-    global counter
-
-    file = File(file_path)
-
-    hmm.run_hmmsearch(file.file_path, file.temp_log, file.temp_output,
+    hmm.run_hmmsearch(file.file_path,
+                      file.temp_files['temp_log'],
+                      file.temp_files['temp_out'],
                       jak_utils.get_yaml("cazyme_db"))
 
-    file.process_dbcan_results()
-    file.write_results()
+    file.results = hmm.cazymes_to_df(file.temp_files['temp_out'], args.qc)
+
+    if os.path.exists(file.results_file):
+        os.remove(file.results_file)
+    f = open(file.results_file, 'a')
+    for c in jak_utils.header(r=True):
+        print(f'# {c}', file=f)
+
+    file.results.to_csv(f, sep="\t", index=False)
 
     # cleanup
     file.remove_temp()
-    counter[file.results_file] = file.file_name
+    result_files.append(file.results_file)
 
 
 ## MAIN LOOP ###################################################################
@@ -154,21 +99,38 @@ def main(file_path):
 if __name__ == "__main__":
     jak_utils.header()
 
-    file_list = utilities.get_file_list(args.files, ['faa'])
-    file_list = utilities.get_directory_file_list(args.in_dir, ['faa'], file_list)
-
-    if len(file_list) == 0:
-        sys.exit(
-            f"{colors.bcolors.RED}Error: No valid .faa files were found!{colors.bcolors.END}")
+    genome_list = utilities.get_files(args.files, args.in_dir, ["faa"])
 
     pool = Pool(processes=8)
-    for _ in tqdm(pool.imap_unordered(main, file_list), total=len(file_list), desc="Finished", unit=" files"):
+    for _ in tqdm(pool.imap_unordered(main, genome_list), total=len(genome_list), desc="Finished", unit=" files"):
         pass
     pool.close()
 
-    # write merged results
+    # # write merged results
     if args.hmm is not None:
-        count_and_merge_tables.main(counter, args.hmm, 'HMM', 1, '.faa.dbcan8.txt')
+        if os.path.exists(args.hmm):
+            os.remove(args.hmm)
+        f = open(args.hmm, 'a')
+        for c in jak_utils.header(r=True):
+            print(f'# {c}', file=f)
+        print(f'# remove_duplicates={args.remove_duplicates}', file=f)
+
+        print(f'{colors.bcolors.YELLOW}WARNING: {args.hmm} may contain counts of duplicate models per gene{colors.bcolors.END}', file=sys.stderr)
+        hmm = merge_value_counts(result_files,
+                                 'HMM',
+                                 remove_duplicates=args.remove_duplicates)
+        hmm.to_csv(f, sep="\t", index=True)
 
     if args.substrate is not None:
-        count_and_merge_tables.main(counter, args.substrate, 'HMM', 1, '.faa.dbcan8.txt')
+        if os.path.exists(args.substrate):
+            os.remove(args.substrate)
+        f = open(args.substrate, 'a')
+        for c in jak_utils.header(r=True):
+            print(f'# {c}', file=f)
+        print(f'# remove_duplicates={args.remove_duplicates}', file=f)
+
+        print(f'{colors.bcolors.YELLOW}WARNING: {args.substrate} may contain counts of duplicate models per gene{colors.bcolors.END}', file=sys.stderr)
+        substrate = merge_value_counts(result_files,
+                                       'SUBSTRATE',
+                                       remove_duplicates=args.remove_duplicates)
+        substrate.to_csv(f, sep="\t", index=True)

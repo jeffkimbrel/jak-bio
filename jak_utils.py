@@ -2,7 +2,7 @@ import yaml
 import sys
 import os
 import pkg_resources
-
+import datetime
 from jakomics import colors
 
 
@@ -18,7 +18,7 @@ def header(r=False):
         print(
             f'{colors.bcolors.BLUE}{code_name} - JAK-BIO v{data["version"]} - JAKomics v{j_version}{colors.bcolors.END}', file=sys.stderr)
     else:
-        return [code_name,  f'JAK-BIO v{data["version"]}', f'JAKomics v{j_version}']
+        return [code_name,  f'JAK-BIO v{data["version"]}', f'JAKomics v{j_version}', f'START_TIME {timestamp()}']
 
 
 def get_yaml(field):
@@ -27,3 +27,7 @@ def get_yaml(field):
         data = yaml.load(f, Loader=yaml.FullLoader)
 
     return data[field]
+
+
+def timestamp():
+    return datetime.datetime.now().strftime("%Y%m%d %H:%M:%S")
