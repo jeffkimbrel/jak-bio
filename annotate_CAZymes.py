@@ -71,7 +71,7 @@ def main(file):
 
     file.temp_files['temp_log'] = file.id + '.log'
     file.temp_files['temp_out'] = file.id + '.temp.txt'
-    file.results_file = file.short_name + '.dbcan8.txt'
+    file.results_file = file.short_name + '.dbcan9.txt'
 
     hmm.run_hmmsearch(file.file_path,
                       file.temp_files['temp_log'],
@@ -93,12 +93,21 @@ def main(file):
     result_files.append(file.results_file)
 
 
+def prep_file(out):
+    if os.path.exists(out):
+        os.remove(out)
+    f = open(out, 'a')
+    for c in jak_utils.header(r=True):
+        print(f'# {c}', file=f)
+    print(f'# remove_duplicates={args.remove_duplicates}', file=f)
+    return f
+
+
 ## MAIN LOOP ###################################################################
 
 
 if __name__ == "__main__":
     jak_utils.header()
-
     genome_list = utilities.get_files(args.files, args.in_dir, ["faa"])
 
     pool = Pool(processes=8)
@@ -108,29 +117,17 @@ if __name__ == "__main__":
 
     # # write merged results
     if args.hmm is not None:
-        if os.path.exists(args.hmm):
-            os.remove(args.hmm)
-        f = open(args.hmm, 'a')
-        for c in jak_utils.header(r=True):
-            print(f'# {c}', file=f)
-        print(f'# remove_duplicates={args.remove_duplicates}', file=f)
-
-        print(f'{colors.bcolors.YELLOW}WARNING: {args.hmm} may contain counts of duplicate models per gene{colors.bcolors.END}', file=sys.stderr)
+        f = prep_file(args.hmm)
         hmm = merge_value_counts(result_files,
                                  'HMM',
                                  remove_duplicates=args.remove_duplicates)
         hmm.to_csv(f, sep="\t", index=True)
+        print(f"{colors.bcolors.YELLOW}HMM table written to {args.hmm}{colors.bcolors.END}")
 
     if args.substrate is not None:
-        if os.path.exists(args.substrate):
-            os.remove(args.substrate)
-        f = open(args.substrate, 'a')
-        for c in jak_utils.header(r=True):
-            print(f'# {c}', file=f)
-        print(f'# remove_duplicates={args.remove_duplicates}', file=f)
-
-        print(f'{colors.bcolors.YELLOW}WARNING: {args.substrate} may contain counts of duplicate models per gene{colors.bcolors.END}', file=sys.stderr)
+        f = prep_file(args.substrate)
         substrate = merge_value_counts(result_files,
                                        'SUBSTRATE',
                                        remove_duplicates=args.remove_duplicates)
         substrate.to_csv(f, sep="\t", index=True)
+        print(f"{colors.bcolors.YELLOW}Substrate table written to {args.substrate}{colors.bcolors.END}")

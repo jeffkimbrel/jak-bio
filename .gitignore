@@ -4,3 +4,4 @@
 *.pyc
 db/TASmania_HMMs/*
 db/TADB_2.0/*
+db/dbCAN-HMMdb-V9.txt

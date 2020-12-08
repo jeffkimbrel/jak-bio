@@ -1,5 +1,5 @@
 version:
-    0.5.0
+    0.5.1
 
 contams_db:
     "/Users/kimbrel1/Science/repos/jak-bio/db/contam_seqs.fa"
@@ -14,4 +14,4 @@ TADB2_ffn:
     /Users/kimbrel1/Science/repos/jak-bio/db/TADB_2.0/TADB2_2.ffn
 
 cazyme_db:
-    /Users/kimbrel1/Science/repos/jak-bio/db/dbCAN-HMMdb-V8.txt
+    /Users/kimbrel1/Science/repos/jak-bio/db/dbCAN-HMMdb-V9.txt
