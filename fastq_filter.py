@@ -25,6 +25,11 @@ parser.add_argument('-q', '--quiet',
                     action='store_false',
                     help='Print out commands')
 
+parser.add_argument('-m', '--memory',
+                    help="excel file with samples in S, F, R, I columns",
+                    required=False,
+                    default="Xmx8g")
+
 args = parser.parse_args()
 
 
@@ -61,13 +66,13 @@ if __name__ == "__main__":
         d.verify_read_pairs(echo=args.quiet, run=True)
 
         if args.amplicons:
-            cf = d.contaminant_filtering(contam_seqs, echo=args.quiet, run=True)
+            cf = d.contaminant_filtering(contam_seqs, echo=args.quiet, run=True, mem=args.memory)
             format_stats(d.sample, 'CF', cf)
 
         else:
-            rt = d.adapter_trimming(contam_seqs, echo=args.quiet, run=True)
+            rt = d.adapter_trimming(contam_seqs, echo=args.quiet, run=True, mem=args.memory)
             format_stats(d.sample, 'RT', rt)
-            cf = d.contaminant_filtering(contam_seqs, echo=args.quiet, run=True)
+            cf = d.contaminant_filtering(contam_seqs, echo=args.quiet, run=True, mem=args.memory)
             format_stats(d.sample, 'CF', cf)
-            qf = d.quality_filtering(echo=args.quiet, run=True)
+            qf = d.quality_filtering(echo=args.quiet, run=True, mem=args.memory)
             format_stats(d.sample, 'QF', qf)
