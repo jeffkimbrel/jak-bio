@@ -26,9 +26,14 @@ parser.add_argument('-q', '--quiet',
                     help='Print out commands')
 
 parser.add_argument('-m', '--memory',
-                    help="excel file with samples in S, F, R, I columns",
+                    help="Memory to pass to bbtools",
                     required=False,
                     default="Xmx8g")
+
+parser.add_argument('-t', '--threads',
+                    help="Threads to pass to bbtools",
+                    required=False,
+                    default=8)
 
 args = parser.parse_args()
 
@@ -59,6 +64,7 @@ if __name__ == "__main__":
 
     for sample, row in files.iterrows():
         d = FASTQ(sample, row)
+        print(d.__dict__)
         sample_list.append(d)
 
         # print(f'{colors.bcolors.CYAN}\n### {d.sample} ###{colors.bcolors.END}')
@@ -66,13 +72,17 @@ if __name__ == "__main__":
         d.verify_read_pairs(echo=args.quiet, run=True)
 
         if args.amplicons:
-            cf = d.contaminant_filtering(contam_seqs, echo=args.quiet, run=True, mem=args.memory)
+            cf = d.contaminant_filtering(contam_seqs, echo=args.quiet,
+                                         run=True, mem=args.memory, threads=args.threads)
             format_stats(d.sample, 'CF', cf)
 
         else:
-            rt = d.adapter_trimming(contam_seqs, echo=args.quiet, run=True, mem=args.memory)
+            rt = d.adapter_trimming(contam_seqs, echo=args.quiet, run=True,
+                                    mem=args.memory, threads=args.threads)
             format_stats(d.sample, 'RT', rt)
-            cf = d.contaminant_filtering(contam_seqs, echo=args.quiet, run=True, mem=args.memory)
+            cf = d.contaminant_filtering(contam_seqs, echo=args.quiet,
+                                         run=True, mem=args.memory, threads=args.threads)
             format_stats(d.sample, 'CF', cf)
-            qf = d.quality_filtering(echo=args.quiet, run=True, mem=args.memory)
+            qf = d.quality_filtering(echo=args.quiet, run=True,
+                                     mem=args.memory, threads=args.threads)
             format_stats(d.sample, 'QF', qf)
