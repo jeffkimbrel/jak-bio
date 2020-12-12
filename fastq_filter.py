@@ -64,7 +64,6 @@ if __name__ == "__main__":
 
     for sample, row in files.iterrows():
         d = FASTQ(sample, row)
-        print(d.__dict__)
         sample_list.append(d)
 
         # print(f'{colors.bcolors.CYAN}\n### {d.sample} ###{colors.bcolors.END}')
