@@ -54,7 +54,7 @@ def format_stats(sample, type, stats, sep="|"):
 
 if __name__ == "__main__":
     jak_utils.header()
-    files = pd.read_excel(args.samples, index_col=0)
+    files = pd.read_excel(args.samples, index_col=0, engine='openpyxl')
 
     contam_seqs = jak_utils.get_yaml("contams_db")
 

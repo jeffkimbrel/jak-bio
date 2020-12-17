@@ -40,8 +40,8 @@ args.out_dir = os.path.abspath(args.out_dir) + '/'
 
 # PREP DATABASES ##############################################################
 
-tadb_data = pd.read_excel(jak_utils.get_yaml("TADB2"), sheet_name="merged")
-tadb_type = pd.read_excel(jak_utils.get_yaml("TADB2"), sheet_name="type")
+tadb_data = pd.read_excel(jak_utils.get_yaml("TADB2"), sheet_name="merged", engine='openpyxl')
+tadb_type = pd.read_excel(jak_utils.get_yaml("TADB2"), sheet_name="type", engine='openpyxl')
 tadb_type = tadb_type.set_index('TA_ID')
 
 blast.make_blast_db('prot', jak_utils.get_yaml("TADB2_faa"))

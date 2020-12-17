@@ -32,7 +32,7 @@ if not os.path.exists(args.out_dir):
     os.makedirs(args.out_dir)
 
 # Read and Sort Stats File ####################################################
-stats = pd.read_excel(args.metadata)
+stats = pd.read_excel(args.metadata, engine='openpyxl')
 stats['OLD_PATH'] = args.in_dir + stats['BIN']
 stats['NEW_PATH'] = args.out_dir + stats['MAG'] + '.fa'
 

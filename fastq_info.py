@@ -53,7 +53,7 @@ if __name__ == "__main__":
     results = manager.list()
 
     jak_utils.header()
-    files = pd.read_excel(args.samples, index_col=0)
+    files = pd.read_excel(args.samples, index_col=0, engine='openpyxl')
 
     sample_list = []
 
