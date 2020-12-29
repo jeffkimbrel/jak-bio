@@ -5,8 +5,6 @@ import pandas as pd
 import jak_utils
 jak_utils.header()
 
-print(
-    f'{colors.bcolors.YELLOW}NOTE: this script is currently not doing anything with the gtdbtk.ar122.summary.tsv file if given.{colors.bcolors.END}', file=sys.stderr)
 
 # OPTIONS #####################################################################
 
@@ -16,9 +14,9 @@ parser.add_argument('-b', '--bac',
                     help="Path to gtdbtk.bac120.summary.tsv",
                     required=True)
 
-parser.add_argument('-a', '--ar',
+parser.add_argument('-a', '--arc',
                     help="Path to gtdbtk.ar122.summary.tsv",
-                    required=False)
+                    required=True)
 
 parser.add_argument('-o',
                     '--out',
@@ -30,9 +28,18 @@ args = parser.parse_args()
 cols = ['user_genome', 'classification', 'fastani_reference', 'fastani_ani',
         'closest_placement_reference', 'closest_placement_ani', 'classification_method', 'note', 'warnings']
 
-df = pd.read_csv(args.bac,
-                 sep="\t",
-                 index_col=None)
+df_bac = pd.read_csv(args.bac,
+                     sep="\t",
+                     index_col=None)
 
-df = df[df.columns.intersection(cols)]
+df_bac = df_bac[df_bac.columns.intersection(cols)]
+
+df_arc = pd.read_csv(args.arc,
+                     sep="\t",
+                     index_col=None)
+
+df_arc = df_arc[df_arc.columns.intersection(cols)]
+
+df = pd.concat([df_bac, df_arc])
+
 df.to_csv(args.out, sep="\t", index=False)

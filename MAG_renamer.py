@@ -2,9 +2,10 @@ import pandas as pd
 import argparse
 import os
 from Bio import SeqIO
-import jak_utils
 from tqdm import tqdm
 
+from jakomics import colors
+import jak_utils
 jak_utils.header()
 
 # OPTIONS #####################################################################
@@ -28,12 +29,12 @@ args.in_dir = os.path.abspath(args.in_dir) + '/'
 args.out_dir = os.path.abspath(args.out_dir) + '/'
 
 if not os.path.exists(args.out_dir):
-    print("\nCreating directory " + args.out_dir)
+    print(f"{colors.bcolors.BLUE}Creating directory {args.out_dir}{colors.bcolors.END}")
     os.makedirs(args.out_dir)
 
 # Read and Sort Stats File ####################################################
 stats = pd.read_excel(args.metadata, engine='openpyxl')
-stats['OLD_PATH'] = args.in_dir + stats['BIN']
+stats['OLD_PATH'] = args.in_dir + stats['BIN'] + '.fa'
 stats['NEW_PATH'] = args.out_dir + stats['MAG'] + '.fa'
 
 # Interate over bins ##########################################################
