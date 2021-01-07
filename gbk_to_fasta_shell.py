@@ -26,6 +26,11 @@ parser.add_argument('-f', '--files',
                     required=False,
                     default=[])
 
+parser.add_argument('--feature_identifier',
+                    help="Feature identifier for genes",
+                    required=False,
+                    default='locus_tag')
+
 parser.add_argument('--out_dir',
                     help="Directory to write results to",
                     required=True)
@@ -46,8 +51,8 @@ def write_fasta(genome):
 
     gbk.genbank_to_fasta(write_faa=gbk.faa_path,
                          write_nt=gbk.nt_path,
-                         write_contig=gbk.contig_path)
-
+                         write_contig=gbk.contig_path,
+                         feature_identifier=args.feature_identifier)
 
 # MAIN LOOP ###################################################################
 
