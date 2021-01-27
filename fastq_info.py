@@ -1,15 +1,14 @@
 #!/usr/bin/env python
 
+import jak_utils
+from jakomics import colors
+from jakomics.fastq import FASTQ, run_info
 import argparse
 import os
 import pandas as pd
 from tqdm import tqdm
-from multiprocessing import Pool, Manager
-
-from jakomics.fastq import FASTQ, run_info
-from jakomics import colors
-
-import jak_utils
+import multiprocessing
+multiprocessing.set_start_method("fork")  # python 3.8 fix
 
 
 # OPTIONS #####################################################################
@@ -33,8 +32,6 @@ args = parser.parse_args()
 
 
 def get_info(sample):
-
-    global results
 
     for fastq_file in sample.files:
         if args.md5:
@@ -61,7 +58,7 @@ def get_info(sample):
 
 
 if __name__ == "__main__":
-    manager = Manager()
+    manager = multiprocessing.Manager()
     results = manager.dict()
 
     jak_utils.header()
@@ -73,7 +70,7 @@ if __name__ == "__main__":
         d = FASTQ(sample, row)
         sample_list.append(d)
 
-    pool = Pool(processes=8)
+    pool = multiprocessing.Pool(processes=8)
     for _ in tqdm(pool.imap_unordered(get_info, sample_list), total=len(sample_list), desc="Finished", unit=" samples"):
         pass
     pool.close()
