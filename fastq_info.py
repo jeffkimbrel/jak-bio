@@ -94,6 +94,8 @@ if __name__ == "__main__":
             ),
             ignore_index=True)
 
+    df = df.sort_values(by=['INDEX'])
+
     # write to file with comments
     if os.path.exists(args.out):
         os.remove(args.out)
