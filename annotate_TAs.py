@@ -1,5 +1,4 @@
-from jakomics import utilities, blast, hmm, gene, colors
-from jakomics.genome import GENOME
+
 import argparse
 import os
 import re
@@ -13,6 +12,8 @@ import math
 from multiprocessing import Manager, Pool
 from tqdm import tqdm
 
+from jakomics import utilities, blast, hmm, gene, colors
+from jakomics.genome import GENOME
 import jak_utils
 
 # OPTIONS #####################################################################
