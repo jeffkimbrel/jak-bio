@@ -5,14 +5,26 @@ import subprocess
 from natsort import natsorted
 from tqdm import tqdm
 
+from jakomics import colors, utilities
+from jakomics.utilities import system_call
+
+import jak_utils
+
 # OPTIONS #####################################################################
 
 parser = argparse.ArgumentParser(description='Run prodigal on a folder of fasta files',
                                  formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
+parser.add_argument('-f', '--files',
+                    help="Paths to individual fasta files",
+                    nargs='*',
+                    required=False,
+                    default=[])
+
 parser.add_argument('--in_dir',
                     help="Directory with nt fasta files",
                     required=True)
+
 parser.add_argument('--out_dir',
                     help="Directory to write .gff and .faa fasta files",
                     required=True)
@@ -34,45 +46,24 @@ if not os.path.exists(args.out_dir):
 # FUNCTIONS ###################################################################
 
 
-def get_files():
-    files = []
-    dirs = os.listdir(args.in_dir)
-    for fileName in dirs:
-        if fileName.endswith('fa'):
-            files.append(fileName)
-
-    return natsorted(files)
-
-
-def systemCall(command, contig_file):
-    # print("\n>$ "+command)
-    subprocess.run('source activate ~/bin/prodigal/ && ' +
-                   command + ' && conda deactivate', shell=True)
-
-    # print("\nDone: " + contig_file)
-
-
 def run_prodigal(contig_file):
 
-    command = 'prodigal -q -i ' + args.in_dir + contig_file + ' -o ' + args.out_dir + contig_file + \
-        '.gff -f gff -a ' + args.out_dir + contig_file + '.faa -d ' + args.out_dir + contig_file + '.ffn'
+    command = f"prodigal -q -i {os.path.join(args.in_dir, contig_file.name)} -o {os.path.join(args.out_dir, contig_file.name + '.gff')} -f gff -a {os.path.join(args.out_dir, contig_file.name + '.faa')} -d {os.path.join(args.out_dir, contig_file.name + '.ffn')}"
 
     if args.meta == True:
         command = command + " -p meta"
 
-    systemCall(command, contig_file)
+    command = 'source activate prodigal-env && ' + command + ' && conda deactivate'
+    # systemCall(command, contig_file)
+    lines = system_call(command, echo=False, run=True)
 
 
 if __name__ == "__main__":
+    jak_utils.header()
 
-    files = get_files()
-    #
-    # pool = Pool()
-    # pool.map(run_prodigal, files)
-    # pool.close()
-    # pool.join()
+    files = utilities.get_files(args.files, args.in_dir, ['fa', 'fasta'])
 
-    pool = Pool(processes=8)
+    pool = Pool()
     for _ in tqdm(pool.imap_unordered(run_prodigal, files), total=len(files), desc="Finished", unit=" files"):
         pass
     pool.close()
