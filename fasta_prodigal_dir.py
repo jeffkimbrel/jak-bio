@@ -1,6 +1,8 @@
 import os
 from multiprocessing import Pool
 import argparse
+import subprocess
+from natsort import natsorted
 from tqdm import tqdm
 
 from jakomics import colors, utilities
