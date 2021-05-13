@@ -16,7 +16,8 @@ parser.add_argument('-b', '--bac',
 
 parser.add_argument('-a', '--arc',
                     help="Path to gtdbtk.ar122.summary.tsv",
-                    required=True)
+                    default=None,
+                    required=False)
 
 parser.add_argument('-o',
                     '--out',
@@ -34,12 +35,15 @@ df_bac = pd.read_csv(args.bac,
 
 df_bac = df_bac[df_bac.columns.intersection(cols)]
 
-df_arc = pd.read_csv(args.arc,
-                     sep="\t",
-                     index_col=None)
+if args.arc != None:
+    df_arc = pd.read_csv(args.arc,
+                         sep="\t",
+                         index_col=None)
 
-df_arc = df_arc[df_arc.columns.intersection(cols)]
+    df_arc = df_arc[df_arc.columns.intersection(cols)]
 
-df = pd.concat([df_bac, df_arc])
+    df = pd.concat([df_bac, df_arc])
+else:
+    df = df_bac
 
 df.to_csv(args.out, sep="\t", index=False)

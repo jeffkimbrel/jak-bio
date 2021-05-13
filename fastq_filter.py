@@ -69,7 +69,7 @@ if __name__ == "__main__":
     for sample, row in files.iterrows():
         d = FASTQ(sample, row)
 
-        d.verify_read_pairs(echo=args.quiet, run=True)
+        d.verify_read_pairs(echo=args.quiet, run=True, verify=True)
         sample_series = pd.Series(name=d.sample, data={'ORDER_VERIFIED': d.ordered})
 
         if args.amplicons:

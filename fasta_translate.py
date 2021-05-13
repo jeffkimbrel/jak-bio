@@ -1,7 +1,7 @@
 import sys
-from Bio import SeqIO
 import argparse
-from multiprocessing import Pool
+
+from Bio import SeqIO
 
 # OPTIONS #####################################################################
 
