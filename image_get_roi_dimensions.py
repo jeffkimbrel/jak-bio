@@ -435,7 +435,7 @@ if __name__ == "__main__":
     now = datetime.datetime.now()
     if args.interactive:
         j['training_file'] = file.file_path
-        json_out = os.path.abspath(file.file_path) + ".json"
+        json_out = os.path.abspath(file.file_path) + "." + now.strftime("%Y%m%d_%H%M%S") + ".json"
     else:
         json_out = now.strftime("%Y%m%d_%H%M%S") + ".json"
 
