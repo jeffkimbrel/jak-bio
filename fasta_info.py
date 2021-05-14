@@ -38,8 +38,8 @@ parser.add_argument('--sequence',
 args = parser.parse_args()
 
 if args.total is False and args.sequence is False:
-    print(f"{colors.bcolors.RED}ERROR: at least one of --total and --sequence required{colors.bcolors.END}", file=sys.stderr)
-    sys.exit()
+    print(f"{colors.bcolors.YELLOW}WARNING: Neither --total or --sequence was set, so automatically setting --sequence for you... {colors.bcolors.END}", file=sys.stderr)
+    args.sequence = True
 
 # FUNCTIONS ###################################################################
 

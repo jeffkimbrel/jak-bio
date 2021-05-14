@@ -49,9 +49,13 @@ def write_fasta(genome):
     gbk.nt_path = os.path.join(args.out_dir, genome.name + ".ffn")
     gbk.contig_path = os.path.join(args.out_dir, genome.name + ".fa")
 
-    gbk.genbank_to_fasta(write_faa=gbk.faa_path,
-                         write_nt=gbk.nt_path,
-                         write_contig=gbk.contig_path,
+    # gbk.genbank_to_fasta(write_faa=gbk.faa_path,
+    #     write_nt=gbk.nt_path,
+    #     write_contig=gbk.contig_path,
+    #     feature_identifier=args.feature_identifier)
+
+    gbk.genbank_to_fasta(write_nt=gbk.nt_path,
+                         write_faa=gbk.faa_path,
                          feature_identifier=args.feature_identifier)
 
 # MAIN LOOP ###################################################################
