@@ -103,7 +103,7 @@ parser.add_argument('-at', '--area_treshold',
 parser.add_argument('-ba', '--blur_amount',
                     help="Blur amount",
                     required=False,
-                    default=2,
+                    default=1,
                     type=int)
 
 parser.add_argument('-bf', '--blur_factor',
@@ -432,10 +432,13 @@ if __name__ == "__main__":
         if arg in for_json:
             j[arg] = getattr(args, arg)
 
+    now = datetime.datetime.now()
     if args.interactive:
         j['training_file'] = file.file_path
-    now = datetime.datetime.now()
-    json_out = now.strftime("%Y%m%d_%H%M%S") + ".json"
+        json_out = os.path.abspath(file.file_path) + ".json"
+    else:
+        json_out = now.strftime("%Y%m%d_%H%M%S") + ".json"
+
     j['timestamp'] = now.strftime("%Y-%m-%d %H:%M:%S")
 
     with open(json_out, 'w') as outfile:
