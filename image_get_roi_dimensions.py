@@ -52,6 +52,13 @@ parser.add_argument('-o',
                     default="ROIs.txt",
                     required=False)
 
+parser.add_argument('-j',
+                    '--json',
+                    help="Use parameters from a file",
+                    default=None,
+                    required=False)
+
+
 parser.add_argument('--crop_lrtb',
                     help="Comma-separated list of pixels to crop from ",
                     default="0,0,0,0",
@@ -118,6 +125,43 @@ parser.add_argument('--interactive',
 
 args = parser.parse_args()
 args.crop_lrtb = args.crop_lrtb.split(",")
+
+if args.json != None:
+    with open(args.json) as json_file:
+        params = json.load(json_file)
+
+    print(f'{colors.bcolors.YELLOW}Overwriting parameters with {args.json}: {colors.bcolors.END}')
+    print(
+        f"{colors.bcolors.YELLOW}crop_lrtb: {args.crop_lrtb} -> {params['crop_lrtb']}{colors.bcolors.END}")
+    print(
+        f"{colors.bcolors.YELLOW}scale: {args.scale} -> {params['scale']}{colors.bcolors.END}")
+    print(
+        f"{colors.bcolors.YELLOW}min_distance: {args.min_distance} -> {params['min_distance']}{colors.bcolors.END}")
+    print(
+        f"{colors.bcolors.YELLOW}background_treshold: {args.background_treshold} -> {params['background_treshold']}{colors.bcolors.END}")
+    print(
+        f"{colors.bcolors.YELLOW}rescale low: {args.low} -> {params['low']}{colors.bcolors.END}")
+    print(
+        f"{colors.bcolors.YELLOW}rescale high: {args.high} -> {params['high']}{colors.bcolors.END}")
+    print(
+        f"{colors.bcolors.YELLOW}area_treshold: {args.area_treshold} -> {params['area_treshold']}{colors.bcolors.END}")
+    print(
+        f"{colors.bcolors.YELLOW}blur_amount: {args.blur_amount} -> {params['blur_amount']}{colors.bcolors.END}")
+    print(
+        f"{colors.bcolors.YELLOW}blur_factor: {args.blur_factor} -> {params['blur_factor']}{colors.bcolors.END}")
+    print(
+        f"{colors.bcolors.YELLOW}block_size: {args.block_size} -> {params['block_size']}{colors.bcolors.END}")
+
+    args.crop_lrtb = params['crop_lrtb']
+    args.scale = params['scale']
+    args.min_distance = params['min_distance']
+    args.background_treshold = params['background_treshold']
+    args.low = params['low']
+    args.high = params['high']
+    args.area_treshold = params['area_treshold']
+    args.blur_amount = params['blur_amount']
+    args.blur_factor = params['blur_factor']
+    args.block_size = params['block_size']
 
 # FUNCTIONS ###################################################################
 
@@ -379,7 +423,7 @@ if __name__ == "__main__":
                 'high',
                 'area_treshold',
                 'blur_amount',
-                'blur_factor'
+                'blur_factor',
                 'block_size']
 
     j = {}
@@ -397,4 +441,4 @@ if __name__ == "__main__":
     with open(json_out, 'w') as outfile:
         json.dump(j, outfile, indent=2)
 
-    print(f'{colors.bcolors.GREEN}Parameter file written to {json_out}{colors.bcolors.END}')
+    print(f'Parameter file written to {colors.bcolors.YELLOW}{json_out}{colors.bcolors.END}')
