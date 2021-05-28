@@ -54,7 +54,7 @@ def get_info(sample):
             file_results["RUN_INFO"][result] = run_info_results[result]
             file_results["TOTAL_READS"] += run_info_results[result]
 
-        results[sample.sample + "_" + fastq_file.read] = file_results
+        results[f'{sample.sample}_{fastq_file.read}'] = file_results
 
 
 if __name__ == "__main__":
