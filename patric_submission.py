@@ -13,7 +13,7 @@ parser = argparse.ArgumentParser(
     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
 parser.add_argument('-m', '--metadata',
-                    help="Excel with contig information. Required to have CONTIGS_FILE (full path), NAME and TAX_ID columns", required=True)
+                    help="Excel with contig information. Required to have CONTIGS_FILE (full path), GENOME and NCBI_ID columns", required=True)
 parser.add_argument('-p', '--patric', help="Patric workspace path", required=True)
 
 args = parser.parse_args()
@@ -29,7 +29,7 @@ if __name__ == "__main__":
     for genome, row in genomes.iterrows():
         validate_path(row['CONTIGS_FILE'])
 
-        command = f"p3-submit-genome-annotation --contigs-file {row['CONTIGS_FILE']} -n \"{row['NAME']}\" -t {row['TAX_ID']} -d Bacteria {args.patric} \"{row['NAME']}\""
+        command = f"p3-submit-genome-annotation --contigs-file {row['CONTIGS_FILE']} -n \"{row['GENOME']}\" -t {row['NCBI_ID']} -d Bacteria {args.patric} \"{row['GENOME']}\""
         system_call(command, echo=False, run=True)
 
         pbar.update(1)
