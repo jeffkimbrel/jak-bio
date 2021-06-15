@@ -6,7 +6,6 @@ import sys
 from jakomics.taxa import RDP
 
 import jak_utils
-jak_utils.header()
 
 # OPTIONS #####################################################################
 
@@ -30,6 +29,7 @@ if args.threshold > 1:
 
 
 if __name__ == "__main__":
+    jak_utils.header()
 
     column_names = ['ASV', 'STRAND', 'D', 'D_p', 'P', 'P_p',
                     'C', 'C_p', 'O', 'O_p', 'F', 'F_p', 'G', 'G_p']

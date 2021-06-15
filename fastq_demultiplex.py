@@ -2,6 +2,7 @@
 
 import argparse
 import os
+import sys
 from Bio import SeqIO
 import pandas as pd
 from tqdm import tqdm
@@ -85,7 +86,15 @@ def createUndetermined():
 def addSamples():
     mapping_data = pd.read_csv(args.mapping, sep="\t", index_col=0)
 
+    dupe_sample_names = mapping_data[mapping_data.index.duplicated()].index.tolist()
+    if len(dupe_sample_names) > 0:
+        print(f"{colors.bcolors.RED}ERROR: Sample name found more than once! Exiting.{colors.bcolors.END}")
+        for sample in dupe_sample_names:
+            print(f"{colors.bcolors.RED}{sample}{colors.bcolors.END}")
+        sys.exit()
+
     for sample, row in mapping_data.iterrows():
+
         samples[row['BarcodeSequence']] = Sample(sample, row['BarcodeSequence'])
 
 
@@ -132,6 +141,9 @@ def write_report():
 
 def main():
 
+    createUndetermined()
+    addSamples()
+
     # read count of original
     print(f"{colors.bcolors.GREEN}Getting read count of {args.read1}... {colors.bcolors.END}")
     original = run_info(args.read1)
@@ -140,9 +152,6 @@ def main():
     print(f"{colors.bcolors.GREEN}...found {total_reads} read pairs {colors.bcolors.END}")
 
     print(f"{colors.bcolors.GREEN}File buffer size: {args.buffer}, File write cutoff: {args.buffer * 500}{colors.bcolors.END}")
-
-    createUndetermined()
-    addSamples()
 
     total, errors = readFiles(total_reads)
 
