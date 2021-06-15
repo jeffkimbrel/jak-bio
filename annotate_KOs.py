@@ -98,7 +98,7 @@ if __name__ == "__main__":
         args.profile = os.path.join(jak_utils.get_yaml("kofam_db"), 'prokaryote.hal')
     file.validate_path(args.profile)
 
-    genome_list = utilities.get_files(args.files, args.in_dir, ["faa", "gbk", "gbff", "gb"])
+    genome_list = utilities.get_files(args.files, args.in_dir, ["faa", "gbk", "gbff", "gb", "fa"])
 
     if len(genome_list) == 0:
         sys.exit(

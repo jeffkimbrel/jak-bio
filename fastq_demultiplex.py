@@ -20,7 +20,8 @@ warnings.simplefilter('ignore', BiopythonWarning)
 
 ## OPTIONS #####################################################################
 
-parser = argparse.ArgumentParser(description='X')
+parser = argparse.ArgumentParser(
+    description='Demultiplex de-interleaved fastq files with de-interleaved barcode files and a sample sheet')
 parser.add_argument('-i1', '--index1', help="Index 1 fastq", required=True)
 parser.add_argument('-i2', '--index2', help="Index 2 fastq", required=True)
 parser.add_argument('-r1', '--read1', help="Read 1 fastq", required=True)
@@ -29,6 +30,10 @@ parser.add_argument('-m',  '--mapping', help="Mapping File", required=True)
 parser.add_argument('-b',  '--buffer', help="read buffer size",
                     required=False, type=int, default=2000)
 parser.add_argument('--out_dir', help="Output directory", required=False, default="demux")
+
+parser.add_argument('--skip_undetermined',
+                    action='store_true',
+                    help='Do not write undetermined to a file')
 
 args = parser.parse_args()
 
@@ -117,11 +122,12 @@ def readFiles(total_reads):
 
         barcode = index1.seq + index2.seq
 
-        if not barcode in samples:
-            barcode = 'Undetermined'
-
         if headers_agree == True:
-            samples[barcode].addPair(read1, read2)
+            if not barcode in samples:
+                if args.skip_undetermined == False:
+                    samples['Undetermined'].addPair(read1, read2)
+            else:
+                samples[barcode].addPair(read1, read2)
 
         total += 1
         if total % args.buffer == 0:
