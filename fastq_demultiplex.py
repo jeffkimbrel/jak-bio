@@ -27,6 +27,7 @@ parser.add_argument('-i2', '--index2', help="Index 2 fastq", required=True)
 parser.add_argument('-r1', '--read1', help="Read 1 fastq", required=True)
 parser.add_argument('-r2', '--read2', help="Read 2 fastq", required=True)
 parser.add_argument('-m',  '--mapping', help="Mapping File", required=True)
+
 parser.add_argument('-b',  '--buffer', help="read buffer size",
                     required=False, type=int, default=2000)
 parser.add_argument('--out_dir', help="Output directory", required=False, default="demux")
@@ -147,7 +148,9 @@ def write_report():
 
 def main():
 
-    createUndetermined()
+    if args.skip_undetermined == False:
+        createUndetermined()
+
     addSamples()
 
     # read count of original
