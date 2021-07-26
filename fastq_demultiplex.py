@@ -170,7 +170,7 @@ def main():
     for barcode in samples:
         samples[barcode].write_to_file(True)
 
-    write_report()
+    # write_report()
 
 ## RUN #########################################################################
 
