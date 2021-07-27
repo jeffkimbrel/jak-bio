@@ -69,6 +69,8 @@ if __name__ == "__main__":
             print(f"{colors.bcolors.YELLOW}WARNING: Sometimes the localDB fails the first time it is run... if you get errors, just cancel and start again.{colors.bcolors.END}")
         
         print(f"{colors.bcolors.YELLOW}CARD DB Version: {system_call('rgi database --version', echo=False, run=True, return_type='out')[0]}{colors.bcolors.END}")
+        print(f"{colors.bcolors.YELLOW}RGI Version: {system_call('rgi main --version', echo=False, run=True, return_type='out')[0]}{colors.bcolors.END}")
+        
     else:
         print(f"{colors.bcolors.RED}NO FILE FOUND AT {args.card_db}{colors.bcolors.END}")
         sys.exit()

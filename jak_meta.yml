@@ -1,5 +1,5 @@
 version:
-    0.8.11
+    0.8.12
 
 contams_db:
     "/Users/kimbrel1/Science/repos/jak-bio/db/contam_seqs.fa"
@@ -18,3 +18,4 @@ cazyme_db:
 
 kofam_db:
     /Users/kimbrel1/Science/kofam/98
+
