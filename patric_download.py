@@ -2,6 +2,7 @@ from natsort import natsorted
 import argparse
 import os
 from tqdm import tqdm
+from multiprocessing import Pool
 
 import jak_utils
 from jakomics.utilities import system_call
@@ -62,8 +63,9 @@ if __name__ == "__main__":
     jak_utils.header()
 
     genomes = get_genome_list()
-    pbar = tqdm(total=len(genomes), desc="Downloaded", unit=" genomes")
+  
+    pool = Pool(processes=4)
+    for _ in tqdm(pool.imap_unordered(download_patric_folder, genomes), total=len(genomes), desc="Downloaded", unit=" genomes"):
+        pass
 
-    for genome in genomes:
-        download_patric_folder(genome)
-        pbar.update(1)
+    pool.close()
