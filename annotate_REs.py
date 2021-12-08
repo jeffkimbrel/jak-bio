@@ -18,58 +18,61 @@ from jakomics import utilities, colors, file
 from jakomics.genome import GENOME
 import jak_utils
 
+print(f"{colors.bcolors.RED}This code is under development and probably not finished!{colors.bcolors.END}"))
+
+
 # OPTIONS #####################################################################
 
-parser = argparse.ArgumentParser(description="", formatter_class=argparse.RawTextHelpFormatter)
+parser=argparse.ArgumentParser(description = "", formatter_class = argparse.RawTextHelpFormatter)
 
 parser.add_argument('--in_dir',
-                    help="Directory with faa files",
-                    required=False,
-                    default="")
+                    help = "Directory with faa files",
+                    required = False,
+                    default = "")
 
 parser.add_argument('-f', '--files',
-                    help="Paths to individual faa files",
-                    nargs='*',
-                    required=False,
-                    default=[])
+                    help = "Paths to individual faa files",
+                    nargs = '*',
+                    required = False,
+                    default = [])
 
 parser.add_argument('--out_dir',
-                    help="Directory to write results to",
-                    required=True)
+                    help = "Directory to write results to",
+                    required = True)
 
-args = parser.parse_args()
+args=parser.parse_args()
 
 # FUNCTIONS ###################################################################
 
 
 def main(genome):
 
-    original_path = genome.file_path
+    original_path=genome.file_path
 
     if genome.suffix in ['.gb', '.gbk', '.gbff']:
-        gbk = GENOME(genome)
-        gbk.fa_path = genome.short_name + "_" + genome.id + ".fa"
-        gbk.genbank_to_fasta(write_contig=gbk.fa_path)
-        genome.file_path = gbk.fa_path
-        genome.temp_files['fa'] = gbk.fa_path
+        gbk=GENOME(genome)
+        gbk.fa_path=genome.short_name + "_" + genome.id + ".fa"
+        gbk.genbank_to_fasta(write_contig = gbk.fa_path)
+        genome.file_path=gbk.fa_path
+        genome.temp_files['fa']=gbk.fa_path
 
-    output_file = os.path.join(args.out_dir, genome.name + '.REs.json')
+    output_file=os.path.join(args.out_dir, genome.name + '.REs.json')
 
     if os.path.exists(output_file):
         os.remove(output_file)
 
     for seq_record in SeqIO.parse(genome.file_path, "fasta"):
-        a = cleanEnzymeList.search(seq_record.seq)
+        a=cleanEnzymeList.search(seq_record.seq)
         # print(a)
         #
         for b in a:
             print(type(b))
             # print(b, len(a[b]), sep="\t")
 
-        #a = Analysis(RestrictionBatch(cleanEnzymeList), seq_record.seq, False)
+        # a = Analysis(RestrictionBatch(cleanEnzymeList), seq_record.seq, False)
         # print(type(a))
         with open(output_file, 'w') as outfile:
-            json.dump(a, outfile, indent=2)
+            json.dump(a, outfile, indent = 2)
 
     #
     # # write to file with comments
@@ -92,12 +95,12 @@ if __name__ == "__main__":
     jak_utils.header()
 
     # fix out directory
-    args.out_dir = os.path.abspath(args.out_dir) + '/'
+    args.out_dir=os.path.abspath(args.out_dir) + '/'
     if not os.path.exists(args.out_dir):
         print("\nCreating directory " + args.out_dir)
         os.makedirs(args.out_dir)
 
-    genome_list = utilities.get_files(args.files, args.in_dir, ["faa", "gbk", "gbff", "gb"])
+    genome_list=utilities.get_files(args.files, args.in_dir, ["faa", "gbk", "gbff", "gb"])
 
     if len(genome_list) == 0:
         sys.exit(

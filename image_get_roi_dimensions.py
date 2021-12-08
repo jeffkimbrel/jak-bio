@@ -244,6 +244,8 @@ if __name__ == "__main__":
         img_cropped = img_orig[int(args.crop_lrtb[2]): img_orig.shape[0]-int(args.crop_lrtb[3]),
                                int(args.crop_lrtb[0]): img_orig.shape[1]-int(args.crop_lrtb[1])]  # y axis, x-axis
 
+        print(img_cropped.shape)
+
     #####################################################################################
 
         if args.interactive:
@@ -401,6 +403,12 @@ if __name__ == "__main__":
         plt.savefig(file.file_path + '_ROI_labels.png', dpi=600)
 
         io.imsave(file.file_path + '_ROIs.png', util.img_as_ubyte(color_labels))
+
+        # save mask 
+        fig, ax = plt.subplots()
+        ax.imshow(img_watershed, cmap=plt.cm.gray)
+        ax.set_axis_off()
+        plt.savefig(file.file_path + '_mask.png')
 
     # write to file with comments
     if os.path.exists(args.out):
