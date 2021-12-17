@@ -4,6 +4,7 @@ import argparse
 import pandas as pd
 from tqdm import tqdm
 import os
+import sys
 
 from jakomics.fastq import FASTQ
 from jakomics import colors
@@ -35,6 +36,10 @@ parser.add_argument('-t', '--threads',
                     required=False,
                     default=8)
 
+parser.add_argument('--verify_pairs',
+                    action='store_true',
+                    help="Verify read pairs")
+
 parser.add_argument('--out',
                     help="File to write results to",
                     default="fastq_filter_results.txt",
@@ -63,13 +68,21 @@ if __name__ == "__main__":
     files = pd.read_excel(args.samples, index_col=0, engine='openpyxl')
 
     contam_seqs = jak_utils.get_yaml("contams_db")
+
+    try:
+        with open(contam_seqs) as f:
+            print(f"{colors.bcolors.GREEN}{contam_seqs} found!{colors.bcolors.END}")
+    except FileNotFoundError:
+        sys.exit(f"{colors.bcolors.RED}ERROR: {contam_seqs} not found!{colors.bcolors.END}")
+         
+    
     pbar = tqdm(total=len(files.index), desc="Filtered", unit=" fastq files")
 
     df = pd.DataFrame(columns=['ORDER_VERIFIED'])
     for sample, row in files.iterrows():
         d = FASTQ(sample, row)
 
-        d.verify_read_pairs(echo=args.quiet, run=True, verify=True)
+        d.verify_read_pairs(echo=args.quiet, run=True, verify=args.verify_pairs)
         sample_series = pd.Series(name=d.sample, data={'ORDER_VERIFIED': d.ordered})
 
         if args.amplicons:

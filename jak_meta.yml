@@ -1,20 +1,20 @@
 version:
-    0.8.16
+    0.8.18
 
 contams_db:
-    "/Users/kimbrel1/Science/repos/jak-bio/db/contam_seqs.fa"
+    "/Users/kimbrel1/GitHub/jak-bio/db/contam_seqs.fa"
 
 TADB2:
-    "/Users/kimbrel1/Science/repos/jak-bio/db/TADB_2.0/TADB2.xlsx"
+    "/Users/kimbrel1/GitHub/jak-bio/jak-bio/db/TADB_2.0/TADB2.xlsx"
 
 TADB2_faa:
-    /Users/kimbrel1/Science/repos/jak-bio/db/TADB_2.0/TADB2_2.faa
+    /Users/kimbrel1/GitHub/jak-bio/jak-bio/db/TADB_2.0/TADB2_2.faa
 
 TADB2_ffn:
-    /Users/kimbrel1/Science/repos/jak-bio/db/TADB_2.0/TADB2_2.ffn
+    /Users/kimbrel1/GitHub/jak-bio/jak-bio/db/TADB_2.0/TADB2_2.ffn
 
 cazyme_db:
-    /Users/kimbrel1/Science/repos/jak-bio/db/dbCAN-HMMdb-V9.txt
+    /Users/kimbrel1/GitHub/jak-bio/jak-bio/db/dbCAN-HMMdb-V9.txt
 
 kofam_db:
     /Users/kimbrel1/Science/kofam/98
