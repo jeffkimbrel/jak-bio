@@ -12,15 +12,12 @@ parser.add_argument('-g', '--gtdb',
 
 args = parser.parse_args()
 
-mapping_file_path = '/Users/kimbrel1/Dropbox/Lab/Resources/gtdb'
-ncbi_file_path = '/Users/kimbrel1/Dropbox/Lab/Resources/new_taxdump/'
-
 # FUNCTIONS ###################################################################
 
-
 def get_ncbi_dmp():
+    print("getting NCBI")
     ncbi = {}
-    ncbi_raw = [line.strip() for line in open(os.path.join(ncbi_file_path, 'fullnamelineage.dmp'))]
+    ncbi_raw = [line.strip() for line in open(os.path.join(jak_utils.get_yaml("ncbi_taxdmp_path"), 'fullnamelineage.dmp'))]
     for line in ncbi_raw:
         split = line.split("|")
         id = int(split[0].strip())
@@ -29,14 +26,14 @@ def get_ncbi_dmp():
 
     return ncbi
 
-
 def get_mapping_file():
+    print("getting GTDB metadata")
     mapping = {}
-    arc = [line.strip() for line in open(os.path.join(mapping_file_path, 'ar122_metadata_r89.tsv'))]
-    bac = [line.strip() for line in open(os.path.join(mapping_file_path, 'bac120_metadata_r89.tsv'))]
-    r89 = arc + bac
+    arc = [line.strip() for line in open(os.path.join(jak_utils.get_yaml("gtdb_metadata_path"), 'ar122_metadata_r202.tsv'))]
+    bac = [line.strip() for line in open(os.path.join(jak_utils.get_yaml("gtdb_metadata_path"), 'bac120_metadata_r202.tsv'))]
+    r202 = arc + bac
 
-    for line in r89:
+    for line in r202:
 
         split = line.split("\t")
         lineage = split[16]

@@ -1,5 +1,5 @@
 version:
-    0.8.18
+    0.8.19
 
 contams_db:
     "/Users/kimbrel1/GitHub/jak-bio/db/contam_seqs.fa"
@@ -17,5 +17,11 @@ cazyme_db:
     /Users/kimbrel1/GitHub/jak-bio/jak-bio/db/dbCAN-HMMdb-V9.txt
 
 kofam_db:
-    /Users/kimbrel1/Science/kofam/98
+    /Users/kimbrel1/Dropbox/Lab/Resources/kofam/100
+
+gtdb_metadata_path:
+    '/Users/kimbrel1/Dropbox/Lab/Resources/gtdb'
+
+ncbi_taxdmp_path:
+    '/Users/kimbrel1/Dropbox/Lab/Resources/new_taxdump/'
 
