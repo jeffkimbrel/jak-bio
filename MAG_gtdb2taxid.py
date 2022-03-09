@@ -15,7 +15,6 @@ args = parser.parse_args()
 # FUNCTIONS ###################################################################
 
 def get_ncbi_dmp():
-    print("getting NCBI")
     ncbi = {}
     ncbi_raw = [line.strip() for line in open(os.path.join(jak_utils.get_yaml("ncbi_taxdmp_path"), 'fullnamelineage.dmp'))]
     for line in ncbi_raw:
@@ -27,7 +26,6 @@ def get_ncbi_dmp():
     return ncbi
 
 def get_mapping_file():
-    print("getting GTDB metadata")
     mapping = {}
     arc = [line.strip() for line in open(os.path.join(jak_utils.get_yaml("gtdb_metadata_path"), 'ar122_metadata_r202.tsv'))]
     bac = [line.strip() for line in open(os.path.join(jak_utils.get_yaml("gtdb_metadata_path"), 'bac120_metadata_r202.tsv'))]
