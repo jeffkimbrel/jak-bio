@@ -8,6 +8,31 @@ from jakomics.utilities import system_call
 
 import jak_utils
 
+parser = argparse.ArgumentParser(description='Run prodigal on a folder of fasta files',
+                                    formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+
+parser.add_argument('-f', '--files',
+                    help="Paths to individual fasta files",
+                    nargs='*',
+                    required=False,
+                    default=[])
+
+parser.add_argument('--in_dir',
+                    help="Directory with nt fasta files",
+                    default="",
+                    required=False)
+
+parser.add_argument('--out_dir',
+                    help="Directory to write .gff and .faa fasta files",
+                    default=".")
+
+parser.add_argument('-m',
+                    '--meta',
+                    help="Enable prodigal meta mode",
+                    action='store_true')
+
+args = parser.parse_args()
+
 # FUNCTIONS ###################################################################
 
 
@@ -18,37 +43,13 @@ def run_prodigal(contig_file):
     if args.meta == True:
         command = command + " -p meta"
 
-    command = 'source activate prodigal-env && ' + command + ' && conda deactivate'
+    #command = 'source activate prodigal-env && ' + command + ' && conda deactivate'
     # systemCall(command, contig_file)
     lines = system_call(command, echo=False, run=True)
 
 
 if __name__ == "__main__":
     jak_utils.header()
-
-    parser = argparse.ArgumentParser(description='Run prodigal on a folder of fasta files',
-                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-
-    parser.add_argument('-f', '--files',
-                        help="Paths to individual fasta files",
-                        nargs='*',
-                        required=False,
-                        default=[])
-
-    parser.add_argument('--in_dir',
-                        help="Directory with nt fasta files",
-                        required=True)
-
-    parser.add_argument('--out_dir',
-                        help="Directory to write .gff and .faa fasta files",
-                        required=True)
-
-    parser.add_argument('-m',
-                        '--meta',
-                        help="Enable prodigal meta mode",
-                        action='store_true')
-
-    args = parser.parse_args()
 
     args.in_dir = os.path.abspath(args.in_dir) + '/'
     args.out_dir = os.path.abspath(args.out_dir) + '/'

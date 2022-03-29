@@ -30,7 +30,7 @@ if __name__ == "__main__":
            genomes = pd.read_csv(args.metadata, sep = "\t")
            
         except:
-            print("sorry, now way, give me some usable file.")
+            print(f"Give me some usable file.")
 
 
 
