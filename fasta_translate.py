@@ -32,11 +32,19 @@ args = parser.parse_args()
 def report_problem_aa(seq_record):
     standard_aa = ['A', 'R', 'N', 'D', 'C', 'E', 'Q', 'G', 'H', 'I', 'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V']
 
+    problems = False
+
     aa_freq = Counter(str(seq_record.seq))
     aa_prob_freq = {k:aa_freq[k] for k in aa_freq.keys() if k not in standard_aa}
 
     if len(aa_prob_freq) > 0:
         print(f"{colors.bcolors.YELLOW}WARNING\tnon-standard AAs\t{aa_prob_freq}\t{seq_record.description}{colors.bcolors.END}", file = sys.stderr)
+        problems = True
+
+    if problems:
+        return(1)
+    else:
+        return(0)
 
 def fix_ambiguous_aa(seq, add_stop):
 
@@ -91,11 +99,12 @@ if __name__ == "__main__":
         CodonTable.unambiguous_dna_by_name['Standard'].forward_table['TAG'] = 'O'
 
         failed = 0
+        warnings = 0
 
         for seq_record in SeqIO.parse(args.fasta, "fasta"):
 
             # report problems
-            report_problem_aa(seq_record)
+            warnings = warnings + report_problem_aa(seq_record)
 
             # fix problematic characters
             fixed_seq = fix_ambiguous_aa(seq_record.seq, add_stop = True)
@@ -109,4 +118,5 @@ if __name__ == "__main__":
                 failed += 1
                 continue
 
+print(f"{colors.bcolors.YELLOW}Warnings: {warnings}{colors.bcolors.END}", file=sys.stderr)
 print(f"{colors.bcolors.RED}Failures: {failed}{colors.bcolors.END}", file=sys.stderr)
