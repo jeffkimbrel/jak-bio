@@ -1,7 +1,7 @@
 import sys
 import time
 from Bio import Entrez
-Entrez.email = 'kimbrel1@llnl.gov'
+Entrez.email = 'XXX'
 
 dictionary = {}
 
