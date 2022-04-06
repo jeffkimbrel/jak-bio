@@ -32,6 +32,9 @@ parser.add_argument('--card_db',
                     required=False,
                     default="/Users/kimbrel1/Dropbox/Lab/Resources/CARD/card.json")
 
+parser.add_argument('--include_loose',
+                    action='store_true',
+                    help="Include loose hits")
 
 args = parser.parse_args()
 
@@ -48,8 +51,11 @@ def rgi(file):
     SeqIO.write(seqs, file.temp_files['asterisk_free'], "fasta")
 
     command = f"rgi main --input_sequence {file.temp_files['asterisk_free']} --output_file {file.short_name}.CARD --input_type protein --alignment_tool diamond --local --clean -n 1"
+    if args.loose:
+        command = command + " --include_loose"
+    
     rgi_err = system_call(command, echo=False, run=True, return_type='err')
-
+    
     file.remove_temp()
 
 ## MAIN LOOP ###################################################################
