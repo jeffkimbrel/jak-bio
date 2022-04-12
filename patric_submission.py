@@ -41,7 +41,7 @@ if __name__ == "__main__":
     for genome, row in genomes.iterrows():
         validate_path(row['CONTIGS_FILE'])
 
-        command = f"p3-submit-genome-annotation --contigs-file {row['CONTIGS_FILE']} -n \"{row['NAME']}\" -t {row['NCBI_ID']} -d {row['TYPE']} {args.patric} \"{row['GENOME']}\""
+        command = f"p3-submit-genome-annotation --contigs-file \"{row['CONTIGS_FILE']}\" -n \"{row['NAME']}\" -t {row['NCBI_ID']} -d {row['TYPE']} {args.patric} \"{row['GENOME']}\""
         system_call(command, echo=False, run=True)
 
         pbar.update(1)

@@ -15,6 +15,7 @@ parser = argparse.ArgumentParser(
     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
 parser.add_argument('-p', '--patric', help="Patric workspace path", required=True)
+parser.add_argument('-f', '--filter', help="Substring to filter for", required=False, default = "", type = str)
 parser.add_argument('--out_dir', help="Directory to download the Patric data to", required=True)
 
 args = parser.parse_args()
@@ -52,7 +53,7 @@ def get_genome_list():
 
 def download_patric_folder(genome):
 
-    command_main = f'p3-cp -R ws:{args.patric}/.{genome} {os.path.join(args.out_dir, genome)}'
+    command_main = f'p3-cp -R ws:{args.patric}/.{genome} \"{os.path.join(args.out_dir, genome)}\"'
 
     system_call(command_main, echo=False, run=True)
 
@@ -64,7 +65,15 @@ if __name__ == "__main__":
 
     genomes = get_genome_list()
   
-    pool = Pool(processes=4)
+    if args.filter != "":
+        genomes_filtered = []
+        for genome in genomes:
+            if args.filter in genome:
+                genomes_filtered.append(genome)
+
+        genomes = genomes_filtered
+
+    pool = Pool()
     for _ in tqdm(pool.imap_unordered(download_patric_folder, genomes), total=len(genomes), desc="Downloaded", unit=" genomes"):
         pass
 
