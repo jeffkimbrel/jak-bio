@@ -38,6 +38,12 @@ args = parser.parse_args()
 def main(fasta, list, column, out_file):
     print(f'Reading and processing {fasta}')
     original_sequences = SeqIO.to_dict(SeqIO.parse(fasta, "fasta"))
+
+    # # modify keys
+    # for id in original_sequences.copy():
+    #     original_sequences[id.split("|")[-1]] = original_sequences[id]
+    #     del original_sequences[id]
+
     collected_sequences = []
 
     print(f'Reading and processing {list} column {column}')
@@ -64,8 +70,8 @@ def main(fasta, list, column, out_file):
     else:
         print(f'{colors.bcolors.GREEN}Done!{colors.bcolors.END}')
 
-    for id in no:
-        print(f'{colors.bcolors.RED}Not Found: {id}{colors.bcolors.END}')
+    # for id in no:
+    #     print(f'{colors.bcolors.RED}Not Found: {id}{colors.bcolors.END}')
 
 
 # MAIN ########################################################################
