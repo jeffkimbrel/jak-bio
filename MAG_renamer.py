@@ -4,7 +4,7 @@ import os
 from Bio import SeqIO
 from tqdm import tqdm
 
-from jakomics import colors
+from jakomics import colors, file
 import jak_utils
 jak_utils.header()
 
@@ -22,6 +22,10 @@ parser.add_argument('--in_dir',
 parser.add_argument('--out_dir',
                     help="Directory to write renamed bins",
                     required=True)
+parser.add_argument('--extension',
+                    help="File extension",
+                    default = "fa",
+                    required=False)
 
 args = parser.parse_args()
 
@@ -34,19 +38,24 @@ if not os.path.exists(args.out_dir):
 
 # Read and Sort Stats File ####################################################
 stats = pd.read_excel(args.metadata, engine='openpyxl')
-stats['OLD_PATH'] = args.in_dir + stats['BIN'] + '.fa'
-stats['NEW_PATH'] = args.out_dir + stats['MAG'] + '.fa'
+stats['NEW_PATH'] = f"{args.out_dir}{stats['MAG']}.{args.extension}"
 
 # Interate over bins ##########################################################
 
 pbar = tqdm(total=len(stats.index))
 
 for MAG, row in stats.iterrows():
-    counter = 1
-    renamed = []
-    for record in SeqIO.parse(row['OLD_PATH'], "fasta"):
-        record.id = row['MAG'] + '_' + str(counter)
-        renamed.append(record)
-        counter += 1
-    SeqIO.write(renamed, row['NEW_PATH'], "fasta")
+    bin_path = f"{args.in_dir}{row['BIN']}.{args.extension}"
+    mag_path = f"{args.out_dir}{row['MAG']}.{args.extension}"
+
+    f = file.FILE(bin_path)
+    if f.check_files_exist(exit_if_false = False):
+        
+        counter = 1
+        renamed = []
+        for record in SeqIO.parse(f.file_path, "fasta"):
+            record.id = row['MAG'] + '_' + str(counter)
+            renamed.append(record)
+            counter += 1
+        SeqIO.write(renamed, mag_path, "fasta")
     pbar.update(1)
