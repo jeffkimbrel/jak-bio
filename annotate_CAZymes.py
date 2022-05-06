@@ -37,7 +37,7 @@ parser.add_argument('--qc',
                     help="QC codes to include",
                     required=False,
                     nargs='*',
-                    default=['1A', '1B'])
+                    default=['1A', '1B', '2', '3'])
 
 parser.add_argument('--hmm',
                     help="Write merged HMM results",
@@ -48,6 +48,11 @@ parser.add_argument('--substrate',
                     help="Write merged substrates results",
                     required=False,
                     default=None)
+
+parser.add_argument('--processes',
+                    help="Number of genomes to process concurrently",
+                    required=False,
+                    default=8)
 
 parser.add_argument('--remove_duplicates',
                     action='store_true',
@@ -71,7 +76,7 @@ def main(file):
 
     file.temp_files['temp_log'] = file.id + '.log'
     file.temp_files['temp_out'] = file.id + '.temp.txt'
-    file.results_file = file.short_name + '.dbcan9.txt'
+    file.results_file = file.short_name + '.dbcan10.txt'
 
     hmm.run_hmmsearch(file.file_path,
                       file.temp_files['temp_log'],
@@ -108,9 +113,10 @@ def prep_file(out):
 
 if __name__ == "__main__":
     jak_utils.header()
-    genome_list = utilities.get_files(args.files, args.in_dir, ["faa"])
+    print(f"{colors.bcolors.GREEN}CAZy/dbCAN File: {jak_utils.get_yaml('cazyme_db')}{colors.bcolors.END}")
+    genome_list = utilities.get_files(args.files, args.in_dir, ["faa", "feature_protein.fasta"])
 
-    pool = Pool(processes=8)
+    pool = Pool(processes=args.processes)
     for _ in tqdm(pool.imap_unordered(main, genome_list), total=len(genome_list), desc="Finished", unit=" files"):
         pass
     pool.close()

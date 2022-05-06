@@ -1,5 +1,5 @@
 version:
-    0.9.6
+    0.9.7
 
 contams_db:
     "/Users/kimbrel1/GitHub/jak-bio/db/contam_seqs.fa"
@@ -14,7 +14,7 @@ TADB2_ffn:
     /Users/kimbrel1/GitHub/jak-bio/jak-bio/db/TADB_2.0/TADB2_2.ffn
 
 cazyme_db:
-    /Users/kimbrel1/GitHub/jak-bio/jak-bio/db/dbCAN-HMMdb-V9.txt
+    /Users/kimbrel1/Dropbox/Lab/Resources/dbcan10/dbCAN-HMMdb-V10.txt
 
 kofam_db:
     /Users/kimbrel1/Dropbox/Lab/Resources/kofam/100
