@@ -1,12 +1,10 @@
-import sys
 import os
 import argparse
-import uuid
 from multiprocessing import Manager, Pool
 from tqdm import tqdm
 
 from jakomics import hmm, utilities, colors
-from jakomics.table import TABLE, merge_value_counts
+from jakomics.table import merge_value_counts
 import jak_utils
 
 # OPTIONS #####################################################################
@@ -49,10 +47,11 @@ parser.add_argument('--substrate',
                     required=False,
                     default=None)
 
-parser.add_argument('--processes',
+parser.add_argument('--processes', '--process',
                     help="Number of genomes to process concurrently",
                     required=False,
-                    default=8)
+                    default=8,
+                    type = int)
 
 parser.add_argument('--remove_duplicates',
                     action='store_true',
@@ -64,15 +63,15 @@ row with the highest HMM_COVERAGE will be retained""")
 
 args = parser.parse_args()
 
-manager = Manager()
-result_files = manager.list()
+# manager = Manager()
+# result_files = manager.list()
 
 # FUNCTIONS ###################################################################
 
 
 def main(file):
 
-    global result_files
+    # global result_files
 
     file.temp_files['temp_log'] = file.id + '.log'
     file.temp_files['temp_out'] = file.id + '.temp.txt'
@@ -81,7 +80,8 @@ def main(file):
     hmm.run_hmmsearch(file.file_path,
                       file.temp_files['temp_log'],
                       file.temp_files['temp_out'],
-                      jak_utils.get_yaml("cazyme_db"))
+                      jak_utils.get_yaml("cazyme_db"),
+                      echo=False, run=True)
 
     file.results = hmm.cazymes_to_df(file.temp_files['temp_out'], args.qc)
 
@@ -95,7 +95,7 @@ def main(file):
 
     # cleanup
     file.remove_temp()
-    result_files.append(file.results_file)
+    #result_files.append(file.results_file)
 
 
 def prep_file(out):
