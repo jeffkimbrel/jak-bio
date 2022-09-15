@@ -17,7 +17,7 @@ cazyme_db:
     /Users/kimbrel1/Dropbox/Lab/Resources/dbcan10/dbCAN-HMMdb-V10.txt
 
 kofam_db:
-    /Users/kimbrel1/Dropbox/Lab/Resources/kofam/100
+    /Users/kimbrel1/Dropbox/Lab/Resources/kofam/102
 
 gtdb_metadata_path:
     '/Users/kimbrel1/Dropbox/Lab/Resources/gtdb'
