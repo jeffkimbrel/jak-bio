@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import argparse
-import pandas as pd
 from tqdm import tqdm
 import os
 import sys
@@ -9,6 +8,11 @@ import sys
 from jakomics.fastq import FASTQ
 from jakomics import colors
 import jak_utils
+
+# stop those pesky future warnings....
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+import pandas as pd
 
 # OPTIONS #####################################################################
 parser = argparse.ArgumentParser(

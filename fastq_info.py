@@ -5,11 +5,14 @@ from jakomics import colors
 from jakomics.fastq import FASTQ, run_info
 import argparse
 import os
-import pandas as pd
 from tqdm import tqdm
 import multiprocessing
 multiprocessing.set_start_method("fork")  # python 3.8 fix
 
+# stop those pesky future warnings....
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+import pandas as pd
 
 # OPTIONS #####################################################################
 parser = argparse.ArgumentParser(

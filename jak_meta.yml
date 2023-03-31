@@ -1,8 +1,8 @@
 version:
-    0.10.2
+    0.10.3
 
 contams_db:
-    "/Users/kimbrel1/GitHub/jak-bio/db/contam_seqs.fa"
+    "/Users/kimbrel1/Dropbox/Lab/Resources/jak-bio_resources/contam_seqs.fa"
 
 TADB2:
     "/Users/kimbrel1/GitHub/jak-bio/jak-bio/db/TADB_2.0/TADB2.xlsx"
