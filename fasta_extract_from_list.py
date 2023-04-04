@@ -3,7 +3,7 @@ from Bio import SeqIO
 import argparse
 import sys
 import os
-from jakomics import colors
+from jakomics import colors, utilities
 
 import jak_utils
 
@@ -12,9 +12,16 @@ import jak_utils
 parser = argparse.ArgumentParser(
     description='Give it a multifasta input (-f) and a list.txt (-l) with identifiers, and it returns the sequences')
 
-parser.add_argument('-f', '--fasta',
-                    help="Fasta input",
-                    required=True)
+parser.add_argument('--in_dir',
+                    help="Directory with fasta files",
+                    required=False,
+                    default="")
+
+parser.add_argument('-f', '--files',
+                    help="Paths to individual fasta files",
+                    nargs='*',
+                    required=False,
+                    default=[])
 
 parser.add_argument('-l', '--list',
                     help="List of headers to include",
@@ -34,61 +41,47 @@ args = parser.parse_args()
 
 # FUNCTIONS ###################################################################
 
+def main(fasta, list, column):
+    global found
 
-def main(fasta, list, column, out_file):
-    print(f'Reading and processing {fasta}')
     original_sequences = SeqIO.to_dict(SeqIO.parse(fasta, "fasta"))
 
-    # # modify keys
-    # for id in original_sequences.copy():
-    #     original_sequences[id.split("|")[-1]] = original_sequences[id]
-    #     del original_sequences[id]
-
-    collected_sequences = []
-
-    print(f'Reading and processing {list} column {column}')
     df = pd.read_csv(list, sep="\t", header=None)
     wanted_sequences = df.iloc[:, column]
-
-    yes = 0
-    no = []
-
+    
     for id in wanted_sequences:
         if id in original_sequences:
-            yes += 1
+            found += 1
             collected_sequences.append(original_sequences[id])
         else:
             no.append(id)
 
-        print(f'IDs in {os.path.basename(fasta)}: {colors.bcolors.GREEN}Found = {yes}{colors.bcolors.END}, {colors.bcolors.RED}NOT Found = {len(no)}{colors.bcolors.END}', end="\r", file=sys.stderr)
+# MAIN ########################################################################
 
-    print(f'\nWriting results to {out_file}')
-    SeqIO.write(collected_sequences, out_file, "fasta")
+if __name__ == "__main__":
+    jak_utils.header()
+
+
+    collected_sequences = []
+    found = 0
+    no = []
+
+    fasta_files = utilities.get_files(args.files, args.in_dir, ['faa', 'fa', 'ffn', 'fasta'])
+
+    for fasta_file in fasta_files:
+        main(fasta_file.file_path, args.list, args.column)
+
+    print(f'{colors.bcolors.GREEN}Found = {found}{colors.bcolors.END}, {colors.bcolors.RED}NOT Found = {len(no)}{colors.bcolors.END}', end="\r", file=sys.stderr)
+
+    print(f'\nWriting results to {args.out}')
+    SeqIO.write(collected_sequences, args.out, "fasta")
 
     if len(no) > 0:
         print(f'Done {colors.bcolors.RED}(with errors){colors.bcolors.END}')
     else:
         print(f'{colors.bcolors.GREEN}Done!{colors.bcolors.END}')
 
-    # for id in no:
-    #     print(f'{colors.bcolors.RED}Not Found: {id}{colors.bcolors.END}')
+    for id in no:
+        print(f'{colors.bcolors.RED}Not Found: {id}{colors.bcolors.END}')
 
-
-# MAIN ########################################################################
-
-#
-# lines = [line.strip() for line in open(args.list)]
-#
-# handle = open(args.fasta, "rU")
-#
-# for seq_record in SeqIO.parse(handle, "fasta"):
-#     for line in list(lines):
-#         if line == seq_record.id:
-#             print(">" + str(seq_record.id) + "\n" + str(seq_record.seq))
-#             lines.remove(line)
-
-
-if __name__ == "__main__":
-    jak_utils.header()
-
-    main(args.fasta, args.list, args.column, args.out)
+    

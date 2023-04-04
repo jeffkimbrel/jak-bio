@@ -56,6 +56,7 @@ def write_fasta(genome):
 
     gbk.genbank_to_fasta(write_nt=gbk.nt_path,
                          write_faa=gbk.faa_path,
+                         write_contig=gbk.contig_path,
                          feature_identifier=args.feature_identifier)
 
 # MAIN LOOP ###################################################################

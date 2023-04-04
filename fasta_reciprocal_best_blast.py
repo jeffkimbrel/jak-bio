@@ -1,5 +1,3 @@
-import os
-import sys
 import argparse
 from Bio import SeqIO
 from natsort import natsorted
@@ -71,7 +69,7 @@ def get_gene_length(gene_set, locus_tag):
 
 if __name__ == "__main__":
     jak_utils.header()
-    print(f"{colors.bcolors.RED}Code is under development{colors.bcolors.END}")
+    #print(f"{colors.bcolors.RED}Code is under development{colors.bcolors.END}")
 
     # collect gene information
     gene_dict = make_gene_dict(args.proteinA, args.proteinB)
@@ -105,6 +103,7 @@ if __name__ == "__main__":
                     best_dict['A'][locus_tag] = {'locus_tag': locus_tag,
                                                  'subject': best.subject,
                                                  'eval': best.eval,
+                                                 'percent': best.percent,
                                                  'alignment_length': best.alignment_length,
                                                  'mismatches': best.mismatches,
                                                  'bit_score': best.bit_score,
@@ -124,6 +123,7 @@ if __name__ == "__main__":
                     best_dict['B'][locus_tag] = {'locus_tag': locus_tag,
                                                  'subject': best.subject,
                                                  'eval': best.eval,
+                                                 'percent': best.percent,
                                                  'alignment_length': best.alignment_length,
                                                  'mismatches': best.mismatches,
                                                  'bit_score': best.bit_score,
@@ -134,8 +134,8 @@ if __name__ == "__main__":
                                                  'already_paired': False
                                                  }
 
-    df = pd.DataFrame(columns=['RECIPROCAL', 'A_LOCUS', 'B_LOCUS', 'A_LENGTH', 'A_COORDS', 'A_EVAL', 'A_ALIGNMENT_LENGTH',
-                               'A_MISMATCHES', 'A_BITSCORE', 'B_LENGTH', 'B_COORDS', 'B_EVAL', 'B_ALIGNMENT_LENGTH', 'B_MISMATCHES', 'B_BITSCORE'])
+    df = pd.DataFrame(columns=['RECIPROCAL', 'A_LOCUS', 'B_LOCUS', 'A_LENGTH', 'A_PERCENT', 'A_COORDS', 'A_EVAL', 'A_ALIGNMENT_LENGTH',
+                               'A_MISMATCHES', 'A_BITSCORE', 'B_LENGTH', 'B_PERCENT', 'B_COORDS', 'B_EVAL', 'B_ALIGNMENT_LENGTH', 'B_MISMATCHES', 'B_BITSCORE'])
 
     # process A hits
     for locus_tag, a_hit in best_dict['A'].items():
@@ -159,12 +159,14 @@ if __name__ == "__main__":
                                 'A_LOCUS': locus_tag,
                                 'B_LOCUS': a_hit['subject'],
                                 'A_LENGTH': get_gene_length('A', locus_tag),
+                                'A_PERCENT': a_hit['percent'],
                                 'A_COORDS': f"{a_hit['query_start']}-{a_hit['query_end']}",
                                 'A_EVAL': a_hit['eval'],
                                 'A_ALIGNMENT_LENGTH': a_hit['alignment_length'],
                                 'A_MISMATCHES': a_hit['mismatches'],
                                 'A_BITSCORE': a_hit['bit_score'],
                                 'B_LENGTH': get_gene_length('B', a_hit['subject']),
+                                'B_PERCENT': b_hit['percent'],
                                 'B_COORDS': f"{b_hit['query_start']}-{b_hit['query_end']}",
                                 'B_EVAL': b_hit['eval'],
                                 'B_ALIGNMENT_LENGTH': b_hit['alignment_length'],
@@ -187,6 +189,7 @@ if __name__ == "__main__":
                     'A_LOCUS': locus_tag,
                     'B_LOCUS': a_hit['subject'],
                     'A_LENGTH': get_gene_length('A', locus_tag),
+                    'A_PERCENT': a_hit['percent'],
                     'A_COORDS': f"{a_hit['query_start']}-{a_hit['query_end']}",
                     'A_EVAL': a_hit['eval'],
                     'A_ALIGNMENT_LENGTH': a_hit['alignment_length'],
@@ -208,6 +211,8 @@ if __name__ == "__main__":
                     'B_LOCUS': locus_tag,
                     'A_LENGTH': get_gene_length('A', b_hit['subject']),
                     'B_LENGTH': get_gene_length('B', locus_tag),
+                    'A_PERCENT': a_hit['percent'],
+                    'B_PERCENT': b_hit['percent'],
                     'B_COORDS': f"{b_hit['query_start']}-{b_hit['query_end']}",
                     'B_EVAL': b_hit['eval'],
                     'B_ALIGNMENT_LENGTH': b_hit['alignment_length'],

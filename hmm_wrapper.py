@@ -10,6 +10,11 @@ import jak_utils
 
 parser = argparse.ArgumentParser(description='XXX', formatter_class=argparse.RawTextHelpFormatter)
 
+import sys
+print(type(parser))
+
+sys.exit()
+
 parser.add_argument('--in_dir',
                     help="Directory with faa files",
                     required=False,
@@ -69,7 +74,7 @@ if __name__ == "__main__":
     
     genome_list = utilities.get_files(args.files, args.in_dir, ["faa", "feature_protein.fasta"])
 
-    pool = Pool()
+    pool = Pool(processes=4)
     for _ in tqdm(pool.imap_unordered(main, genome_list), total=len(genome_list), desc="Finished", unit=" files"):
         pass
     pool.close()
