@@ -10,8 +10,8 @@ import multiprocessing
 multiprocessing.set_start_method("fork")  # python 3.8 fix
 
 # stop those pesky future warnings....
-import warnings
-warnings.simplefilter(action='ignore', category=FutureWarning)
+# import warnings
+# warnings.simplefilter(action='ignore', category=FutureWarning)
 import pandas as pd
 
 # OPTIONS #####################################################################
@@ -82,7 +82,7 @@ if __name__ == "__main__":
                                'TYPE', 'PAIR', 'TOTAL_READS', 'RUN_INFO'])
 
     for result in results:
-        df = df.append(
+        df = pd.concat([df,
             pd.Series(data={
                 'INDEX': result,
                 'SAMPLE': results[result]["SAMPLE"],
@@ -94,7 +94,7 @@ if __name__ == "__main__":
                 'RUN_INFO': str(results[result]["RUN_INFO"]),
 
             }
-            ),
+            )],
             ignore_index=True)
 
     df = df.sort_values(by=['INDEX'])
