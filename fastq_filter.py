@@ -62,8 +62,8 @@ def format_stats(sample_series, filter_type, stats):
     new = pd.Series(name=sample_series.name,
                     data=d
                     )
-    sample_series = sample_series.append(new)
 
+    sample_series = pd.concat([sample_series, new], ignore_index=False)
     return sample_series
 
 
@@ -114,7 +114,12 @@ if __name__ == "__main__":
                                      threads=args.threads)
             sample_series = format_stats(sample_series, 'QF', qf)
 
-        df = df.append(sample_series, ignore_index=False)
+        df = pd.concat([df, sample_series.to_frame().T], ignore_index=False)
+
+
+
+
+
         pbar.update(1)
 
     # write to file with comments
