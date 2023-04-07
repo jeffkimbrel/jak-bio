@@ -82,8 +82,7 @@ if __name__ == "__main__":
                                'TYPE', 'PAIR', 'TOTAL_READS', 'RUN_INFO'])
 
     for result in results:
-        df = pd.concat([df,
-            pd.Series(data={
+        s = pd.Series(data={
                 'INDEX': result,
                 'SAMPLE': results[result]["SAMPLE"],
                 'FILE': results[result]["FILE"],
@@ -91,13 +90,14 @@ if __name__ == "__main__":
                 'TYPE': results[result]["TYPE"],
                 'PAIR': results[result]["PAIR"],
                 'TOTAL_READS': results[result]["TOTAL_READS"],
-                'RUN_INFO': str(results[result]["RUN_INFO"]),
+                'RUN_INFO': str(results[result]["RUN_INFO"])
 
             }
-            )],
-            ignore_index=True)
+            )
+        
+        df = pd.concat([df, s.to_frame().T], ignore_index=True)
 
-    df = df.sort_values(by=['INDEX'])
+    #df = df.sort_values(by=['INDEX'])
 
     # write to file with comments
     if os.path.exists(args.out):
