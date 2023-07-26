@@ -31,6 +31,7 @@ def get_files():
     genome_list = []
     folder_list = [d for d in os.listdir(
         args.in_dir) if os.path.isdir(os.path.join(args.in_dir, d))]
+        
 
     for folder in natsorted(folder_list):
         genome_list.append(Patric(args.in_dir, folder))

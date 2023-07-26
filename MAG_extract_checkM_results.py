@@ -37,7 +37,9 @@ for line in results:
     js['genome'] = sample
 
     series = pd.Series(js)
-    df = df.append(series, ignore_index=True)
+    df = pd.concat([df, series.to_frame().T], ignore_index=True)
+
+#    df = df.append(series, ignore_index=True)
 
 df = df[df.columns.intersection(cols)]
 
