@@ -14,7 +14,7 @@ TADB2_ffn:
     /Users/kimbrel1/GitHub/jak-bio/jak-bio/db/TADB_2.0/TADB2_2.ffn
 
 cazyme_db:
-    /Users/kimbrel1/Dropbox/Lab/Resources/dbcan10/dbCAN-HMMdb-V10.txt
+    /Users/kimbrel1/Dropbox/Lab/Resources/dbcan/12/dbCAN-HMMdb-V12.txt
 
 kofam_db:
     /Users/kimbrel1/Dropbox/Lab/Resources/kofam/102

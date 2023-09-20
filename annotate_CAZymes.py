@@ -1,6 +1,6 @@
 import os
 import argparse
-from multiprocessing import Manager, Pool
+from multiprocessing import Pool
 from tqdm import tqdm
 
 from jakomics import hmm, utilities, colors
@@ -75,7 +75,7 @@ def main(file):
 
     file.temp_files['temp_log'] = file.id + '.log'
     file.temp_files['temp_out'] = file.id + '.temp.txt'
-    file.results_file = file.short_name + '.dbcan10.txt'
+    file.results_file = file.short_name + '.dbcan12.txt'
 
     hmm.run_hmmsearch(file.file_path,
                       file.temp_files['temp_log'],
@@ -90,7 +90,8 @@ def main(file):
     f = open(file.results_file, 'a')
     for c in jak_utils.header(r=True):
         print(f'# {c}', file=f)
-
+    print(f'# remove_duplicates={args.remove_duplicates}', file=f)
+    print(f'# db_path={jak_utils.get_yaml("cazyme_db")}', file=f)
     file.results.to_csv(f, sep="\t", index=False)
 
     # cleanup
@@ -105,6 +106,8 @@ def prep_file(out):
     for c in jak_utils.header(r=True):
         print(f'# {c}', file=f)
     print(f'# remove_duplicates={args.remove_duplicates}', file=f)
+    print(f'# db_path={jak_utils.get_yaml("cazyme_db")}', file=f)
+    
     return f
 
 
