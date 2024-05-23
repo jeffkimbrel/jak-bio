@@ -10,10 +10,6 @@ import jak_utils
 
 parser = argparse.ArgumentParser(description='XXX', formatter_class=argparse.RawTextHelpFormatter)
 
-import sys
-print(type(parser))
-
-sys.exit()
 
 parser.add_argument('--in_dir',
                     help="Directory with faa files",

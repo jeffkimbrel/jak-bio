@@ -35,8 +35,11 @@ genomes = pd.read_csv(args.metadata, sep="\t")
 
 for genome, row in genomes.iterrows():
     name = str(row['organism_name'])
-    if pd.notna(row['infraspecific_name']):
-        name = name + " " + str(row['infraspecific_name'])
+    # if pd.notna(row['infraspecific_name']):
+    #     name = name + " " + str(row['infraspecific_name'])
+    # if pd.notna(row['isolate']):
+    #     name = name + " " + str(row['isolate'])
+    name = name + " " + str(row['asm_name'])
     name = name.replace(" ", "_")
     name = name.replace("strain=", "")
 

@@ -68,7 +68,8 @@ def getInfo(seq_record, count_special_characters):
 # ANALYZE #####################################################################
 
 
-fasta_files = utilities.get_files(args.files, args.in_dir, ['faa', 'fa', 'ffn', 'fasta'])
+fasta_files = utilities.get_files(args.files, args.in_dir, ['faa', 'fa', 'ffn', 'fasta', 'fna'])
+
 
 for fasta_file in fasta_files:
     total = 0

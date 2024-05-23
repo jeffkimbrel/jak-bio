@@ -9,7 +9,7 @@ from natsort import natsorted
 # from Bio import SearchIO
 from collections import Counter
 import math
-from multiprocessing import Manager, Pool
+from multiprocessing import Pool
 from tqdm import tqdm
 
 from jakomics import utilities, blast, hmm, gene, colors
@@ -45,8 +45,8 @@ tadb_data = pd.read_excel(jak_utils.get_yaml("TADB2"), sheet_name="merged", engi
 tadb_type = pd.read_excel(jak_utils.get_yaml("TADB2"), sheet_name="type", engine='openpyxl')
 tadb_type = tadb_type.set_index('TA_ID')
 
-blast.make_blast_db('prot', jak_utils.get_yaml("TADB2_faa"))
-blast.make_blast_db('nucl', jak_utils.get_yaml("TADB2_ffn"))
+#blast.make_blast_db('prot', jak_utils.get_yaml("TADB2_faa"))
+#blast.make_blast_db('nucl', jak_utils.get_yaml("TADB2_ffn"))
 
 # CLASSES #####################################################################
 
@@ -142,6 +142,7 @@ def gene_distance(gene1, gene2):
 
 def get_tadb_family(tadb):
     tadb = tadb.replace("TADB|", "")
+    print(tadb)
     role, ta_id, _ = re.split('(\d+)', tadb)
     df = tadb_data.loc[tadb_data['TA_ID'] == int(ta_id)]
     family = df['TA_FAMILY'].tolist()
@@ -312,8 +313,8 @@ def tadb_results_to_df(name, pairs, min_score):
     for pair in pairs:
         if pair.score >= min_score:
             # pair.view(name)
-            details = details.append(
-                pd.Series(data={
+
+            s = pd.Series(data={
                     'GENOME': name,
                     'GENOME_PAIR': pair.id,
                     'REPLICON': pair.get_replicon(),
@@ -331,16 +332,19 @@ def tadb_results_to_df(name, pairs, min_score):
                     'ANTITOXIN_TADB_IDS': pair.all_antitoxin_tabd_ids(),
                     'TOXIN_NAMES': pair.get_all_toxin_names(),
                     'ANTITOXIN_NAMES': pair.get_all_antitoxin_names()
-                }
-                ),
-                ignore_index=True)
+                })
+
+            # details = details.append(
+            #     pd.Series(s),
+            #     ignore_index=True)
+
+            details = pd.concat([details, s.to_frame().T], ignore_index = True)
 
     return details
 
 
 def find_TAs(genome):
 
-    global shared_results
     results = []
 
     # write genes to genomes and gene class dictionary
@@ -367,7 +371,19 @@ def find_TAs(genome):
             genome.potential_TA_list.append(genome.genes[gene].id)
 
     pairs = get_potential_tadb_pairs(genome)
-    shared_results[genome.name] = score_tadb_pairs(pairs)
+    # shared_results[genome.name] = score_tadb_pairs(pairs)
+    results = score_tadb_pairs(pairs)
+
+    details = tadb_results_to_df(genome.name, results, min_score=5)
+
+
+    f = open(os.path.join(args.out_dir, genome.name + "_results.txt"), 'a')
+    for c in jak_utils.header(r=True):
+        print(f'# {c}', file=f)
+    for arg in vars(args):
+        print(f'# ARG {arg} = {getattr(args, arg)}', file=f)
+
+    details.to_csv(f, sep="\t", index=False)
 
 # MAIN LOOP ###################################################################
 
@@ -375,8 +391,8 @@ def find_TAs(genome):
 if __name__ == "__main__":
     jak_utils.header()
 
-    manager = Manager()
-    shared_results = manager.dict()
+    # manager = Manager()
+    # shared_results = manager.dict()
 
     if not os.path.exists(args.out_dir):
         print("\nCreating directory " + args.out_dir)
@@ -389,18 +405,18 @@ if __name__ == "__main__":
         pass
     pool.close()
 
-    results_df = make_empty_df()
-    for genome in shared_results:
-        details = tadb_results_to_df(genome, shared_results[genome], min_score=5)
-        results_df = pd.concat([results_df, details])
+    # results_df = make_empty_df()
+    # for genome in shared_results:
+    #     details = tadb_results_to_df(genome, shared_results[genome], min_score=5)
+    #     results_df = pd.concat([results_df, details])
 
-    print(results_df)
+    # print(results_df)
 
-    # write to file with comments
-    f = open(os.path.join(args.out_dir, "results.txt"), 'a')
-    for c in jak_utils.header(r=True):
-        print(f'# {c}', file=f)
-    for arg in vars(args):
-        print(f'# ARG {arg} = {getattr(args, arg)}', file=f)
+    # # write to file with comments
+    # f = open(os.path.join(args.out_dir, "results.txt"), 'a')
+    # for c in jak_utils.header(r=True):
+    #     print(f'# {c}', file=f)
+    # for arg in vars(args):
+    #     print(f'# ARG {arg} = {getattr(args, arg)}', file=f)
 
-    results_df.to_csv(f, sep="\t", index=False)
+    # results_df.to_csv(f, sep="\t", index=False)
