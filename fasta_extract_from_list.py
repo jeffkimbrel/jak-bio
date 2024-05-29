@@ -2,7 +2,6 @@ import pandas as pd
 from Bio import SeqIO
 import argparse
 import sys
-import os
 from jakomics import colors, utilities
 
 import jak_utils
@@ -36,6 +35,10 @@ parser.add_argument('-c', '--column',
                     type=int,
                     default=0,
                     required=False)
+
+parser.add_argument('--quiet',
+                    action='store_true',
+                    help='display less')
 
 args = parser.parse_args()
 
@@ -81,7 +84,8 @@ if __name__ == "__main__":
     else:
         print(f'{colors.bcolors.GREEN}Done!{colors.bcolors.END}')
 
-    for id in no:
-        print(f'{colors.bcolors.RED}Not Found: {id}{colors.bcolors.END}')
+    if args.quiet == False:
+        for id in no:
+            print(f'{colors.bcolors.RED}Not Found: {id}{colors.bcolors.END}')
 
     
