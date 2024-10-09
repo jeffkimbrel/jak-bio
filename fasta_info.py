@@ -3,7 +3,6 @@
 from Bio import SeqIO
 import argparse
 import sys
-from Bio.SeqUtils import GC
 
 from jakomics import colors, utilities
 import jak_utils
