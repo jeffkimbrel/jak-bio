@@ -75,7 +75,7 @@ def main(file):
 
     file.temp_files['temp_log'] = file.id + '.log'
     file.temp_files['temp_out'] = file.id + '.temp.txt'
-    file.results_file = file.short_name + '.dbcan12.txt'
+    file.results_file = file.short_name + '.dbcan13.txt'
 
     hmm.run_hmmsearch(file.file_path,
                       file.temp_files['temp_log'],

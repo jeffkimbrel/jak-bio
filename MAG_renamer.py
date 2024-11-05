@@ -46,7 +46,7 @@ pbar = tqdm(total=len(stats.index))
 
 for MAG, row in stats.iterrows():
     bin_path = f"{args.in_dir}{row['BIN']}.{args.extension}"
-    mag_path = f"{args.out_dir}{row['MAG']}.{args.extension}"
+    mag_path = f"{args.out_dir}{row['MAG']}.fa"
 
     f = file.FILE(bin_path)
     if f.check_files_exist(exit_if_false = False):

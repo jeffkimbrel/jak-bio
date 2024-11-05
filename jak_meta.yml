@@ -1,5 +1,5 @@
 version:
-    0.10.9
+    0.10.10
 
 contams_db:
     "/Users/kimbrel1/Dropbox/Lab/Resources/jak-bio_resources/contam_seqs.fa"
@@ -14,7 +14,7 @@ TADB2_ffn:
     /Users/kimbrel1/Library/CloudStorage/Dropbox/Lab/Resources/jak-bio_resources/TADB_2.0/TADB2_2.ffn
 
 cazyme_db:
-    /Users/kimbrel1/Dropbox/Lab/Resources/dbcan/12/dbCAN-HMMdb-V12.txt
+    /Users/kimbrel1/Library/CloudStorage/Dropbox/Lab/Resources/dbcan/13/dbCAN-HMMdb-V13.txt
 
 kofam_db:
     /Users/kimbrel1/Dropbox/Lab/Resources/kofam/102
