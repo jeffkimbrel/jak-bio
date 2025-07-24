@@ -6,6 +6,7 @@ import os
 import sys
 
 from jakomics.fastq import FASTQ
+from jakomics.bbtools import bbtools_version
 from jakomics import colors
 import jak_utils
 
@@ -69,6 +70,7 @@ def format_stats(sample_series, filter_type, stats):
 
 if __name__ == "__main__":
     jak_utils.header()
+    bbtools_version()
     files = pd.read_excel(args.samples, index_col=0, engine='openpyxl')
 
     contam_seqs = jak_utils.get_yaml("contams_db")
