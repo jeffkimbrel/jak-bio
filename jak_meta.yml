@@ -25,3 +25,6 @@ gtdb_metadata_path:
 ncbi_taxdmp_path:
     '/Users/kimbrel1/Dropbox/Lab/Resources/new_taxdump/'
 
+rfam_db:
+    '/Users/kimbrel1/Library/CloudStorage/Dropbox/Lab/Resources/RFAM'
+
