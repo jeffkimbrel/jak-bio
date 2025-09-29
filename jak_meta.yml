@@ -1,5 +1,5 @@
 version:
-    0.10.11
+    0.10.12
 
 contams_db:
     "/Users/kimbrel1/Dropbox/Lab/Resources/jak-bio_resources/contam_seqs.fa"
@@ -17,7 +17,7 @@ cazyme_db:
     /Users/kimbrel1/Library/CloudStorage/Dropbox/Lab/Resources/dbcan/13/dbCAN-HMMdb-V13.txt
 
 kofam_db:
-    /Users/kimbrel1/Dropbox/Lab/Resources/kofam/102
+    /Users/kimbrel1/Library/CloudStorage/Dropbox/Lab/Resources/kofam/113
 
 gtdb_metadata_path:
     '/Users/kimbrel1/Dropbox/Lab/Resources/gtdb'

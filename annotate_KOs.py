@@ -5,6 +5,7 @@ from multiprocessing import Pool
 import pandas as pd
 from tqdm import tqdm
 import yaml
+import shutil
 
 from jakomics import utilities, colors, kegg, file
 from jakomics.genome import GENOME
@@ -34,6 +35,11 @@ parser.add_argument('--profile',
                     default='prokaryote',
                     required=False)
 
+parser.add_argument('--temp_dir',
+                    help="Temporary directory for kofam raw output",
+                    default='out_dir',
+                    required=False)
+
 parser.add_argument('--t_scale',
                     help="Threshold Scale",
                     default=1.0,
@@ -55,16 +61,24 @@ def main(genome):
         gbk.genbank_to_fasta(write_faa=gbk.faa_path)
         genome.file_path = gbk.faa_path
         genome.temp_files['faa'] = gbk.faa_path
+        
 
     output_file = os.path.join(args.out_dir, genome.name + '.KofamKOALA.txt')
+
+    if args.temp_dir == "out_dir":
+        temp_dir = os.path.join(args.out_dir, genome.name + '_kofamscan')
+    else:
+        temp_dir = os.path.join(args.temp_dir, genome.name + '_kofamscan')
 
     if os.path.exists(output_file):
         os.remove(output_file)
 
     hits = kegg.run_kofam(genome.file_path,
                           args.profile,
+                          temp_dir,
                           os.path.join(jak_utils.get_yaml("kofam_db"), 'ko_list'),
-                          t_scale=args.t_scale)
+                          t_scale=args.t_scale,
+                          echo = False)
 
     df = kegg.kofam_to_df(hits)
 
@@ -80,6 +94,7 @@ def main(genome):
     df.to_csv(f, sep="\t", index=False)
 
     genome.remove_temp()
+    shutil.rmtree(temp_dir, ignore_errors=False)
 
 
 # MAIN LOOP ###################################################################
