@@ -2,6 +2,8 @@
 
 from Bio import SeqIO
 from Bio.Seq import Seq
+from Bio.SeqRecord import SeqRecord
+
 import argparse
 import sys
 import json
@@ -24,6 +26,10 @@ parser.add_argument('-m', '--mode',
                     required=False,
                     default="description")
 
+parser.add_argument('-o', '--out',
+                    help="fasta file out",
+                    required=False,
+                    default="validated.fa")
 
 parser.add_argument('--remove_identical_sequences',
                     action='store_true',
@@ -85,7 +91,17 @@ def validate_records(seqs):
         json.dump(bad_records, outfile, indent=2)
 
 
+    return(deduped_records)
 
+def write_fasta(seqs, out):
+    
+    formatted_seqs = []
+
+    for seq in seqs:
+        s = SeqRecord(Seq(validated_seqs[seq][0]), id=seq, description="")
+        formatted_seqs.append(s)
+
+    SeqIO.write(formatted_seqs, out, "fasta")
 
 
 
@@ -99,4 +115,6 @@ if __name__ == "__main__":
     for seq_record in SeqIO.parse(args.file, "fasta"):
         seqs.append(seq_record)
 
-    validate_records(seqs)
+    validated_seqs = validate_records(seqs)
+
+    write_fasta(validated_seqs, args.out)

@@ -13,9 +13,9 @@ from jakomics.fastq import FASTQ, run_info
 
 import jak_utils
 
-import warnings
-from Bio import BiopythonWarning
-warnings.simplefilter('ignore', BiopythonWarning)
+# import warnings
+# from Bio import BiopythonWarning
+# warnings.simplefilter('ignore', BiopythonWarning)
 
 
 ## OPTIONS #####################################################################
@@ -23,7 +23,7 @@ warnings.simplefilter('ignore', BiopythonWarning)
 parser = argparse.ArgumentParser(
     description='Demultiplex de-interleaved fastq files with de-interleaved barcode files and a sample sheet')
 parser.add_argument('-i1', '--index1', help="Index 1 fastq", required=True)
-parser.add_argument('-i2', '--index2', help="Index 2 fastq", required=True)
+#parser.add_argument('-i2', '--index2', help="Index 2 fastq", required=True)
 parser.add_argument('-r1', '--read1', help="Read 1 fastq", required=True)
 parser.add_argument('-r2', '--read2', help="Read 2 fastq", required=True)
 parser.add_argument('-m',  '--mapping', help="Mapping File", required=True)
@@ -90,7 +90,7 @@ def createUndetermined():
 
 
 def addSamples():
-    mapping_data = pd.read_csv(args.mapping, sep="\t", index_col=0)
+    mapping_data = pd.read_csv(args.mapping, sep="\t", index_col=0) # might need encoding="utf-16" sometimes
 
     dupe_sample_names = mapping_data[mapping_data.index.duplicated()].index.tolist()
     if len(dupe_sample_names) > 0:
@@ -100,7 +100,7 @@ def addSamples():
         sys.exit()
 
     for sample, row in mapping_data.iterrows():
-
+        sample = str(sample)
         samples[row['BarcodeSequence']] = Sample(sample, row['BarcodeSequence'])
 
 
@@ -109,41 +109,49 @@ def readFiles(total_reads):
     errors = 0
     pbar = tqdm(total=total_reads, desc="Processed", unit=" read pairs")
 
-    for read1, read2, index1, index2 in zip(SeqIO.parse(args.read1,  "fastq"),
-                                            SeqIO.parse(args.read2,  "fastq"),
-                                            SeqIO.parse(args.index1, "fastq"),
-                                            SeqIO.parse(args.index2, "fastq")):
+    with gzip.open(args.read1, "rt") as f1, gzip.open(args.read2, "rt") as f2, gzip.open(args.index1, "rt") as f3:
 
-        headers_agree = False
+        # for read1, read2, index1, index2 in zip(SeqIO.parse(args.read1,  "fastq"),
+        #                                         SeqIO.parse(args.read2,  "fastq"),
+        #                                         SeqIO.parse(args.index1, "fastq"),
+        #                                         SeqIO.parse(args.index2, "fastq")):
+        
+        for read1, read2, index1 in zip(SeqIO.parse(f1,  "fastq"),
+                                        SeqIO.parse(f2,  "fastq"),
+                                        SeqIO.parse(f3, "fastq")):
 
-        if len(set({read1.id, read2.id, index1.id, index2.id})) == 1:
-            headers_agree = True
-        else:
-            errors += 1
+            headers_agree = False
 
-        barcode = index1.seq + index2.seq
-
-        if headers_agree == True:
-            if not barcode in samples:
-                if args.skip_undetermined == False:
-                    samples['Undetermined'].addPair(read1, read2)
+            # if len(set({read1.id, read2.id, index1.id, index2.id})) == 1:
+            if len(set({read1.id, read2.id, index1.id})) == 1:
+                headers_agree = True
             else:
-                samples[barcode].addPair(read1, read2)
+                errors += 1
 
-        total += 1
-        if total % args.buffer == 0:
-            pbar.update(args.buffer)
+            # barcode = index1.seq + index2.seq
+            barcode = index1.seq
 
-            if total % (args.buffer * 500) == 0:
-                for barcode in samples:
-                    samples[barcode].write_to_file(False)
+            if headers_agree == True:
+                if not barcode in samples:
+                    if args.skip_undetermined == False:
+                        samples['Undetermined'].addPair(read1, read2)
+                else:
+                    samples[barcode].addPair(read1, read2)
+
+            total += 1
+            if total % args.buffer == 0:
+                pbar.update(args.buffer)
+
+                if total % (args.buffer * 500) == 0:
+                    for barcode in samples:
+                        samples[barcode].write_to_file(False)
 
     return(total, errors)
 
 
 def write_report():
     for sample in samples:
-        print(sample.sample, sample.barcode, sample.file1, sample.file2, sample.count, sep="\t")
+        print(samples[sample].sample, samples[sample].barcode, samples[sample].file1, samples[sample].file2, samples[sample].count, sep="\t")
 
 
 def main():
@@ -152,6 +160,11 @@ def main():
         createUndetermined()
 
     addSamples()
+
+    # for sample in samples:
+    #     print(samples[sample].__dict__)
+
+    #exit()
 
     # read count of original
     print(f"{colors.bcolors.GREEN}Getting read count of {args.read1}... {colors.bcolors.END}")
@@ -170,7 +183,7 @@ def main():
     for barcode in samples:
         samples[barcode].write_to_file(True)
 
-    # write_report()
+    write_report()
 
 ## RUN #########################################################################
 
