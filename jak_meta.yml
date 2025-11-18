@@ -2,7 +2,7 @@ version:
     0.10.13
 
 contams_db:
-    "/Users/kimbrel1/Dropbox/Lab/Resources/jak-bio_resources/contam_seqs.fa"
+    "/Users/kimbrel1/Library/CloudStorage/Dropbox/Lab/Resources/jak-bio_resources/contam_seqs.fa"
 
 TADB2:
     "/Users/kimbrel1/Library/CloudStorage/Dropbox/Lab/Resources/jak-bio_resources/TADB_2.0/TADB2.xlsx"
@@ -20,10 +20,10 @@ kofam_db:
     /Users/kimbrel1/Library/CloudStorage/Dropbox/Lab/Resources/kofam/113
 
 gtdb_metadata_path:
-    '/Users/kimbrel1/Dropbox/Lab/Resources/gtdb'
+    '/Users/kimbrel1/Library/CloudStorage/Dropbox/Lab/Resources/jak-bio_resources/gtdb'
 
 ncbi_taxdmp_path:
-    '/Users/kimbrel1/Dropbox/Lab/Resources/new_taxdump/'
+    '/Users/kimbrel1/Library/CloudStorage/Dropbox/Lab/Resources/jak-bio_resources/new_taxdump/'
 
 rfam_db:
     '/Users/kimbrel1/Library/CloudStorage/Dropbox/Lab/Resources/RFAM'
