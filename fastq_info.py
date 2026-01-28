@@ -26,6 +26,10 @@ parser.add_argument('--md5',
                     action='store_true',
                     help='Run md5 (very slow)')
 
+parser.add_argument('--qiime_headers',
+                    action='store_true',
+                    help='Parse fastq headers as qiime')
+
 parser.add_argument('--out',
                     help="File to write results to",
                     default="fastq_info_results.txt",
@@ -42,7 +46,7 @@ def get_info(sample):
         else:
             fastq_file.md5 = "NA"
 
-        run_info_results = run_info(fastq_file.file_path)
+        run_info_results = run_info(fastq_file.file_path, qiime_headers = args.qiime_headers)
 
         file_results = {"SAMPLE": sample.sample,
                         "FILE": fastq_file.file_path,
