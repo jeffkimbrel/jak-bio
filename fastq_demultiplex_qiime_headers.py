@@ -79,6 +79,33 @@ class Sample:
 
 ## FUNCTIONS ###################################################################
 
+def fix_headers(record):
+    """
+    Remove a leading token from a FASTQ header and make the remaining
+    header Biopython-consistent (id, name, description).
+
+    Example:
+      '161_18507 M02149:436:000000000-APCL6:1:1101:7821:5809 1:N:0:0'
+        ->
+      id:          'M02149:436:000000000-APCL6:1:1101:7821:5809'
+      description: 'M02149:436:000000000-APCL6:1:1101:7821:5809 1:N:0:0'
+    """
+    parts = record.description.split(maxsplit=1)
+
+    # If there's nothing to strip, return unchanged
+    if len(parts) == 1:
+        return record
+
+    new_desc = parts[1]
+    new_id = new_desc.split()[0]
+
+    record.id = new_id
+    record.name = new_id
+    record.description = new_desc
+
+    return record
+
+
 def readFiles(total_reads):
     total = 0
     errors = 0
@@ -90,7 +117,7 @@ def readFiles(total_reads):
         sample1, pair1, direction1 = parse_header(read1)
         sample2, pair2, direction2 = parse_header(read2)
 
-        
+        #print(f"id={read1.id}\tdescription={read1.description}")
 
         if not sample1 in samples:
             samples[sample1] = Sample(sample1)
@@ -99,9 +126,10 @@ def readFiles(total_reads):
             samples[sample2] = Sample(sample2)
    
         if len(set({pair1, pair2})) == 1:
+            
             # overwrite existing header with sample_pair part removed
-            read1.description = " ".join(read1.description.split(" ")[1:])
-            read2.description = " ".join(read2.description.split(" ")[1:])
+            read1 = fix_headers(read1)
+            read2 = fix_headers(read2)
             
             samples[sample1].addPair(read1, read2)
         else:
@@ -127,8 +155,8 @@ def addSingles(read1, read2):
     sample2, pair2, direction2 = parse_header(read2)
 
     # overwrite existing header with sample_pair part removed
-    read1.description = " ".join(read1.description.split(" ")[1:])
-    read2.description = " ".join(read2.description.split(" ")[1:])
+    read1 = fix_headers(read1)
+    read2 = fix_headers(read2)
     
     if pair1 in samples[sample1].singles:
         samples[sample1].singles[pair1][direction1] = read1
